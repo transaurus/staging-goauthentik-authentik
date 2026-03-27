@@ -1,0 +1,10 @@
+{
+  "sourceUrl": "https://github.com/goauthentik/authentik",
+  "branch": "main",
+  "docusaurusRoot": "website",
+  "configFile": "website/docs/docusaurus.config.cjs",
+  "translateCommand": "npm run -w docs docusaurus -- write-translations",
+  "buildCommand": "npm run -w docs build",
+  "buildOutput": "build",
+  "packageManager": "npm"
+}
