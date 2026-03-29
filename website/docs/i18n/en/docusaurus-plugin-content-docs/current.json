@@ -1,0 +1,550 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Core Concepts": {
+    "message": "Core Concepts",
+    "description": "The label for category 'Core Concepts' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.terms": {
+    "message": "terms",
+    "description": "The label for category 'terms' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Enterprise": {
+    "message": "Enterprise",
+    "description": "The label for category 'Enterprise' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Installation and Configuration": {
+    "message": "Installation and Configuration",
+    "description": "The label for category 'Installation and Configuration' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category 'Installation' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Add and Secure Applications": {
+    "message": "Add and Secure Applications",
+    "description": "The label for category 'Add and Secure Applications' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Applications": {
+    "message": "Applications",
+    "description": "The label for category 'Applications' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Providers": {
+    "message": "Providers",
+    "description": "The label for category 'Providers' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Property Mappings": {
+    "message": "Property Mappings",
+    "description": "The label for category 'Property Mappings' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Google Workspace Provider": {
+    "message": "Google Workspace Provider",
+    "description": "The label for category 'Google Workspace Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.LDAP Provider": {
+    "message": "LDAP Provider",
+    "description": "The label for category 'LDAP Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Microsoft Entra ID Provider": {
+    "message": "Microsoft Entra ID Provider",
+    "description": "The label for category 'Microsoft Entra ID Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.OAuth2 Provider": {
+    "message": "OAuth2 Provider",
+    "description": "The label for category 'OAuth2 Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Proxy Provider": {
+    "message": "Proxy Provider",
+    "description": "The label for category 'Proxy Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Forward authentication": {
+    "message": "Forward authentication",
+    "description": "The label for category 'Forward authentication' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.RAC (Remote Access Control) Provider": {
+    "message": "RAC (Remote Access Control) Provider",
+    "description": "The label for category 'RAC (Remote Access Control) Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.SAML Provider": {
+    "message": "SAML Provider",
+    "description": "The label for category 'SAML Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.SSF Provider": {
+    "message": "SSF Provider",
+    "description": "The label for category 'SSF Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.WS-Federation Provider": {
+    "message": "WS-Federation Provider",
+    "description": "The label for category 'WS-Federation Provider' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Flows and Stages": {
+    "message": "Flows and Stages",
+    "description": "The label for category 'Flows and Stages' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Flows": {
+    "message": "Flows",
+    "description": "The label for category 'Flows' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Defaults and Examples": {
+    "message": "Defaults and Examples",
+    "description": "The label for category 'Defaults and Examples' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Executors": {
+    "message": "Executors",
+    "description": "The label for category 'Executors' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Stages": {
+    "message": "Stages",
+    "description": "The label for category 'Stages' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Bindings": {
+    "message": "Bindings",
+    "description": "The label for category 'Bindings' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Outposts": {
+    "message": "Outposts",
+    "description": "The label for category 'Outposts' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Integrations": {
+    "message": "Integrations",
+    "description": "The label for category 'Integrations' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Running and upgrading": {
+    "message": "Running and upgrading",
+    "description": "The label for category 'Running and upgrading' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Customize your instance": {
+    "message": "Customize your instance",
+    "description": "The label for category 'Customize your instance' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Policies": {
+    "message": "Policies",
+    "description": "The label for category 'Policies' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Expression Policies": {
+    "message": "Expression Policies",
+    "description": "The label for category 'Expression Policies' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Interfaces": {
+    "message": "Interfaces",
+    "description": "The label for category 'Interfaces' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Blueprints": {
+    "message": "Blueprints",
+    "description": "The label for category 'Blueprints' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Models": {
+    "message": "Models",
+    "description": "The label for category 'Models' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Manage Users and Sources": {
+    "message": "Manage Users and Sources",
+    "description": "The label for category 'Manage Users and Sources' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Users": {
+    "message": "Users",
+    "description": "The label for category 'Users' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Groups": {
+    "message": "Groups",
+    "description": "The label for category 'Groups' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Roles": {
+    "message": "Roles",
+    "description": "The label for category 'Roles' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Access Control": {
+    "message": "Access Control",
+    "description": "The label for category 'Access Control' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Federated and Social Sources": {
+    "message": "Federated and Social Sources",
+    "description": "The label for category 'Federated and Social Sources' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Protocols": {
+    "message": "Protocols",
+    "description": "The label for category 'Protocols' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Kerberos": {
+    "message": "Kerberos",
+    "description": "The label for category 'Kerberos' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Source Property Mappings": {
+    "message": "Source Property Mappings",
+    "description": "The label for category 'Source Property Mappings' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Directory synchronization": {
+    "message": "Directory synchronization",
+    "description": "The label for category 'Directory synchronization' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Identity Providers": {
+    "message": "Identity Providers",
+    "description": "The label for category 'Identity Providers' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Entra ID": {
+    "message": "Entra ID",
+    "description": "The label for category 'Entra ID' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Google": {
+    "message": "Google",
+    "description": "The label for category 'Google' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.System Management": {
+    "message": "System Management",
+    "description": "The label for category 'System Management' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Brands": {
+    "message": "Brands",
+    "description": "The label for category 'Brands' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Operations": {
+    "message": "Operations",
+    "description": "The label for category 'Operations' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Events": {
+    "message": "Events",
+    "description": "The label for category 'Events' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Notification Rules": {
+    "message": "Notification Rules",
+    "description": "The label for category 'Notification Rules' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Endpoint Devices (Early Preview)": {
+    "message": "Endpoint Devices (Early Preview)",
+    "description": "The label for category 'Endpoint Devices (Early Preview)' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.authentik Agent": {
+    "message": "authentik Agent",
+    "description": "The label for category 'authentik Agent' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Deployment": {
+    "message": "Deployment",
+    "description": "The label for category 'Deployment' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Device authentication": {
+    "message": "Device authentication",
+    "description": "The label for category 'Device authentication' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Local device login": {
+    "message": "Local device login",
+    "description": "The label for category 'Local device login' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.CLI application authentication": {
+    "message": "CLI application authentication",
+    "description": "The label for category 'CLI application authentication' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Release notes": {
+    "message": "Release notes",
+    "description": "The label for category 'Release notes' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Device compliance": {
+    "message": "Device compliance",
+    "description": "The label for category 'Device compliance' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Connectors": {
+    "message": "Connectors",
+    "description": "The label for category 'Connectors' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Developer Documentation": {
+    "message": "Developer Documentation",
+    "description": "The label for category 'Developer Documentation' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Development environment": {
+    "message": "Development environment",
+    "description": "The label for category 'Development environment' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Writing documentation": {
+    "message": "Writing documentation",
+    "description": "The label for category 'Writing documentation' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Templates": {
+    "message": "Templates",
+    "description": "The label for category 'Templates' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Security": {
+    "message": "Security",
+    "description": "The label for category 'Security' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Security.link.generated-index.title": {
+    "message": "Security",
+    "description": "The generated-index page title for category 'Security' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Audits and Certificates": {
+    "message": "Audits and Certificates",
+    "description": "The label for category 'Audits and Certificates' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.CVEs": {
+    "message": "CVEs",
+    "description": "The label for category 'CVEs' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.2026": {
+    "message": "2026",
+    "description": "The label for category '2026' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.2025": {
+    "message": "2025",
+    "description": "The label for category '2025' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.2024": {
+    "message": "2024",
+    "description": "The label for category '2024' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.2023": {
+    "message": "2023",
+    "description": "The label for category '2023' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.2022": {
+    "message": "2022",
+    "description": "The label for category '2022' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Troubleshooting": {
+    "message": "Troubleshooting",
+    "description": "The label for category 'Troubleshooting' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Troubleshooting.link.generated-index.title": {
+    "message": "Troubleshooting",
+    "description": "The generated-index page title for category 'Troubleshooting' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Troubleshooting.link.generated-index.description": {
+    "message": "Troubleshooting various issues",
+    "description": "The generated-index page description for category 'Troubleshooting' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Logs": {
+    "message": "Logs",
+    "description": "The label for category 'Logs' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.PostgreSQL": {
+    "message": "PostgreSQL",
+    "description": "The label for category 'PostgreSQL' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Release Notes": {
+    "message": "Release Notes",
+    "description": "The label for category 'Release Notes' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Release Notes.link.generated-index.title": {
+    "message": "Releases",
+    "description": "The generated-index page title for category 'Release Notes' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Release Notes.link.generated-index.description": {
+    "message": "Release Notes for recent authentik versions",
+    "description": "The generated-index page description for category 'Release Notes' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Previous versions": {
+    "message": "Previous versions",
+    "description": "The label for category 'Previous versions' in sidebar 'docs'"
+  },
+  "sidebar.docs.link.API Overview": {
+    "message": "API Overview",
+    "description": "The label for link 'API Overview' in sidebar 'docs', linking to 'https://api.goauthentik.io'"
+  },
+  "sidebar.docs.doc.Contributing": {
+    "message": "Contributing",
+    "description": "The label for the doc item 'Contributing' in sidebar 'docs', linking to the doc developer-docs/contributing"
+  },
+  "sidebar.docs.doc.release-2026.5": {
+    "message": "2026.5",
+    "description": "The label for the doc item '2026.5' in sidebar 'docs', linking to the doc releases/2026/v2026.5"
+  },
+  "sidebar.docs.doc.release-2026.2": {
+    "message": "2026.2",
+    "description": "The label for the doc item '2026.2' in sidebar 'docs', linking to the doc releases/2026/v2026.2"
+  },
+  "sidebar.docs.doc.release-2025.12": {
+    "message": "2025.12",
+    "description": "The label for the doc item '2025.12' in sidebar 'docs', linking to the doc releases/2025/v2025.12"
+  },
+  "sidebar.docs.doc.release-2025.10": {
+    "message": "2025.10",
+    "description": "The label for the doc item '2025.10' in sidebar 'docs', linking to the doc releases/2025/v2025.10"
+  },
+  "sidebar.docs.doc.release-2025.8": {
+    "message": "2025.8",
+    "description": "The label for the doc item '2025.8' in sidebar 'docs', linking to the doc releases/2025/v2025.8"
+  },
+  "sidebar.docs.doc.release-2025.6": {
+    "message": "2025.6",
+    "description": "The label for the doc item '2025.6' in sidebar 'docs', linking to the doc releases/2025/v2025.6"
+  },
+  "sidebar.docs.doc.release-2025.4": {
+    "message": "2025.4",
+    "description": "The label for the doc item '2025.4' in sidebar 'docs', linking to the doc releases/2025/v2025.4"
+  },
+  "sidebar.docs.doc.release-2025.2": {
+    "message": "2025.2",
+    "description": "The label for the doc item '2025.2' in sidebar 'docs', linking to the doc releases/2025/v2025.2"
+  },
+  "sidebar.docs.doc.release-2024.12": {
+    "message": "2024.12",
+    "description": "The label for the doc item '2024.12' in sidebar 'docs', linking to the doc releases/2024/v2024.12"
+  },
+  "sidebar.docs.doc.release-2024.10": {
+    "message": "2024.10",
+    "description": "The label for the doc item '2024.10' in sidebar 'docs', linking to the doc releases/2024/v2024.10"
+  },
+  "sidebar.docs.doc.release-2024.8": {
+    "message": "2024.8",
+    "description": "The label for the doc item '2024.8' in sidebar 'docs', linking to the doc releases/2024/v2024.8"
+  },
+  "sidebar.docs.doc.release-2024.6": {
+    "message": "2024.6",
+    "description": "The label for the doc item '2024.6' in sidebar 'docs', linking to the doc releases/2024/v2024.6"
+  },
+  "sidebar.docs.doc.release-2024.4": {
+    "message": "2024.4",
+    "description": "The label for the doc item '2024.4' in sidebar 'docs', linking to the doc releases/2024/v2024.4"
+  },
+  "sidebar.docs.doc.release-2024.2": {
+    "message": "2024.2",
+    "description": "The label for the doc item '2024.2' in sidebar 'docs', linking to the doc releases/2024/v2024.2"
+  },
+  "sidebar.docs.doc.release-2023.10": {
+    "message": "2023.10",
+    "description": "The label for the doc item '2023.10' in sidebar 'docs', linking to the doc releases/2023/v2023.10"
+  },
+  "sidebar.docs.doc.release-2023.8": {
+    "message": "2023.8",
+    "description": "The label for the doc item '2023.8' in sidebar 'docs', linking to the doc releases/2023/v2023.8"
+  },
+  "sidebar.docs.doc.release-2023.6": {
+    "message": "2023.6",
+    "description": "The label for the doc item '2023.6' in sidebar 'docs', linking to the doc releases/2023/v2023.6"
+  },
+  "sidebar.docs.doc.release-2023.5": {
+    "message": "2023.5",
+    "description": "The label for the doc item '2023.5' in sidebar 'docs', linking to the doc releases/2023/v2023.5"
+  },
+  "sidebar.docs.doc.release-2023.4": {
+    "message": "2023.4",
+    "description": "The label for the doc item '2023.4' in sidebar 'docs', linking to the doc releases/2023/v2023.4"
+  },
+  "sidebar.docs.doc.release-2023.3": {
+    "message": "2023.3",
+    "description": "The label for the doc item '2023.3' in sidebar 'docs', linking to the doc releases/2023/v2023.3"
+  },
+  "sidebar.docs.doc.release-2023.2": {
+    "message": "2023.2",
+    "description": "The label for the doc item '2023.2' in sidebar 'docs', linking to the doc releases/2023/v2023.2"
+  },
+  "sidebar.docs.doc.release-2023.1": {
+    "message": "2023.1",
+    "description": "The label for the doc item '2023.1' in sidebar 'docs', linking to the doc releases/2023/v2023.1"
+  },
+  "sidebar.docs.doc.release-2022.12": {
+    "message": "2022.12",
+    "description": "The label for the doc item '2022.12' in sidebar 'docs', linking to the doc releases/2022/v2022.12"
+  },
+  "sidebar.docs.doc.release-2022.11": {
+    "message": "2022.11",
+    "description": "The label for the doc item '2022.11' in sidebar 'docs', linking to the doc releases/2022/v2022.11"
+  },
+  "sidebar.docs.doc.release-2022.10": {
+    "message": "2022.10",
+    "description": "The label for the doc item '2022.10' in sidebar 'docs', linking to the doc releases/2022/v2022.10"
+  },
+  "sidebar.docs.doc.release-2022.9": {
+    "message": "2022.9",
+    "description": "The label for the doc item '2022.9' in sidebar 'docs', linking to the doc releases/2022/v2022.9"
+  },
+  "sidebar.docs.doc.release-2022.8": {
+    "message": "2022.8",
+    "description": "The label for the doc item '2022.8' in sidebar 'docs', linking to the doc releases/2022/v2022.8"
+  },
+  "sidebar.docs.doc.release-2022.7": {
+    "message": "2022.7",
+    "description": "The label for the doc item '2022.7' in sidebar 'docs', linking to the doc releases/2022/v2022.7"
+  },
+  "sidebar.docs.doc.release-2022.6": {
+    "message": "2022.6",
+    "description": "The label for the doc item '2022.6' in sidebar 'docs', linking to the doc releases/2022/v2022.6"
+  },
+  "sidebar.docs.doc.release-2022.5": {
+    "message": "2022.5",
+    "description": "The label for the doc item '2022.5' in sidebar 'docs', linking to the doc releases/2022/v2022.5"
+  },
+  "sidebar.docs.doc.release-2022.4": {
+    "message": "2022.4",
+    "description": "The label for the doc item '2022.4' in sidebar 'docs', linking to the doc releases/2022/v2022.4"
+  },
+  "sidebar.docs.doc.release-2022.3": {
+    "message": "2022.3",
+    "description": "The label for the doc item '2022.3' in sidebar 'docs', linking to the doc releases/2022/v2022.3"
+  },
+  "sidebar.docs.doc.release-2022.2": {
+    "message": "2022.2",
+    "description": "The label for the doc item '2022.2' in sidebar 'docs', linking to the doc releases/2022/v2022.2"
+  },
+  "sidebar.docs.doc.release-2022.1": {
+    "message": "2022.1",
+    "description": "The label for the doc item '2022.1' in sidebar 'docs', linking to the doc releases/2022/v2022.1"
+  },
+  "sidebar.docs.doc.release-2021.12": {
+    "message": "2021.12",
+    "description": "The label for the doc item '2021.12' in sidebar 'docs', linking to the doc releases/2021/v2021.12"
+  },
+  "sidebar.docs.doc.release-2021.10": {
+    "message": "2021.10",
+    "description": "The label for the doc item '2021.10' in sidebar 'docs', linking to the doc releases/2021/v2021.10"
+  },
+  "sidebar.docs.doc.release-2021.9": {
+    "message": "2021.9",
+    "description": "The label for the doc item '2021.9' in sidebar 'docs', linking to the doc releases/2021/v2021.9"
+  },
+  "sidebar.docs.doc.release-2021.8": {
+    "message": "2021.8",
+    "description": "The label for the doc item '2021.8' in sidebar 'docs', linking to the doc releases/2021/v2021.8"
+  },
+  "sidebar.docs.doc.release-2021.7": {
+    "message": "2021.7",
+    "description": "The label for the doc item '2021.7' in sidebar 'docs', linking to the doc releases/2021/v2021.7"
+  },
+  "sidebar.docs.doc.release-2021.6": {
+    "message": "2021.6",
+    "description": "The label for the doc item '2021.6' in sidebar 'docs', linking to the doc releases/2021/v2021.6"
+  },
+  "sidebar.docs.doc.release-2021.5": {
+    "message": "2021.5",
+    "description": "The label for the doc item '2021.5' in sidebar 'docs', linking to the doc releases/2021/v2021.5"
+  },
+  "sidebar.docs.doc.release-2021.4": {
+    "message": "2021.4",
+    "description": "The label for the doc item '2021.4' in sidebar 'docs', linking to the doc releases/2021/v2021.4"
+  },
+  "sidebar.docs.doc.release-2021.3": {
+    "message": "2021.3",
+    "description": "The label for the doc item '2021.3' in sidebar 'docs', linking to the doc releases/2021/v2021.3"
+  },
+  "sidebar.docs.doc.release-2021.2": {
+    "message": "2021.2",
+    "description": "The label for the doc item '2021.2' in sidebar 'docs', linking to the doc releases/2021/v2021.2"
+  },
+  "sidebar.docs.doc.release-2021.1": {
+    "message": "2021.1",
+    "description": "The label for the doc item '2021.1' in sidebar 'docs', linking to the doc releases/2021/v2021.1"
+  },
+  "sidebar.docs.doc.release-0.14": {
+    "message": "0.14",
+    "description": "The label for the doc item '0.14' in sidebar 'docs', linking to the doc releases/old/v0.14"
+  },
+  "sidebar.docs.doc.release-0.13": {
+    "message": "0.13",
+    "description": "The label for the doc item '0.13' in sidebar 'docs', linking to the doc releases/old/v0.13"
+  },
+  "sidebar.docs.doc.release-0.12": {
+    "message": "0.12",
+    "description": "The label for the doc item '0.12' in sidebar 'docs', linking to the doc releases/old/v0.12"
+  },
+  "sidebar.docs.doc.release-0.11": {
+    "message": "0.11",
+    "description": "The label for the doc item '0.11' in sidebar 'docs', linking to the doc releases/old/v0.11"
+  },
+  "sidebar.docs.doc.release-0.10": {
+    "message": "0.10",
+    "description": "The label for the doc item '0.10' in sidebar 'docs', linking to the doc releases/old/v0.10"
+  },
+  "sidebar.docs.doc.release-0.9": {
+    "message": "0.9",
+    "description": "The label for the doc item '0.9' in sidebar 'docs', linking to the doc releases/old/v0.9"
+  }
+}

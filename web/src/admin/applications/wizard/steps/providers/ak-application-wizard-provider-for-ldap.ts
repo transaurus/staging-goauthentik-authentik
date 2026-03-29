@@ -1,0 +1,45 @@
+import "#admin/applications/wizard/ak-wizard-title";
+
+import { WithBrandConfig } from "#elements/mixins/branding";
+
+import { ApplicationWizardProviderForm } from "#admin/applications/wizard/steps/providers/ApplicationWizardProviderForm";
+import {
+    ApplicationTransactionValidationError,
+    WizardValidationRecord,
+} from "#admin/applications/wizard/steps/providers/shared";
+import { renderForm } from "#admin/providers/ldap/LDAPProviderFormForm";
+
+import type { LDAPProvider } from "@goauthentik/api";
+
+import { msg } from "@lit/localize";
+import { html } from "lit";
+import { customElement } from "lit/decorators.js";
+
+@customElement("ak-application-wizard-provider-for-ldap")
+export class ApplicationWizardLdapProviderForm extends WithBrandConfig(
+    ApplicationWizardProviderForm<LDAPProvider, ApplicationTransactionValidationError>,
+) {
+    label = msg("Configure LDAP Provider");
+
+    renderForm(provider: LDAPProvider, errors: WizardValidationRecord) {
+        return html`
+            <ak-wizard-title>${this.label}</ak-wizard-title>
+            <form id="providerform" class="pf-c-form pf-m-horizontal" slot="form">
+                ${renderForm({ provider, errors, brand: this.brand })}
+            </form>
+        `;
+    }
+
+    render() {
+        if (!(this.wizard.provider && this.wizard.errors)) {
+            throw new Error("LDAP Provider Step received uninitialized wizard context.");
+        }
+        return this.renderForm(this.wizard.provider, this.wizard.errors.provider ?? {});
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        "ak-application-wizard-provider-for-ldap": ApplicationWizardLdapProviderForm;
+    }
+}

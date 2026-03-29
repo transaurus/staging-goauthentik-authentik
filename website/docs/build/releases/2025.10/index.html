@@ -1,0 +1,937 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-releases/2025/v2025.10" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>Release 2025.10 | authentik</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true name=twitter:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true property=og:url content=https://docs.goauthentik.io/releases/2025.10/ /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Release 2025.10 | authentik"/><meta data-rh=true name=description content=Highlights /><meta data-rh=true property=og:description content=Highlights /><link data-rh=true rel=icon href=/img/icon.png /><link data-rh=true rel=canonical href=https://docs.goauthentik.io/releases/2025.10/ /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2025.10/ hreflang=en /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2025.10/ hreflang=x-default /><link data-rh=true rel=preconnect href=https://36ROD0O0FV-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://docs.goauthentik.io/releases","name":"Release Notes","position":1},{"@type":"ListItem","item":"https://docs.goauthentik.io/releases/2025.10","name":"2025.10","position":2}]}</script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-9MVR9WZFZH"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-9MVR9WZFZH",{anonymize_ip:!0})</script><link rel=search type=application/opensearchdescription+xml title=authentik href=/opensearch.xml><link rel=stylesheet href=/assets/css/styles.96891979.css /><script src=/assets/js/runtime~main.48e1a0ed.js defer></script><script src=/assets/js/main.0769e9dc.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/icon_left_brand.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a href=https://goauthentik.io/ target=_self rel="noopener noreferrer" class=navbar__brand><div class=navbar__logo><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--dark_yETr"/></div></a><a href=https://goauthentik.io/features target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Features</a><a href=https://integrations.goauthentik.io target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Integrations</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" target=_self href=/>Documentation</a><a href=https://goauthentik.io/pricing/ target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Pricing</a><a href=https://goauthentik.io/blog target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/goauthentik/authentik target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=github aria-label=GitHub></a><a href=https://goauthentik.io/discord target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=discord aria-label=Discord></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="navbar__item dropdown dropdown--hoverable dropdown--right ak-version-selector"><div aria-haspopup=true aria-expanded=false role=button class="navbar__link menu__link">Version: <!-- -->Pre-release</div><ul class="dropdown__menu menu__list-item--collapsed"><li><a href=https://version-2026-2.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2026.2</a><li><a href=https://version-2025-12.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2025.12</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/><span title="Welcome to authentik" class=linkLabel_fEdy>Welcome to authentik</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/core/glossary/><span title="Core Concepts" class=categoryLinkLabel_ufhF>Core Concepts</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/enterprise/><span title=Enterprise class=categoryLinkLabel_ufhF>Enterprise</span></a><button aria-label="Expand sidebar category 'Enterprise'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/install-config/><span title="Installation and Configuration" class=categoryLinkLabel_ufhF>Installation and Configuration</span></a><button aria-label="Expand sidebar category 'Installation and Configuration'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/add-secure-apps/applications/><span title="Add and Secure Applications" class=categoryLinkLabel_ufhF>Add and Secure Applications</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/customize/><span title="Customize your instance" class=categoryLinkLabel_ufhF>Customize your instance</span></a><button aria-label="Expand sidebar category 'Customize your instance'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/users-sources/user/><span title="Manage Users and Sources" class=categoryLinkLabel_ufhF>Manage Users and Sources</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/background-tasks/><span title="System Management" class=categoryLinkLabel_ufhF>System Management</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/endpoint-devices/><span title="Endpoint Devices (Early Preview)" class=categoryLinkLabel_ufhF>Endpoint Devices (Early Preview)</span></a><button aria-label="Expand sidebar category 'Endpoint Devices (Early Preview)'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/developer-docs/><span title="Developer Documentation" class=categoryLinkLabel_ufhF>Developer Documentation</span></a><button aria-label="Expand sidebar category 'Developer Documentation'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/security/><span title=Security class=categoryLinkLabel_ufhF>Security</span></a><button aria-label="Expand sidebar category 'Security'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/troubleshooting/><span title=Troubleshooting class=categoryLinkLabel_ufhF>Troubleshooting</span></a><button aria-label="Expand sidebar category 'Troubleshooting'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--active" href=/releases/><span title="Release Notes" class=categoryLinkLabel_ufhF>Release Notes</span></a><button aria-label="Collapse sidebar category 'Release Notes'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2026.2/><span title=2026.2 class=linkLabel_fEdy>2026.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.12/><span title=2025.12 class=linkLabel_fEdy>2025.12</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true tabindex=0 href=/releases/2025.10/><span title="Previous versions" class=categoryLinkLabel_ufhF>Previous versions</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/releases/2025.10/><span title=2025.10 class=linkLabel_fEdy>2025.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.8/><span title=2025.8 class=linkLabel_fEdy>2025.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.6/><span title=2025.6 class=linkLabel_fEdy>2025.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.4/><span title=2025.4 class=linkLabel_fEdy>2025.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.2/><span title=2025.2 class=linkLabel_fEdy>2025.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.12/><span title=2024.12 class=linkLabel_fEdy>2024.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.10/><span title=2024.10 class=linkLabel_fEdy>2024.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.8/><span title=2024.8 class=linkLabel_fEdy>2024.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.6/><span title=2024.6 class=linkLabel_fEdy>2024.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.4/><span title=2024.4 class=linkLabel_fEdy>2024.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.2/><span title=2024.2 class=linkLabel_fEdy>2024.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.10/><span title=2023.10 class=linkLabel_fEdy>2023.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.8/><span title=2023.8 class=linkLabel_fEdy>2023.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.6/><span title=2023.6 class=linkLabel_fEdy>2023.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.5/><span title=2023.5 class=linkLabel_fEdy>2023.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.4/><span title=2023.4 class=linkLabel_fEdy>2023.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.3/><span title=2023.3 class=linkLabel_fEdy>2023.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.2/><span title=2023.2 class=linkLabel_fEdy>2023.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.1/><span title=2023.1 class=linkLabel_fEdy>2023.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.12/><span title=2022.12 class=linkLabel_fEdy>2022.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.11/><span title=2022.11 class=linkLabel_fEdy>2022.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.10/><span title=2022.10 class=linkLabel_fEdy>2022.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.9/><span title=2022.9 class=linkLabel_fEdy>2022.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.8/><span title=2022.8 class=linkLabel_fEdy>2022.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.7/><span title=2022.7 class=linkLabel_fEdy>2022.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.6/><span title=2022.6 class=linkLabel_fEdy>2022.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.5/><span title=2022.5 class=linkLabel_fEdy>2022.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.4/><span title=2022.4 class=linkLabel_fEdy>2022.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.3/><span title=2022.3 class=linkLabel_fEdy>2022.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.2/><span title=2022.2 class=linkLabel_fEdy>2022.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.1/><span title=2022.1 class=linkLabel_fEdy>2022.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.12/><span title=2021.12 class=linkLabel_fEdy>2021.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.10/><span title=2021.10 class=linkLabel_fEdy>2021.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.9/><span title=2021.9 class=linkLabel_fEdy>2021.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.8/><span title=2021.8 class=linkLabel_fEdy>2021.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.7/><span title=2021.7 class=linkLabel_fEdy>2021.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.6/><span title=2021.6 class=linkLabel_fEdy>2021.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.5/><span title=2021.5 class=linkLabel_fEdy>2021.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.4/><span title=2021.4 class=linkLabel_fEdy>2021.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.3/><span title=2021.3 class=linkLabel_fEdy>2021.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.2/><span title=2021.2 class=linkLabel_fEdy>2021.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.1/><span title=2021.1 class=linkLabel_fEdy>2021.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.14/><span title=0.14 class=linkLabel_fEdy>0.14</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.13/><span title=0.13 class=linkLabel_fEdy>0.13</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.12/><span title=0.12 class=linkLabel_fEdy>0.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.11/><span title=0.11 class=linkLabel_fEdy>0.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.10/><span title=0.10 class=linkLabel_fEdy>0.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.9/><span title=0.9 class=linkLabel_fEdy>0.9</span></a></ul></ul></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><a class=breadcrumbs__link href=/releases/><span>Release Notes</span></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Previous versions</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>2025.10</span></ul></nav><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Release 2025.10</h1></header><h2 class="anchor anchorTargetStickyNavbar_tleR" id=highlights>Highlights<a href=#highlights class=hash-link aria-label="Direct link to Highlights" title="Direct link to Highlights" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>SAML and OAuth2 provider Single Logout support</strong>: This release adds support for back-channel and front-channel SLO for SAML and front-channel for OAuth2/OIDC.</li>
+<li class=""><strong>Removed Redis dependency</strong>: authentik no longer uses Redis at all.</li>
+<li class=""><strong>Telegram source</strong>: Telegram can now be used for social login.</li>
+<li class=""><strong>SCIM provider OAuth support</strong>: <span class="badge badge--primary" title="This feature is available in the enterprise version of authentik." aria-description="Enterprise badge" role=img>Enterprise</span> SCIM providers can use OAuth providers to authenticate to SCIM endpoints.</li>
+<li class=""><strong>RADIUS EAP-TLS Support</strong>: <span class="badge badge--primary" title="This feature is available in the enterprise version of authentik." aria-description="Enterprise badge" role=img>Enterprise</span> The RADIUS provider now supports EAP-TLS, which can be used to authenticate WiFi clients.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=breaking-changes>Breaking changes<a href=#breaking-changes class=hash-link aria-label="Direct link to Breaking changes" title="Direct link to Breaking changes" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=redis-removal>Redis removal<a href=#redis-removal class=hash-link aria-label="Direct link to Redis removal" title="Direct link to Redis removal" translate=no>​</a></h3>
+<p>In previous versions, authentik used Redis for caching, tasks, the embedded proxy outpost's session store, and WebSocket connections. Since <a class="" href=/releases/2025.8/>2025.8</a>, tasks were migrated to use Postgres. With this release we've also migrated caching, the embedded outpost, and WebSocket to Postgres, fully removing the need for Redis.</p>
+<p>As a result of this change, it is expected that authentik will use roughly 50% more database connections to Postgres. Redis-related settings have also been removed and can be deleted from your configuration.</p>
+<p>If your Postgres instance requires a TLS connection, authentik now requires TLS 1.3 or the Extended Master Secret extension to connect to Postgres.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=default-oauth-scope-mappings>Default OAuth scope mappings<a href=#default-oauth-scope-mappings class=hash-link aria-label="Direct link to Default OAuth scope mappings" title="Direct link to Default OAuth scope mappings" translate=no>​</a></h3>
+<p>In previous releases with the default scope mappings, we set the <code>email_verified</code> claim to <code>true</code>. As we don't have a single source of whether a users' email is verified or not, and claiming that it is verified could lead to security implications, this claim has been corrected to <code>false</code>.</p>
+<p>Some applications may require this claim to be <code>true</code> to successfully authenticate users, in which case you can create a custom <code>email</code> scope mapping that returns <code>email_verified</code> as <code>true</code>.</p>
+<p>For more information, refer to the <a class="" href=/add-secure-apps/providers/oauth2/#email-scope-verification>Email scope verification documentation</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=new-features-and-improvements>New features and improvements<a href=#new-features-and-improvements class=hash-link aria-label="Direct link to New features and improvements" title="Direct link to New features and improvements" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=scim-provider-oauth-support->SCIM provider OAuth support <span class="badge badge--primary" title="This feature is available in the enterprise version of authentik." aria-description="Enterprise badge" role=img>Enterprise</span><a href=#scim-provider-oauth-support- class=hash-link aria-label="Direct link to scim-provider-oauth-support-" title="Direct link to scim-provider-oauth-support-" translate=no>​</a></h3>
+<p>SCIM providers can now use OAuth sources to authenticate to SCIM endpoints. This requires support in the remote system for OAuth authentication. Using an OAuth source provides improved security due to not requiring long-lived static tokens.</p>
+<p>This is supported by applications such as Slack and Salesforce.</p>
+<p>See <a class="" href=/add-secure-apps/providers/scim/#oauth-authentication-for-a-scim-provider-->SCIM Provider documentation</a> for more details.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=radius-eap-tls-support->RADIUS EAP-TLS support <span class="badge badge--primary" title="This feature is available in the enterprise version of authentik." aria-description="Enterprise badge" role=img>Enterprise</span><a href=#radius-eap-tls-support- class=hash-link aria-label="Direct link to radius-eap-tls-support-" title="Direct link to radius-eap-tls-support-" translate=no>​</a></h3>
+<p>The RADIUS outpost can now support EAP-TLS which allows for client authentication using certificates with the <a class="" href=/add-secure-apps/flows-stages/stages/mtls/>Mutual TLS stage</a>.</p>
+<p>See <a class="" href=/add-secure-apps/providers/radius/>RADIUS Provider documentation</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=saml-and-oauth2-provider-single-logout-support>SAML and OAuth2 provider Single Logout support<a href=#saml-and-oauth2-provider-single-logout-support class=hash-link aria-label="Direct link to SAML and OAuth2 provider Single Logout support" title="Direct link to SAML and OAuth2 provider Single Logout support" translate=no>​</a></h3>
+<p>In <a class="" href=/releases/2025.8/>2025.8</a> we've introduced support for back-channel logout in the OAuth2 Provider. This release adds support for front-channel logout in the OAuth2 Provider and both back- and front-channel logout support in the SAML Provider.</p>
+<p>See <a class="" href=/add-secure-apps/providers/oauth2/>OAuth2 Provider documentation</a> and <a class="" href=/add-secure-apps/providers/saml/>SAML Provider documentation</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=telegram-source>Telegram source<a href=#telegram-source class=hash-link aria-label="Direct link to Telegram source" title="Direct link to Telegram source" translate=no>​</a></h3>
+<p>Being one of the most upvoted GitHub issues, we've finally done it. Telegram can now be used as a federated identity provider in authentik. This allows users to authenticate with their Telegram credentials.</p>
+<p>See <a class="" href=/users-sources/sources/social-logins/telegram/>Telegram Source documentation</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=refined-flow-and-user-library>Refined flow and user library<a href=#refined-flow-and-user-library class=hash-link aria-label="Direct link to Refined flow and user library" title="Direct link to Refined flow and user library" translate=no>​</a></h3>
+<p>The flow interface now fits better on mobile devices/small viewports and looks sharper on HiDPi devices. There are also improvements for auto-completion during credential input (thanks to <a href=https://github.com/cjoshmartin target=_blank rel="noopener noreferrer" class=""><strong>@cjoshmartin</strong></a>!).
+The user library has improved scaling and makes better use of space with a higher density.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=additional-noteworthy-improvements>Additional noteworthy improvements<a href=#additional-noteworthy-improvements class=hash-link aria-label="Direct link to Additional noteworthy improvements" title="Direct link to Additional noteworthy improvements" translate=no>​</a></h3>
+<ul>
+<li class="">Credential provider: Alpha releases of desktop integrations are now available for testing; reach out to <a href=mailto:hello@goauthentik.io target=_blank rel="noopener noreferrer" class="">hello@goauthentik.io</a> if you are interested in providing early feedback for any of these:<!-- -->
+<ul>
+<li class="">Windows: a custom credential provider allowing custom authentication flows.</li>
+<li class="">macOS: a Platform SSO integration allowing seamless authentication.</li>
+<li class="">Linux: accessing Linux servers via an authentik identity.</li>
+</ul>
+</li>
+<li class="">Add <code>ak_send_email</code>: Allow for easier sending of emails in expressions; see <a class="" href=/customize/policies/expression/>ak_send_email</a>.</li>
+<li class="">Change recovery token duration: When using <code>ak create_recovery_key</code>, the duration is now set in minutes instead of years.</li>
+<li class="">Add OIDC <code>ui_locales</code> support: The OAuth2 provider now accepts <code>ui_locales</code> to set the locale of authentik.</li>
+<li class="">Add support for separate labels and values in prompt choice inputs, see <a class="" href=/add-secure-apps/flows-stages/stages/prompt/>Prompt stage documentation</a>; thanks to <a href=https://github.com/ErikAhlund target=_blank rel="noopener noreferrer" class=""><strong>@ErikAhlund</strong></a>!</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=new-integration-guides>New integration guides<a href=#new-integration-guides class=hash-link aria-label="Direct link to New integration guides" title="Direct link to New integration guides" translate=no>​</a></h2>
+<p>An integration is how authentik connects to third-party applications, directories, and other identity providers. The following integration guides were recently added.</p>
+<ul>
+<li class=""><a href=https://integrations.goauthentik.io/platforms/cloudflare/ target=_blank rel="noopener noreferrer" class="">Cloudflare</a></li>
+<li class=""><a href=https://integrations.goauthentik.io/cloud-providers/digitalocean/ target=_blank rel="noopener noreferrer" class="">Digital Ocean</a></li>
+<li class=""><a class="" href=/users-sources/sources/social-logins/entra-id/scim/>Entra ID SCIM</a></li>
+<li class=""><a href=https://integrations.goauthentik.io/infrastructure/osticket/ target=_blank rel="noopener noreferrer" class="">osTicket</a></li>
+<li class=""><a href=https://integrations.goauthentik.io/infrastructure/terraform-cloud/ target=_blank rel="noopener noreferrer" class="">Terraform Cloud</a></li>
+<li class=""><a href=https://integrations.goauthentik.io/infrastructure/termix/ target=_blank rel="noopener noreferrer" class="">Termix</a></li>
+<li class=""><a href=https://integrations.goauthentik.io/infrastructure/zendesk/ target=_blank rel="noopener noreferrer" class="">Zendesk</a></li>
+<li class=""><a href=https://integrations.goauthentik.io/chat-communication-collaboration/zoom/ target=_blank rel="noopener noreferrer" class="">Zoom</a></li>
+<li class=""><a href=https://integrations.goauthentik.io/infrastructure/zot/ target=_blank rel="noopener noreferrer" class="">Zot</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=upgrading>Upgrading<a href=#upgrading class=hash-link aria-label="Direct link to Upgrading" title="Direct link to Upgrading" translate=no>​</a></h2>
+<p>Following the upgrade instructions below will remove Redis from your installation. If you use authentik with an externally configured Redis, you can simply remove the Redis configuration from authentik; for more detailed information about upgrading authentik, refer to our <a class="" href=/install-config/upgrade/>Upgrade documentation</a>.</p>
+<div class="theme-admonition theme-admonition-warning admonition_WCGJ alert alert--warning"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 16 16"><path fill-rule=evenodd d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg></span>warning</div><div class=admonitionContent_pbrs><p>When you upgrade, be aware that the version of the authentik instance and of any outposts must be the same. We recommend that you always upgrade any outposts at the same time you upgrade your authentik instance.</div></div>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=docker-compose>Docker Compose<a href=#docker-compose class=hash-link aria-label="Direct link to Docker Compose" title="Direct link to Docker Compose" translate=no>​</a></h3>
+<p>To upgrade, download the new docker-compose file and update the Docker stack with the new version, using these commands:</p>
+<div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token function" style="color:hsl(221, 87%, 60%)">wget</span><span class="token plain"> </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-O</span><span class="token plain"> docker-compose.yml https://goauthentik.io/version/2025.10/docker-compose.yml</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain"></span><span class="token function" style="color:hsl(221, 87%, 60%)">docker</span><span class="token plain"> compose up </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-d</span><span class="token plain"> --remove-orphans</span><br/></span></code></pre></div></div>
+<p>The <code>-O</code> flag retains the downloaded file's name, overwriting any existing local file with the same name.</p>
+<p>The <code>--remove-orphans</code> flag removes the Redis container as it's no longer needed.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=kubernetes>Kubernetes<a href=#kubernetes class=hash-link aria-label="Direct link to Kubernetes" title="Direct link to Kubernetes" translate=no>​</a></h3>
+<p>Upgrade the Helm Chart to the new version, using the following commands:</p>
+<div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">helm repo update</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">helm upgrade authentik authentik/authentik </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-f</span><span class="token plain"> values.yaml </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">--version</span><span class="token plain"> ^2025.10</span><br/></span></code></pre></div></div>
+<p>If you had persistence for Redis configured, you can delete the PVC and PV after the upgrade.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=minor-changesfixes>Minor changes/fixes<a href=#minor-changesfixes class=hash-link aria-label="Direct link to Minor changes/fixes" title="Direct link to Minor changes/fixes" translate=no>​</a></h2>
+<ul>
+<li class="">*: add ruff BLE rules (<a href=https://github.com/goauthentik/authentik/issues/16943 target=_blank rel="noopener noreferrer" class="">#16943</a>)</li>
+<li class="">*: Fix dead doc link (<a href=https://github.com/goauthentik/authentik/issues/16288 target=_blank rel="noopener noreferrer" class="">#16288</a>)</li>
+<li class="">*: remove Redis leftovers (<a href=https://github.com/goauthentik/authentik/issues/17146 target=_blank rel="noopener noreferrer" class="">#17146</a>)</li>
+<li class="">*/bindings: order by pk (<a href=https://github.com/goauthentik/authentik/issues/17027 target=_blank rel="noopener noreferrer" class="">#17027</a>)</li>
+<li class="">api: Clean schema up more (<a href=https://github.com/goauthentik/authentik/issues/17055 target=_blank rel="noopener noreferrer" class="">#17055</a>)</li>
+<li class="">api: Fix locale propagation from ?locale parameter in frontend (<a href=https://github.com/goauthentik/authentik/issues/16857 target=_blank rel="noopener noreferrer" class="">#16857</a>)</li>
+<li class="">api: optimize schemas' common query parameters (<a href=https://github.com/goauthentik/authentik/issues/16884 target=_blank rel="noopener noreferrer" class="">#16884</a>)</li>
+<li class="">blueprints: ensure tasks retry on database errors (<a href=https://github.com/goauthentik/authentik/issues/17333 target=_blank rel="noopener noreferrer" class="">#17333</a>)</li>
+<li class="">blueprints: exclude exporting UserConsent (<a href=https://github.com/goauthentik/authentik/issues/16640 target=_blank rel="noopener noreferrer" class="">#16640</a>)</li>
+<li class="">blueprints: fix email address verified by default (<a href=https://github.com/goauthentik/authentik/issues/16206 target=_blank rel="noopener noreferrer" class="">#16206</a>)</li>
+<li class="">blueprints: fix typo in sources-google-ldap-mappings (<a href=https://github.com/goauthentik/authentik/issues/16955 target=_blank rel="noopener noreferrer" class="">#16955</a>)</li>
+<li class="">blueprints: regenerate schema (<a href=https://github.com/goauthentik/authentik/issues/17365 target=_blank rel="noopener noreferrer" class="">#17365</a>)</li>
+<li class="">brands: revert sort matched brand by match length (revert <a href=https://github.com/goauthentik/authentik/issues/15413 target=_blank rel="noopener noreferrer" class="">#15413</a>) (<a href=https://github.com/goauthentik/authentik/issues/16233 target=_blank rel="noopener noreferrer" class="">#16233</a>)</li>
+<li class="">cmd/server/healthcheck: info log success instead of debug (<a href=https://github.com/goauthentik/authentik/issues/17093 target=_blank rel="noopener noreferrer" class="">#17093</a>)</li>
+<li class="">core, events: reduce memory usage when batch deleting objects (<a href=https://github.com/goauthentik/authentik/issues/12436 target=_blank rel="noopener noreferrer" class="">#12436</a>)</li>
+<li class="">core: Add ak_send_email function in expression context (<a href=https://github.com/goauthentik/authentik/issues/16941 target=_blank rel="noopener noreferrer" class="">#16941</a>)</li>
+<li class="">core: Add email template selector (<a href=https://github.com/goauthentik/authentik/issues/16170 target=_blank rel="noopener noreferrer" class="">#16170</a>)</li>
+<li class="">core: add index on Group.is_superuser (<a href=https://github.com/goauthentik/authentik/issues/17011 target=_blank rel="noopener noreferrer" class="">#17011</a>)</li>
+<li class="">core: Add input validation for service account creation (<a href=https://github.com/goauthentik/authentik/issues/16964 target=_blank rel="noopener noreferrer" class="">#16964</a>)</li>
+<li class="">core: add QL for groups (<a href=https://github.com/goauthentik/authentik/issues/17527 target=_blank rel="noopener noreferrer" class="">#17527</a>)</li>
+<li class="">core: Block usage of Django's createsuperuser (<a href=https://github.com/goauthentik/authentik/issues/16215 target=_blank rel="noopener noreferrer" class="">#16215</a>)</li>
+<li class="">core: fix absolute and relative path file uploads (<a href=https://github.com/goauthentik/authentik/issues/17269 target=_blank rel="noopener noreferrer" class="">#17269</a>)</li>
+<li class="">core: fix application and source's fa:// icon (<a href=https://github.com/goauthentik/authentik/issues/17416 target=_blank rel="noopener noreferrer" class="">#17416</a>)</li>
+<li class="">core: fix client-side only validation allowing admin to set blank user password (<a href=https://github.com/goauthentik/authentik/issues/16467 target=_blank rel="noopener noreferrer" class="">#16467</a>)</li>
+<li class="">core: fix description on remove_user_from_group (<a href=https://github.com/goauthentik/authentik/issues/16694 target=_blank rel="noopener noreferrer" class="">#16694</a>)</li>
+<li class="">core: Fix middleware race condition induced crash (<a href=https://github.com/goauthentik/authentik/issues/16705 target=_blank rel="noopener noreferrer" class="">#16705</a>)</li>
+<li class="">core: Fix typo (<a href=https://github.com/goauthentik/authentik/issues/16560 target=_blank rel="noopener noreferrer" class="">#16560</a>)</li>
+<li class="">core: Include region comments in VSCode Minimap. (<a href=https://github.com/goauthentik/authentik/issues/16667 target=_blank rel="noopener noreferrer" class="">#16667</a>)</li>
+<li class="">core: Mark impersonation reason field as required in UI and fix status codes (<a href=https://github.com/goauthentik/authentik/issues/16065 target=_blank rel="noopener noreferrer" class="">#16065</a>)</li>
+<li class="">core: Normalize NPM script arguments. (<a href=https://github.com/goauthentik/authentik/issues/16725 target=_blank rel="noopener noreferrer" class="">#16725</a>)</li>
+<li class="">core: update_attributes: only update the model if attributes changed (<a href=https://github.com/goauthentik/authentik/issues/16322 target=_blank rel="noopener noreferrer" class="">#16322</a>)</li>
+<li class="">core: use email backend for test_email management command (<a href=https://github.com/goauthentik/authentik/issues/16311 target=_blank rel="noopener noreferrer" class="">#16311</a>)</li>
+<li class="">core/api: Better naming for partial user/group serializer, optimize bindings (<a href=https://github.com/goauthentik/authentik/issues/17022 target=_blank rel="noopener noreferrer" class="">#17022</a>)</li>
+<li class="">enterprise/providers/gws+entra: fix group integrity error during discovery (<a href=https://github.com/goauthentik/authentik/issues/17355 target=_blank rel="noopener noreferrer" class="">#17355</a>)</li>
+<li class="">enterprise/providers/gws+entra: fix integrity error during discovery (<a href=https://github.com/goauthentik/authentik/issues/17341 target=_blank rel="noopener noreferrer" class="">#17341</a>)</li>
+<li class="">enterprise/providers/radius: add EAP-TLS support (<a href=https://github.com/goauthentik/authentik/issues/15702 target=_blank rel="noopener noreferrer" class="">#15702</a>)</li>
+<li class="">enterprise/providers/scim: Add SCIM OAuth support (<a href=https://github.com/goauthentik/authentik/issues/16903 target=_blank rel="noopener noreferrer" class="">#16903</a>)</li>
+<li class="">enterprise/stages/mtls: Improve Email address extraction (<a href=https://github.com/goauthentik/authentik/issues/17068 target=_blank rel="noopener noreferrer" class="">#17068</a>)</li>
+<li class="">events: remove deprecated models (<a href=https://github.com/goauthentik/authentik/issues/15823 target=_blank rel="noopener noreferrer" class="">#15823</a>)</li>
+<li class="">flows: redirect to next when accessing an unapplicable authentication flow while already authenticated (<a href=https://github.com/goauthentik/authentik/issues/17243 target=_blank rel="noopener noreferrer" class="">#17243</a>)</li>
+<li class="">flows: SessionEndStage: only show page if user is still authenticated (<a href=https://github.com/goauthentik/authentik/issues/17003 target=_blank rel="noopener noreferrer" class="">#17003</a>)</li>
+<li class="">lib: import ExceptionDictTransformer from structlog.tracebacks (<a href=https://github.com/goauthentik/authentik/issues/17526 target=_blank rel="noopener noreferrer" class="">#17526</a>)</li>
+<li class="">lib: match exception_to_dict locals behaviour (<a href=https://github.com/goauthentik/authentik/issues/17006 target=_blank rel="noopener noreferrer" class="">#17006</a>)</li>
+<li class="">lib: small type hinting improvements (<a href=https://github.com/goauthentik/authentik/issues/17528 target=_blank rel="noopener noreferrer" class="">#17528</a>)</li>
+<li class="">lib/config: fix listen settings (<a href=https://github.com/goauthentik/authentik/issues/17005 target=_blank rel="noopener noreferrer" class="">#17005</a>)</li>
+<li class="">lib/logging: only show locals when in debug mode (<a href=https://github.com/goauthentik/authentik/issues/16772 target=_blank rel="noopener noreferrer" class="">#16772</a>)</li>
+<li class="">lib/sync: fix missing f for string (<a href=https://github.com/goauthentik/authentik/issues/16423 target=_blank rel="noopener noreferrer" class="">#16423</a>)</li>
+<li class="">lib/sync: revert breaking type change (<a href=https://github.com/goauthentik/authentik/issues/17553 target=_blank rel="noopener noreferrer" class="">#17553</a>)</li>
+<li class="">lib/sync/outgoing: fix single object sync timeout (<a href=https://github.com/goauthentik/authentik/issues/16447 target=_blank rel="noopener noreferrer" class="">#16447</a>)</li>
+<li class="">lib/sync/outgoing: revert reduce number of db queries made (revert <a href=https://github.com/goauthentik/authentik/issues/14177 target=_blank rel="noopener noreferrer" class="">#14177</a>) (<a href=https://github.com/goauthentik/authentik/issues/17306 target=_blank rel="noopener noreferrer" class="">#17306</a>)</li>
+<li class="">lifecycle: fix permission error when running worker as root (<a href=https://github.com/goauthentik/authentik/issues/16735 target=_blank rel="noopener noreferrer" class="">#16735</a>)</li>
+<li class="">lifecycle: fix PROMETHEUS_MULTIPROC_DIR missing suffix (<a href=https://github.com/goauthentik/authentik/issues/16401 target=_blank rel="noopener noreferrer" class="">#16401</a>)</li>
+<li class="">lifecycle: set PROMETHEUS_MULTIPROC_DIR as early as possible (<a href=https://github.com/goauthentik/authentik/issues/16298 target=_blank rel="noopener noreferrer" class="">#16298</a>)</li>
+<li class="">outpost: proxyv2: Use Postgres for the Embedded Outpost (<a href=https://github.com/goauthentik/authentik/issues/16628 target=_blank rel="noopener noreferrer" class="">#16628</a>)</li>
+<li class="">outpost/proxyv2: postgresstore: credential refresh (<a href=https://github.com/goauthentik/authentik/issues/17414 target=_blank rel="noopener noreferrer" class="">#17414</a>)</li>
+<li class="">outpost/proxyv2: postgresstore: db/pool/misc cleanup and enhancement (<a href=https://github.com/goauthentik/authentik/issues/17511 target=_blank rel="noopener noreferrer" class="">#17511</a>)</li>
+<li class="">outposts: allow ingress path type configuration (<a href=https://github.com/goauthentik/authentik/issues/16339 target=_blank rel="noopener noreferrer" class="">#16339</a>)</li>
+<li class="">outposts: fix flow executor when using subpath (<a href=https://github.com/goauthentik/authentik/issues/16947 target=_blank rel="noopener noreferrer" class="">#16947</a>)</li>
+<li class="">outposts: fix service connection update task arguments (<a href=https://github.com/goauthentik/authentik/issues/16312 target=_blank rel="noopener noreferrer" class="">#16312</a>)</li>
+<li class="">outposts/ldap: add pwdChangeTime attribute (<a href=https://github.com/goauthentik/authentik/issues/17010 target=_blank rel="noopener noreferrer" class="">#17010</a>)</li>
+<li class="">packages/django-channels-postgres: compression and connection pool (<a href=https://github.com/goauthentik/authentik/issues/17303 target=_blank rel="noopener noreferrer" class="">#17303</a>)</li>
+<li class="">packages/django-channels-postgres: init (<a href=https://github.com/goauthentik/authentik/issues/17247 target=_blank rel="noopener noreferrer" class="">#17247</a>)</li>
+<li class="">packages/django-channels-postgres/layer: fix connection deadlock (<a href=https://github.com/goauthentik/authentik/issues/17270 target=_blank rel="noopener noreferrer" class="">#17270</a>)</li>
+<li class="">packages/django-dramatiq-postgres: broker: fix new messages not being picked up when too many messages are waiting (<a href=https://github.com/goauthentik/authentik/issues/17106 target=_blank rel="noopener noreferrer" class="">#17106</a>)version-2025.8) (<a href=https://github.com/goauthentik/authentik/issues/17108 target=_blank rel="noopener noreferrer" class="">#17108</a>)</li>
+<li class="">packages/django-dramatiq-postgres: broker: fix task expiration (<a href=https://github.com/goauthentik/authentik/issues/17178 target=_blank rel="noopener noreferrer" class="">#17178</a>)</li>
+<li class="">packages/django-dramatiq-postgres: broker: fix various timing issues (<a href=https://github.com/goauthentik/authentik/issues/16340 target=_blank rel="noopener noreferrer" class="">#16340</a>)</li>
+<li class="">packages/django-dramatiq-postgres: broker: task retrieval fixes and improvements (<a href=https://github.com/goauthentik/authentik/issues/17335 target=_blank rel="noopener noreferrer" class="">#17335</a>)</li>
+<li class="">packages/django-dramatiq-postgres: fix error when updating task with no changes (<a href=https://github.com/goauthentik/authentik/issues/16728 target=_blank rel="noopener noreferrer" class="">#16728</a>)</li>
+<li class="">packages/django-dramatiq-postgres: middleware: fix listening on hosts where ipv6 is not supported (<a href=https://github.com/goauthentik/authentik/issues/16308 target=_blank rel="noopener noreferrer" class="">#16308</a>)</li>
+<li class="">packages/django-dramatiq-postgres: typing (<a href=https://github.com/goauthentik/authentik/issues/16978 target=_blank rel="noopener noreferrer" class="">#16978</a>)</li>
+<li class="">packages/django-postgres-cache: Initial implementation of postgres cache (<a href=https://github.com/goauthentik/authentik/issues/16653 target=_blank rel="noopener noreferrer" class="">#16653</a>)</li>
+<li class="">policies: remove object pk from authentik_policies_execution_time to reduce cardinality (<a href=https://github.com/goauthentik/authentik/issues/16500 target=_blank rel="noopener noreferrer" class="">#16500</a>)</li>
+<li class="">policies/password: Fix amount_uppercase in password policy check (<a href=https://github.com/goauthentik/authentik/issues/16197 target=_blank rel="noopener noreferrer" class="">#16197</a>)</li>
+<li class="">policies/reputation: update reputation in a single query (<a href=https://github.com/goauthentik/authentik/issues/17529 target=_blank rel="noopener noreferrer" class="">#17529</a>)</li>
+<li class="">providers/ldap: add include_children parameter to cached search mode (<a href=https://github.com/goauthentik/authentik/issues/16918 target=_blank rel="noopener noreferrer" class="">#16918</a>)</li>
+<li class="">providers/oauth2: add missing exp claim for logout token (<a href=https://github.com/goauthentik/authentik/issues/16593 target=_blank rel="noopener noreferrer" class="">#16593</a>)</li>
+<li class="">providers/oauth2: add ui_locales support for OIDC (<a href=https://github.com/goauthentik/authentik/issues/17140 target=_blank rel="noopener noreferrer" class="">#17140</a>)</li>
+<li class="">providers/oauth2: allow setting logout method always (<a href=https://github.com/goauthentik/authentik/issues/17470 target=_blank rel="noopener noreferrer" class="">#17470</a>)</li>
+<li class="">providers/oauth2: avoid deadlock during session migration (<a href=https://github.com/goauthentik/authentik/issues/16361 target=_blank rel="noopener noreferrer" class="">#16361</a>)</li>
+<li class="">providers/oauth2: fix authentication error with identical app passwords (<a href=https://github.com/goauthentik/authentik/issues/17100 target=_blank rel="noopener noreferrer" class="">#17100</a>)</li>
+<li class="">providers/oauth2: fix logout token missing sid, fix wrong sub mode used (<a href=https://github.com/goauthentik/authentik/issues/16295 target=_blank rel="noopener noreferrer" class="">#16295</a>)</li>
+<li class="">providers/oauth2: include scope in JWT (<a href=https://github.com/goauthentik/authentik/issues/16454 target=_blank rel="noopener noreferrer" class="">#16454</a>)</li>
+<li class="">providers/oauth2: only issue new refresh token if old one is about to expire (<a href=https://github.com/goauthentik/authentik/issues/16905 target=_blank rel="noopener noreferrer" class="">#16905</a>)</li>
+<li class="">providers/proxy: fix missing postgres import (<a href=https://github.com/goauthentik/authentik/issues/17582 target=_blank rel="noopener noreferrer" class="">#17582</a>)</li>
+<li class="">providers/rac: bump guacd to 1.6 (<a href=https://github.com/goauthentik/authentik/issues/17392 target=_blank rel="noopener noreferrer" class="">#17392</a>)</li>
+<li class="">providers/rac: fix <code>AuthenticatedSession</code> migration (<a href=https://github.com/goauthentik/authentik/issues/16400 target=_blank rel="noopener noreferrer" class="">#16400</a>)</li>
+<li class="">providers/rac: remove autobahn import (<a href=https://github.com/goauthentik/authentik/issues/17224 target=_blank rel="noopener noreferrer" class="">#17224</a>)</li>
+<li class="">providers/saml: add frontchannel idp slo, backchannel post idp slo (<a href=https://github.com/goauthentik/authentik/issues/15863 target=_blank rel="noopener noreferrer" class="">#15863</a>)</li>
+<li class="">providers/saml: fix timezone naive warning (<a href=https://github.com/goauthentik/authentik/issues/17382 target=_blank rel="noopener noreferrer" class="">#17382</a>)</li>
+<li class="">providers/scim: add salesforce support (<a href=https://github.com/goauthentik/authentik/issues/16976 target=_blank rel="noopener noreferrer" class="">#16976</a>)</li>
+<li class="">providers/scim: fix string formatting for SCIM user filter (<a href=https://github.com/goauthentik/authentik/issues/16465 target=_blank rel="noopener noreferrer" class="">#16465</a>)</li>
+<li class="">providers/scim: improve error message when object fails to sync (<a href=https://github.com/goauthentik/authentik/issues/16625 target=_blank rel="noopener noreferrer" class="">#16625</a>)</li>
+<li class="">rbac: assign <code>InitialPermission</code>s in a middleware (<a href=https://github.com/goauthentik/authentik/issues/16138 target=_blank rel="noopener noreferrer" class="">#16138</a>)</li>
+<li class="">rbac: fix role search fields (<a href=https://github.com/goauthentik/authentik/issues/17305 target=_blank rel="noopener noreferrer" class="">#17305</a>)</li>
+<li class="">rbac: fix typo (<a href=https://github.com/goauthentik/authentik/issues/16476 target=_blank rel="noopener noreferrer" class="">#16476</a>)</li>
+<li class="">rbac: optimize rbac assigned by users query (<a href=https://github.com/goauthentik/authentik/issues/17015 target=_blank rel="noopener noreferrer" class="">#17015</a>)</li>
+<li class="">readme: Remove Docker pulls badge (<a href=https://github.com/goauthentik/authentik/issues/16707 target=_blank rel="noopener noreferrer" class="">#16707</a>)</li>
+<li class="">recovery: Default to 60 minutes (<a href=https://github.com/goauthentik/authentik/issues/16005 target=_blank rel="noopener noreferrer" class="">#16005</a>)</li>
+<li class="">router: fix missing response headers on compressed 404 for static files (<a href=https://github.com/goauthentik/authentik/issues/16216 target=_blank rel="noopener noreferrer" class="">#16216</a>)</li>
+<li class="">sources: add Telegram source (<a href=https://github.com/goauthentik/authentik/issues/15749 target=_blank rel="noopener noreferrer" class="">#15749</a>)</li>
+<li class="">sources/ldap: fix malformed filter error with special characters in group DN (<a href=https://github.com/goauthentik/authentik/issues/16243 target=_blank rel="noopener noreferrer" class="">#16243</a>)</li>
+<li class="">sources/oauth: add support for login support if source was started within a flow executor (<a href=https://github.com/goauthentik/authentik/issues/16982 target=_blank rel="noopener noreferrer" class="">#16982</a>)</li>
+<li class="">sources/oauth: configurable PKCE mode (<a href=https://github.com/goauthentik/authentik/issues/17487 target=_blank rel="noopener noreferrer" class="">#17487</a>)</li>
+<li class="">sources/oauth/entra_id: do not assume group_id comes from entra (<a href=https://github.com/goauthentik/authentik/issues/16456 target=_blank rel="noopener noreferrer" class="">#16456</a>)</li>
+<li class="">sources/saml: add default error messages to exceptions (<a href=https://github.com/goauthentik/authentik/issues/15562 target=_blank rel="noopener noreferrer" class="">#15562</a>)</li>
+<li class="">sources/saml: add location selection for Signature node (<a href=https://github.com/goauthentik/authentik/issues/15626 target=_blank rel="noopener noreferrer" class="">#15626</a>)</li>
+<li class="">stages: update friendly_name model from null to blank (<a href=https://github.com/goauthentik/authentik/issues/16672 target=_blank rel="noopener noreferrer" class="">#16672</a>)</li>
+<li class="">stages/authenticator_duo: Add test to fix codecov error (<a href=https://github.com/goauthentik/authentik/issues/16257 target=_blank rel="noopener noreferrer" class="">#16257</a>)</li>
+<li class="">stages/authenticator_duo: return generic error message (<a href=https://github.com/goauthentik/authentik/issues/16194 target=_blank rel="noopener noreferrer" class="">#16194</a>)</li>
+<li class="">stages/email_authenticator: Fix email mfa loop (<a href=https://github.com/goauthentik/authentik/issues/16579 target=_blank rel="noopener noreferrer" class="">#16579</a>)</li>
+<li class="">stages/identification: fix mismatched error messages (<a href=https://github.com/goauthentik/authentik/issues/17090 target=_blank rel="noopener noreferrer" class="">#17090</a>)</li>
+<li class="">stages/prompt: add ability to set separate labels and values for choices (<a href=https://github.com/goauthentik/authentik/issues/16693 target=_blank rel="noopener noreferrer" class="">#16693</a>)</li>
+<li class="">stages/user_login: add user to query (<a href=https://github.com/goauthentik/authentik/issues/17171 target=_blank rel="noopener noreferrer" class="">#17171</a>)</li>
+<li class="">stages/user_write: fix attribute path replacement (<a href=https://github.com/goauthentik/authentik/issues/17507 target=_blank rel="noopener noreferrer" class="">#17507</a>)</li>
+<li class="">tasks: add preprocess, running and postprocess statuses (<a href=https://github.com/goauthentik/authentik/issues/17297 target=_blank rel="noopener noreferrer" class="">#17297</a>)</li>
+<li class="">tasks: add rel_obj to system task exception event (<a href=https://github.com/goauthentik/authentik/issues/16270 target=_blank rel="noopener noreferrer" class="">#16270</a>)</li>
+<li class="">tasks: add sentry dramatiq integration (<a href=https://github.com/goauthentik/authentik/issues/16167 target=_blank rel="noopener noreferrer" class="">#16167</a>)</li>
+<li class="">tasks: add task status summary (<a href=https://github.com/goauthentik/authentik/issues/17302 target=_blank rel="noopener noreferrer" class="">#17302</a>)</li>
+<li class="">tasks: fix errors found in tests (<a href=https://github.com/goauthentik/authentik/issues/17062 target=_blank rel="noopener noreferrer" class="">#17062</a>)</li>
+<li class="">tasks: fix logger name (<a href=https://github.com/goauthentik/authentik/issues/17009 target=_blank rel="noopener noreferrer" class="">#17009</a>)</li>
+<li class="">tasks: fix status and healthcheck breaking with connection issues (<a href=https://github.com/goauthentik/authentik/issues/16504 target=_blank rel="noopener noreferrer" class="">#16504</a>)</li>
+<li class="">tasks: only set tenant on task creation (<a href=https://github.com/goauthentik/authentik/issues/17358 target=_blank rel="noopener noreferrer" class="">#17358</a>)</li>
+<li class="">tasks: reduce default number of retries and max backoff (<a href=https://github.com/goauthentik/authentik/issues/17107 target=_blank rel="noopener noreferrer" class="">#17107</a>)</li>
+<li class="">tasks: set uid early (<a href=https://github.com/goauthentik/authentik/issues/17356 target=_blank rel="noopener noreferrer" class="">#17356</a>)</li>
+<li class="">tasks: show number of retries and planned execution time (<a href=https://github.com/goauthentik/authentik/issues/17295 target=_blank rel="noopener noreferrer" class="">#17295</a>)</li>
+<li class="">tasks: store messages in separate table (<a href=https://github.com/goauthentik/authentik/issues/17359 target=_blank rel="noopener noreferrer" class="">#17359</a>)</li>
+<li class="">tasks/middlewares/messages: make sure exceptions are always logged (<a href=https://github.com/goauthentik/authentik/issues/17237 target=_blank rel="noopener noreferrer" class="">#17237</a>)</li>
+<li class="">tasks/schedules: fix api search fields (<a href=https://github.com/goauthentik/authentik/issues/16405 target=_blank rel="noopener noreferrer" class="">#16405</a>)</li>
+<li class="">tasks/schedules: upsert instead of update_or_create (<a href=https://github.com/goauthentik/authentik/issues/17534 target=_blank rel="noopener noreferrer" class="">#17534</a>)</li>
+<li class="">tests/e2e: fix ldap tests following <a href=https://github.com/goauthentik/authentik/issues/17010 target=_blank rel="noopener noreferrer" class="">#17010</a> (<a href=https://github.com/goauthentik/authentik/issues/17021 target=_blank rel="noopener noreferrer" class="">#17021</a>)</li>
+<li class="">tests/e2e: less hardcoded names (<a href=https://github.com/goauthentik/authentik/issues/17047 target=_blank rel="noopener noreferrer" class="">#17047</a>)</li>
+<li class="">tests/e2e: switch chrome for chromium (<a href=https://github.com/goauthentik/authentik/issues/17407 target=_blank rel="noopener noreferrer" class="">#17407</a>)</li>
+<li class="">web: Add disabled radio styles. (<a href=https://github.com/goauthentik/authentik/issues/17026 target=_blank rel="noopener noreferrer" class="">#17026</a>)</li>
+<li class="">web: Additional text field properties, ARIA fixes (<a href=https://github.com/goauthentik/authentik/issues/17115 target=_blank rel="noopener noreferrer" class="">#17115</a>)</li>
+<li class="">web: ak-status-label: add neutral status (<a href=https://github.com/goauthentik/authentik/issues/16064 target=_blank rel="noopener noreferrer" class="">#16064</a>)</li>
+<li class="">web: Apply consistent background color when input is disabled or readonly. (<a href=https://github.com/goauthentik/authentik/issues/17105 target=_blank rel="noopener noreferrer" class="">#17105</a>)</li>
+<li class="">web: Automatic reload during server start up. (<a href=https://github.com/goauthentik/authentik/issues/16030 target=_blank rel="noopener noreferrer" class="">#16030</a>)</li>
+<li class="">web: Clean up render interfaces. (<a href=https://github.com/goauthentik/authentik/issues/16031 target=_blank rel="noopener noreferrer" class="">#16031</a>)</li>
+<li class="">web: Do not mark Attributes as a mandatory field (<a href=https://github.com/goauthentik/authentik/issues/16004 target=_blank rel="noopener noreferrer" class="">#16004</a>)</li>
+<li class="">web: Docker versioning compatibility (<a href=https://github.com/goauthentik/authentik/issues/16139 target=_blank rel="noopener noreferrer" class="">#16139</a>)</li>
+<li class="">web: fix "Explore integrations" link in Quick actions (<a href=https://github.com/goauthentik/authentik/issues/16274 target=_blank rel="noopener noreferrer" class="">#16274</a>)</li>
+<li class="">web: Fix ak-flow-card footer alignment. (<a href=https://github.com/goauthentik/authentik/issues/16236 target=_blank rel="noopener noreferrer" class="">#16236</a>)</li>
+<li class="">web: Fix avatar image load flash. (<a href=https://github.com/goauthentik/authentik/issues/17220 target=_blank rel="noopener noreferrer" class="">#17220</a>)</li>
+<li class="">web: Fix behavior for modals configured with closeAfterSuccessfulSubmit (<a href=https://github.com/goauthentik/authentik/issues/17277 target=_blank rel="noopener noreferrer" class="">#17277</a>)</li>
+<li class="">web: Fix card alignment, slotting, labeling (<a href=https://github.com/goauthentik/authentik/issues/17307 target=_blank rel="noopener noreferrer" class="">#17307</a>)</li>
+<li class="">web: Fix default RADIUS EAP-TLS cert without license. (<a href=https://github.com/goauthentik/authentik/issues/17152 target=_blank rel="noopener noreferrer" class="">#17152</a>)</li>
+<li class="">web: Fix docs links, a11y input descriptors (<a href=https://github.com/goauthentik/authentik/issues/16671 target=_blank rel="noopener noreferrer" class="">#16671</a>)</li>
+<li class="">web: Fix flow autofocus element targeting. (<a href=https://github.com/goauthentik/authentik/issues/17255 target=_blank rel="noopener noreferrer" class="">#17255</a>)</li>
+<li class="">web: Fix flow view title setter. (<a href=https://github.com/goauthentik/authentik/issues/17245 target=_blank rel="noopener noreferrer" class="">#17245</a>)</li>
+<li class="">web: Fix hidden textarea <code>required</code> attribute. (<a href=https://github.com/goauthentik/authentik/issues/16168 target=_blank rel="noopener noreferrer" class="">#16168</a>)</li>
+<li class="">web: Fix issue where clicking a list item scrolls container. (<a href=https://github.com/goauthentik/authentik/issues/16174 target=_blank rel="noopener noreferrer" class="">#16174</a>)</li>
+<li class="">web: Fix issue where form group uses unknown slot. (<a href=https://github.com/goauthentik/authentik/issues/16276 target=_blank rel="noopener noreferrer" class="">#16276</a>)</li>
+<li class="">web: Fix layout class for 'row' in LibraryPage (<a href=https://github.com/goauthentik/authentik/issues/16752 target=_blank rel="noopener noreferrer" class="">#16752</a>)</li>
+<li class="">web: Fix low DPI on QR Codes. (<a href=https://github.com/goauthentik/authentik/issues/17251 target=_blank rel="noopener noreferrer" class="">#17251</a>)</li>
+<li class="">web: Fix native icon colors when using dark theme. (<a href=https://github.com/goauthentik/authentik/issues/17118 target=_blank rel="noopener noreferrer" class="">#17118</a>)</li>
+<li class="">web: Fix nested table column span behavior. (<a href=https://github.com/goauthentik/authentik/issues/17177 target=_blank rel="noopener noreferrer" class="">#17177</a>)</li>
+<li class="">web: Fix numeric values in search select inputs, search input fixes (<a href=https://github.com/goauthentik/authentik/issues/16928 target=_blank rel="noopener noreferrer" class="">#16928</a>)</li>
+<li class="">web: Fix Recent Events toolbar height. (<a href=https://github.com/goauthentik/authentik/issues/17172 target=_blank rel="noopener noreferrer" class="">#17172</a>)</li>
+<li class="">web: Fix reported error precedence (<a href=https://github.com/goauthentik/authentik/issues/16231 target=_blank rel="noopener noreferrer" class="">#16231</a>)</li>
+<li class="">web: Fix skip-to-content element target, order. (<a href=https://github.com/goauthentik/authentik/issues/17030 target=_blank rel="noopener noreferrer" class="">#17030</a>)</li>
+<li class="">web: Fix tab theme consistency, table overflow. (<a href=https://github.com/goauthentik/authentik/issues/17222 target=_blank rel="noopener noreferrer" class="">#17222</a>)</li>
+<li class="">web: Fix table child alignment (<a href=https://github.com/goauthentik/authentik/issues/17114 target=_blank rel="noopener noreferrer" class="">#17114</a>)</li>
+<li class="">web: Fix table column updates, template parsing (<a href=https://github.com/goauthentik/authentik/issues/17254 target=_blank rel="noopener noreferrer" class="">#17254</a>)</li>
+<li class="">web: Fixed null lastUsed and autofocus on TOTP login field (<a href=https://github.com/goauthentik/authentik/issues/16739 target=_blank rel="noopener noreferrer" class="">#16739</a>)</li>
+<li class="">web: Flow fixes -- Captchas, form states, compatibility mode. (<a href=https://github.com/goauthentik/authentik/issues/17226 target=_blank rel="noopener noreferrer" class="">#17226</a>)</li>
+<li class="">web: Flush logs on SIGINT. (<a href=https://github.com/goauthentik/authentik/issues/16723 target=_blank rel="noopener noreferrer" class="">#16723</a>)</li>
+<li class="">web: Ignore spellchecking of Playwright output. (<a href=https://github.com/goauthentik/authentik/issues/16862 target=_blank rel="noopener noreferrer" class="">#16862</a>)</li>
+<li class="">web: Improvements to ReCaptcha resizing (<a href=https://github.com/goauthentik/authentik/issues/16171 target=_blank rel="noopener noreferrer" class="">#16171</a>)</li>
+<li class="">web: Minimal mobile flow (<a href=https://github.com/goauthentik/authentik/issues/17280 target=_blank rel="noopener noreferrer" class="">#17280</a>)</li>
+<li class="">web: Minimal mobile flow, revisions (<a href=https://github.com/goauthentik/authentik/issues/17310 target=_blank rel="noopener noreferrer" class="">#17310</a>)</li>
+<li class="">web: Remove brand column. (<a href=https://github.com/goauthentik/authentik/issues/17173 target=_blank rel="noopener noreferrer" class="">#17173</a>)</li>
+<li class="">web: Remove CSS constructor polyfill. (<a href=https://github.com/goauthentik/authentik/issues/16920 target=_blank rel="noopener noreferrer" class="">#16920</a>)</li>
+<li class="">web: Remove deprecated <code>node:path</code> polyfill. (<a href=https://github.com/goauthentik/authentik/issues/16702 target=_blank rel="noopener noreferrer" class="">#16702</a>)</li>
+<li class="">web: Replace Github Slugger package with change-case. (<a href=https://github.com/goauthentik/authentik/issues/16921 target=_blank rel="noopener noreferrer" class="">#16921</a>)</li>
+<li class="">web: Report unregistered elements. (<a href=https://github.com/goauthentik/authentik/issues/17025 target=_blank rel="noopener noreferrer" class="">#17025</a>)</li>
+<li class="">web: Responsive toolbar flow (<a href=https://github.com/goauthentik/authentik/issues/17278 target=_blank rel="noopener noreferrer" class="">#17278</a>)</li>
+<li class="">web: revert bump the swc group across 1 directory with 11 updates (<a href=https://github.com/goauthentik/authentik/issues/17113 target=_blank rel="noopener noreferrer" class="">#17113</a>)</li>
+<li class="">web: revise ak-page-navbar to use standard event handlers (<a href=https://github.com/goauthentik/authentik/issues/16898 target=_blank rel="noopener noreferrer" class="">#16898</a>)</li>
+<li class="">web: saml provider view: fix state refresh issues (<a href=https://github.com/goauthentik/authentik/issues/14474 target=_blank rel="noopener noreferrer" class="">#14474</a>)</li>
+<li class="">web: Table refresh timestamp. (<a href=https://github.com/goauthentik/authentik/issues/17145 target=_blank rel="noopener noreferrer" class="">#17145</a>)</li>
+<li class="">web: Use curated dictionary for e2e fixtures. (<a href=https://github.com/goauthentik/authentik/issues/16750 target=_blank rel="noopener noreferrer" class="">#16750</a>)</li>
+<li class="">web: Use embedded layout. (<a href=https://github.com/goauthentik/authentik/issues/16481 target=_blank rel="noopener noreferrer" class="">#16481</a>)</li>
+<li class="">web: Use Pino console logger, reduce live reload noise. (<a href=https://github.com/goauthentik/authentik/issues/16703 target=_blank rel="noopener noreferrer" class="">#16703</a>)</li>
+<li class="">web: User library UI fixes (<a href=https://github.com/goauthentik/authentik/issues/17376 target=_blank rel="noopener noreferrer" class="">#17376</a>)</li>
+<li class="">web: Username truncation, field alignment. (<a href=https://github.com/goauthentik/authentik/issues/16283 target=_blank rel="noopener noreferrer" class="">#16283</a>)</li>
+<li class="">web/a11y: Accessible scrollbars. (<a href=https://github.com/goauthentik/authentik/issues/17253 target=_blank rel="noopener noreferrer" class="">#17253</a>)</li>
+<li class="">web/a11y: Admin overview regions. (<a href=https://github.com/goauthentik/authentik/issues/17170 target=_blank rel="noopener noreferrer" class="">#17170</a>)</li>
+<li class="">web/a11y: Associating labels with inputs (<a href=https://github.com/goauthentik/authentik/issues/16119 target=_blank rel="noopener noreferrer" class="">#16119</a>)</li>
+<li class="">web/a11y: Brand form (<a href=https://github.com/goauthentik/authentik/issues/16011 target=_blank rel="noopener noreferrer" class="">#16011</a>)</li>
+<li class="">web/a11y: Codemirror (<a href=https://github.com/goauthentik/authentik/issues/16010 target=_blank rel="noopener noreferrer" class="">#16010</a>)</li>
+<li class="">web/a11y: File Inputs (<a href=https://github.com/goauthentik/authentik/issues/16038 target=_blank rel="noopener noreferrer" class="">#16038</a>)</li>
+<li class="">web/a11y: Fix "skip to content" target. (<a href=https://github.com/goauthentik/authentik/issues/17510 target=_blank rel="noopener noreferrer" class="">#17510</a>)</li>
+<li class="">web/a11y: Fix dark theme color contrast (<a href=https://github.com/goauthentik/authentik/issues/17144 target=_blank rel="noopener noreferrer" class="">#17144</a>)</li>
+<li class="">web/a11y: Fix missing screen reader class on fieldset legends. (<a href=https://github.com/goauthentik/authentik/issues/17298 target=_blank rel="noopener noreferrer" class="">#17298</a>)</li>
+<li class="">web/a11y: Flow inspector. (<a href=https://github.com/goauthentik/authentik/issues/17271 target=_blank rel="noopener noreferrer" class="">#17271</a>)</li>
+<li class="">web/a11y: Flow Search (<a href=https://github.com/goauthentik/authentik/issues/15876 target=_blank rel="noopener noreferrer" class="">#15876</a>)</li>
+<li class="">web/a11y: Flow Stages (<a href=https://github.com/goauthentik/authentik/issues/17273 target=_blank rel="noopener noreferrer" class="">#17273</a>)</li>
+<li class="">web/a11y: Notifications drawer (<a href=https://github.com/goauthentik/authentik/issues/17031 target=_blank rel="noopener noreferrer" class="">#17031</a>)</li>
+<li class="">web/a11y: QL Search Input (<a href=https://github.com/goauthentik/authentik/issues/16198 target=_blank rel="noopener noreferrer" class="">#16198</a>)</li>
+<li class="">web/a11y: Status label (<a href=https://github.com/goauthentik/authentik/issues/17148 target=_blank rel="noopener noreferrer" class="">#17148</a>)</li>
+<li class="">web/a11y: Table header -- Fix pagination jitter, prepare alignment (<a href=https://github.com/goauthentik/authentik/issues/17116 target=_blank rel="noopener noreferrer" class="">#17116</a>)</li>
+<li class="">web/a11y: Table header -- Search input (<a href=https://github.com/goauthentik/authentik/issues/17117 target=_blank rel="noopener noreferrer" class="">#17117</a>)</li>
+<li class="">web/a11y: Tables -- labels, input handlers, selection and expanded state (<a href=https://github.com/goauthentik/authentik/issues/16207 target=_blank rel="noopener noreferrer" class="">#16207</a>)</li>
+<li class="">web/a11y: Text Input (<a href=https://github.com/goauthentik/authentik/issues/16041 target=_blank rel="noopener noreferrer" class="">#16041</a>)</li>
+<li class="">web/a11y: Tree view (<a href=https://github.com/goauthentik/authentik/issues/17147 target=_blank rel="noopener noreferrer" class="">#17147</a>)</li>
+<li class="">web/a11y: User library (<a href=https://github.com/goauthentik/authentik/issues/17311 target=_blank rel="noopener noreferrer" class="">#17311</a>)</li>
+<li class="">web/a11y: User settings flow. (<a href=https://github.com/goauthentik/authentik/issues/17219 target=_blank rel="noopener noreferrer" class="">#17219</a>)</li>
+<li class="">web/admin: Add link to the docs in the import flow dialog (<a href=https://github.com/goauthentik/authentik/issues/17436 target=_blank rel="noopener noreferrer" class="">#17436</a>)</li>
+<li class="">web/admin: allow blank value for User path template in User Write Stage (<a href=https://github.com/goauthentik/authentik/issues/16347 target=_blank rel="noopener noreferrer" class="">#16347</a>)</li>
+<li class="">web/admin: Fix disappearing "Create" button in service account modal (<a href=https://github.com/goauthentik/authentik/issues/16963 target=_blank rel="noopener noreferrer" class="">#16963</a>)</li>
+<li class="">web/admin: fix federation sources automatically selected (<a href=https://github.com/goauthentik/authentik/issues/17069 target=_blank rel="noopener noreferrer" class="">#17069</a>)</li>
+<li class="">web/admin: fix incorrect placeholder for scim provider (<a href=https://github.com/goauthentik/authentik/issues/17308 target=_blank rel="noopener noreferrer" class="">#17308</a>)</li>
+<li class="">web/admin: fix settings saving (<a href=https://github.com/goauthentik/authentik/issues/16184 target=_blank rel="noopener noreferrer" class="">#16184</a>)</li>
+<li class="">web/admin: providers/rac: improve host field hint (<a href=https://github.com/goauthentik/authentik/issues/16443 target=_blank rel="noopener noreferrer" class="">#16443</a>)</li>
+<li class="">web/admin: remove maxlength on user display name (<a href=https://github.com/goauthentik/authentik/issues/17412 target=_blank rel="noopener noreferrer" class="">#17412</a>)</li>
+<li class="">web/admin: rework task status summary (<a href=https://github.com/goauthentik/authentik/issues/17337 target=_blank rel="noopener noreferrer" class="">#17337</a>)</li>
+<li class="">web/e2e: Playwright end-to-end test runner (<a href=https://github.com/goauthentik/authentik/issues/16014 target=_blank rel="noopener noreferrer" class="">#16014</a>)</li>
+<li class="">web/e2e: User creation (<a href=https://github.com/goauthentik/authentik/issues/17149 target=_blank rel="noopener noreferrer" class="">#17149</a>)</li>
+<li class="">web/flow: small layout fixes (<a href=https://github.com/goauthentik/authentik/issues/17551 target=_blank rel="noopener noreferrer" class="">#17551</a>)</li>
+<li class="">web/flows: fix card alignment (<a href=https://github.com/goauthentik/authentik/issues/17332 target=_blank rel="noopener noreferrer" class="">#17332</a>)</li>
+<li class="">web/flows: only disable login button when interactive captcha is configured and not loaded (<a href=https://github.com/goauthentik/authentik/issues/16586 target=_blank rel="noopener noreferrer" class="">#16586</a>)</li>
+<li class="">web/flows: update default flow background (<a href=https://github.com/goauthentik/authentik/issues/17315 target=_blank rel="noopener noreferrer" class="">#17315</a>)</li>
+<li class="">web/maintenance: typo in icon class (<a href=https://github.com/goauthentik/authentik/issues/16371 target=_blank rel="noopener noreferrer" class="">#16371</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2025101>Fixed in 2025.10.1<a href=#fixed-in-2025101 class=hash-link aria-label="Direct link to Fixed in 2025.10.1" title="Direct link to Fixed in 2025.10.1" translate=no>​</a></h2>
+<ul>
+<li class="">internal: fix Go deprecation for +build (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17806 target=_blank rel="noopener noreferrer" class="">#17806</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17824 target=_blank rel="noopener noreferrer" class="">#17824</a>)</li>
+<li class="">internal: full openssl path (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17856 target=_blank rel="noopener noreferrer" class="">#17856</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17860 target=_blank rel="noopener noreferrer" class="">#17860</a>)</li>
+<li class="">internal/web/proxy: fix return status code during startup (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17827 target=_blank rel="noopener noreferrer" class="">#17827</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17832 target=_blank rel="noopener noreferrer" class="">#17832</a>)</li>
+<li class="">outpost: revert breaking signals change (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17847 target=_blank rel="noopener noreferrer" class="">#17847</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17848 target=_blank rel="noopener noreferrer" class="">#17848</a>)</li>
+<li class="">outposts: update permissions more eagerly (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17783 target=_blank rel="noopener noreferrer" class="">#17783</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17841 target=_blank rel="noopener noreferrer" class="">#17841</a>)</li>
+<li class="">packages/django-postgres-cache: use upsert instead of select/update in a transaction (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17760 target=_blank rel="noopener noreferrer" class="">#17760</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17767 target=_blank rel="noopener noreferrer" class="">#17767</a>)</li>
+<li class="">providers/oauth2: fix kid always required for federation (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17914 target=_blank rel="noopener noreferrer" class="">#17914</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17917 target=_blank rel="noopener noreferrer" class="">#17917</a>)</li>
+<li class="">providers/oauth2: move encryption key field (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17722 target=_blank rel="noopener noreferrer" class="">#17722</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17729 target=_blank rel="noopener noreferrer" class="">#17729</a>)</li>
+<li class="">providers/proxy: fix missing JWT/claims header (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17759 target=_blank rel="noopener noreferrer" class="">#17759</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17764 target=_blank rel="noopener noreferrer" class="">#17764</a>)</li>
+<li class="">providers/radius: fix inverted message authenticator validation (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17855 target=_blank rel="noopener noreferrer" class="">#17855</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17888 target=_blank rel="noopener noreferrer" class="">#17888</a>)</li>
+<li class="">providers/radius: fix panic when no cert is configured (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17762 target=_blank rel="noopener noreferrer" class="">#17762</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17766 target=_blank rel="noopener noreferrer" class="">#17766</a>)</li>
+<li class="">providers/radius: revert fix inverted message authenticator validation (<a href=https://github.com/goauthentik/authentik/issues/17855 target=_blank rel="noopener noreferrer" class="">#17855</a>) (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17915 target=_blank rel="noopener noreferrer" class="">#17915</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17916 target=_blank rel="noopener noreferrer" class="">#17916</a>)</li>
+<li class="">root: Add Dockerfile label org.opencontainers.image.source (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17756 target=_blank rel="noopener noreferrer" class="">#17756</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17757 target=_blank rel="noopener noreferrer" class="">#17757</a>)</li>
+<li class="">root: use hashes for dockerfile FROM (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17795 target=_blank rel="noopener noreferrer" class="">#17795</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17798 target=_blank rel="noopener noreferrer" class="">#17798</a>)</li>
+<li class="">sources/oauth: Make PKCE verifier 128 characters (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17763 target=_blank rel="noopener noreferrer" class="">#17763</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17765 target=_blank rel="noopener noreferrer" class="">#17765</a>)</li>
+<li class="">tasks: delay startup signals (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17769 target=_blank rel="noopener noreferrer" class="">#17769</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17775 target=_blank rel="noopener noreferrer" class="">#17775</a>)</li>
+<li class="">tasks: sanitize log attributes (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17833 target=_blank rel="noopener noreferrer" class="">#17833</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17842 target=_blank rel="noopener noreferrer" class="">#17842</a>)</li>
+<li class="">web: Consistent Tab Panel URL Parameters (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17804 target=_blank rel="noopener noreferrer" class="">#17804</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17859 target=_blank rel="noopener noreferrer" class="">#17859</a>)</li>
+<li class="">web/a11y: User library -- fix issues surrounding element focus, ARIA labeling. (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17522 target=_blank rel="noopener noreferrer" class="">#17522</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17828 target=_blank rel="noopener noreferrer" class="">#17828</a>)</li>
+<li class="">web/admin: fix SCIM provider form (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17831 target=_blank rel="noopener noreferrer" class="">#17831</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17834 target=_blank rel="noopener noreferrer" class="">#17834</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2025102>Fixed in 2025.10.2<a href=#fixed-in-2025102 class=hash-link aria-label="Direct link to Fixed in 2025.10.2" title="Direct link to Fixed in 2025.10.2" translate=no>​</a></h2>
+<ul>
+<li class="">brands: add more matching tests (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/16185 target=_blank rel="noopener noreferrer" class="">#16185</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17924 target=_blank rel="noopener noreferrer" class="">#17924</a>)</li>
+<li class="">brands: sort matched brand by match length (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17920 target=_blank rel="noopener noreferrer" class="">#17920</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17935 target=_blank rel="noopener noreferrer" class="">#17935</a>)</li>
+<li class="">cmd/server/healthcheck: remove worker HTTP healthcheck (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18090 target=_blank rel="noopener noreferrer" class="">#18090</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18091 target=_blank rel="noopener noreferrer" class="">#18091</a>)</li>
+<li class="">core: bump django from 5.2.7 to 5.2.8 (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17967 target=_blank rel="noopener noreferrer" class="">#17967</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18003 target=_blank rel="noopener noreferrer" class="">#18003</a>)</li>
+<li class="">core: improve app launch URL formatting (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18076 target=_blank rel="noopener noreferrer" class="">#18076</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18087 target=_blank rel="noopener noreferrer" class="">#18087</a>)</li>
+<li class="">events: fix timezone not set for log events (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18067 target=_blank rel="noopener noreferrer" class="">#18067</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18071 target=_blank rel="noopener noreferrer" class="">#18071</a>)</li>
+<li class="">internal: Automated internal backport: 1487-invitation-expiry.sec.patch to authentik-2025.10 (<a href=https://github.com/goauthentik/authentik/issues/18258 target=_blank rel="noopener noreferrer" class="">#18258</a>)</li>
+<li class="">internal: Automated internal backport: 1498-oauth2-cc-user-active.sec.patch to authentik-2025.10 (<a href=https://github.com/goauthentik/authentik/issues/18259 target=_blank rel="noopener noreferrer" class="">#18259</a>)</li>
+<li class="">internal: Automated internal backport: 5000-sidebar.sec.patch to authentik-2025.10 (<a href=https://github.com/goauthentik/authentik/issues/18260 target=_blank rel="noopener noreferrer" class="">#18260</a>)</li>
+<li class="">packages/django-channels-postgres/layer: fix query when subscribed to multiple channels (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18152 target=_blank rel="noopener noreferrer" class="">#18152</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18153 target=_blank rel="noopener noreferrer" class="">#18153</a>)</li>
+<li class="">packages/django-dramatiq-postgres: broker: ensure locking happens with the same connection (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18095 target=_blank rel="noopener noreferrer" class="">#18095</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18119 target=_blank rel="noopener noreferrer" class="">#18119</a>)</li>
+<li class="">providers/scim: allow custom schema data (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18073 target=_blank rel="noopener noreferrer" class="">#18073</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18075 target=_blank rel="noopener noreferrer" class="">#18075</a>)</li>
+<li class="">stages/prompt: fix choices with labels causing error on submit (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18183 target=_blank rel="noopener noreferrer" class="">#18183</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18236 target=_blank rel="noopener noreferrer" class="">#18236</a>)</li>
+<li class="">tasks/schedules: fix rel obj not being associated or updated (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17934 target=_blank rel="noopener noreferrer" class="">#17934</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17936 target=_blank rel="noopener noreferrer" class="">#17936</a>)</li>
+<li class="">web: Disable library <code>&lt;datalist></code> on Firefox. (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18103 target=_blank rel="noopener noreferrer" class="">#18103</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18135 target=_blank rel="noopener noreferrer" class="">#18135</a>)</li>
+<li class="">web: Fix RAC modal visibility. (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17941 target=_blank rel="noopener noreferrer" class="">#17941</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18097 target=_blank rel="noopener noreferrer" class="">#18097</a>)</li>
+<li class="">web: Fix tab activation, blank provider URLs (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18031 target=_blank rel="noopener noreferrer" class="">#18031</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18101 target=_blank rel="noopener noreferrer" class="">#18101</a>)</li>
+<li class="">web/admin: link to user on invitation list page (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18132 target=_blank rel="noopener noreferrer" class="">#18132</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18134 target=_blank rel="noopener noreferrer" class="">#18134</a>)</li>
+<li class="">web/flows: improvements for hCaptcha (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/16882 target=_blank rel="noopener noreferrer" class="">#16882</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18128 target=_blank rel="noopener noreferrer" class="">#18128</a>)</li>
+<li class="">web/sfe: downgrade bootstrap that was accidentally upgraded (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18157 target=_blank rel="noopener noreferrer" class="">#18157</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18171 target=_blank rel="noopener noreferrer" class="">#18171</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2025103>Fixed in 2025.10.3<a href=#fixed-in-2025103 class=hash-link aria-label="Direct link to Fixed in 2025.10.3" title="Direct link to Fixed in 2025.10.3" translate=no>​</a></h2>
+<ul>
+<li class="">core: list applications fix (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18798 target=_blank rel="noopener noreferrer" class="">#18798</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18827 target=_blank rel="noopener noreferrer" class="">#18827</a>)</li>
+<li class="">core: optimize list applications (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18330 target=_blank rel="noopener noreferrer" class="">#18330</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18791 target=_blank rel="noopener noreferrer" class="">#18791</a>)</li>
+<li class="">enterprise/stages/mtls: fix traefik certificate parsing (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18607 target=_blank rel="noopener noreferrer" class="">#18607</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18645 target=_blank rel="noopener noreferrer" class="">#18645</a>)</li>
+<li class="">flows: refresh unauthenticated tabs (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18621 target=_blank rel="noopener noreferrer" class="">#18621</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18633 target=_blank rel="noopener noreferrer" class="">#18633</a>)</li>
+<li class="">lib/sync/outgoing: check if there is a provider before creating tasks (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18394 target=_blank rel="noopener noreferrer" class="">#18394</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18397 target=_blank rel="noopener noreferrer" class="">#18397</a>)</li>
+<li class="">outpost/proxyv2: more tests, fix pg password with spaces, and existing session on restart (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18211 target=_blank rel="noopener noreferrer" class="">#18211</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18742 target=_blank rel="noopener noreferrer" class="">#18742</a>)</li>
+<li class="">outposts: set container healthcheck inline (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18298 target=_blank rel="noopener noreferrer" class="">#18298</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18370 target=_blank rel="noopener noreferrer" class="">#18370</a>)</li>
+<li class="">packages/django-channels-postgres: fix notify size check (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18347 target=_blank rel="noopener noreferrer" class="">#18347</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18409 target=_blank rel="noopener noreferrer" class="">#18409</a>)</li>
+<li class="">packages/django-dramatiq-postgres: broker: close django connections on consumer close (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18833 target=_blank rel="noopener noreferrer" class="">#18833</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18835 target=_blank rel="noopener noreferrer" class="">#18835</a>)</li>
+<li class="">providers/scim: compare users/groups before sending update request (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18456 target=_blank rel="noopener noreferrer" class="">#18456</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18465 target=_blank rel="noopener noreferrer" class="">#18465</a>)</li>
+<li class="">root: fix missing authentik_device cookie causing error (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18642 target=_blank rel="noopener noreferrer" class="">#18642</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18644 target=_blank rel="noopener noreferrer" class="">#18644</a>)</li>
+<li class="">root: skip current tab when refreshing others (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18674 target=_blank rel="noopener noreferrer" class="">#18674</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18675 target=_blank rel="noopener noreferrer" class="">#18675</a>)</li>
+<li class="">sources/ldap: make server info optional (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18648 target=_blank rel="noopener noreferrer" class="">#18648</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18654 target=_blank rel="noopener noreferrer" class="">#18654</a>)</li>
+<li class="">stages/prompt: set allow_blank for _read_only fields (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18297 target=_blank rel="noopener noreferrer" class="">#18297</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18406 target=_blank rel="noopener noreferrer" class="">#18406</a>)</li>
+<li class="">web: Fix row expansion on modal trigger buttons. (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18412 target=_blank rel="noopener noreferrer" class="">#18412</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18647 target=_blank rel="noopener noreferrer" class="">#18647</a>)</li>
+<li class="">web: Fix stale table rows (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17940 target=_blank rel="noopener noreferrer" class="">#17940</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18373 target=_blank rel="noopener noreferrer" class="">#18373</a>)</li>
+<li class="">web: Fix stale table rows (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17940 target=_blank rel="noopener noreferrer" class="">#17940</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18408 target=_blank rel="noopener noreferrer" class="">#18408</a>)</li>
+<li class="">web: Hide device picker when challenges are not present. (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18611 target=_blank rel="noopener noreferrer" class="">#18611</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18681 target=_blank rel="noopener noreferrer" class="">#18681</a>)</li>
+<li class="">web: Improved table selection behavior (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18622 target=_blank rel="noopener noreferrer" class="">#18622</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18685 target=_blank rel="noopener noreferrer" class="">#18685</a>)</li>
+<li class="">web: revert Fix stale table rows (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17940 target=_blank rel="noopener noreferrer" class="">#17940</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18407 target=_blank rel="noopener noreferrer" class="">#18407</a>)</li>
+<li class="">web/admin: add entitlement search (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18291 target=_blank rel="noopener noreferrer" class="">#18291</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18390 target=_blank rel="noopener noreferrer" class="">#18390</a>)</li>
+<li class="">web/admin: fix brands default switch label (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18518 target=_blank rel="noopener noreferrer" class="">#18518</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18522 target=_blank rel="noopener noreferrer" class="">#18522</a>)</li>
+<li class="">web/admin: fix event volume chart not updating with query (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18649 target=_blank rel="noopener noreferrer" class="">#18649</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18653 target=_blank rel="noopener noreferrer" class="">#18653</a>)</li>
+<li class="">web/admin: fix wording in password stage (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18393 target=_blank rel="noopener noreferrer" class="">#18393</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18395 target=_blank rel="noopener noreferrer" class="">#18395</a>)</li>
+<li class="">web/admin: fixes capitalization in application wizard title (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/17959 target=_blank rel="noopener noreferrer" class="">#17959</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/17962 target=_blank rel="noopener noreferrer" class="">#17962</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2025104>Fixed in 2025.10.4<a href=#fixed-in-2025104 class=hash-link aria-label="Direct link to Fixed in 2025.10.4" title="Direct link to Fixed in 2025.10.4" translate=no>​</a></h2>
+<ul>
+<li class="">core: bump django from v5.2.8 to 5.2.11 (version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/20020 target=_blank rel="noopener noreferrer" class="">#20020</a>)</li>
+<li class="">core: fix read replica routing during transactions (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19086 target=_blank rel="noopener noreferrer" class="">#19086</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19240 target=_blank rel="noopener noreferrer" class="">#19240</a>)</li>
+<li class="">core: return bad request when user is authenticated and not active (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19706 target=_blank rel="noopener noreferrer" class="">#19706</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19709 target=_blank rel="noopener noreferrer" class="">#19709</a>)</li>
+<li class="">core: use chunked_queryset for expired message deletion (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19028 target=_blank rel="noopener noreferrer" class="">#19028</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19030 target=_blank rel="noopener noreferrer" class="">#19030</a>)</li>
+<li class="">internal: fix incorrect metric calculation (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19701 target=_blank rel="noopener noreferrer" class="">#19701</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19702 target=_blank rel="noopener noreferrer" class="">#19702</a>)</li>
+<li class="">internal: rework liveness probe and proxy (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19312 target=_blank rel="noopener noreferrer" class="">#19312</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19383 target=_blank rel="noopener noreferrer" class="">#19383</a>)</li>
+<li class="">internal: update TLS Suite (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19076 target=_blank rel="noopener noreferrer" class="">#19076</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19077 target=_blank rel="noopener noreferrer" class="">#19077</a>)</li>
+<li class="">outpost/proxyv2: fix stale session cookie causing 400 error in createState (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19026 target=_blank rel="noopener noreferrer" class="">#19026</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19374 target=_blank rel="noopener noreferrer" class="">#19374</a>)</li>
+<li class="">outpost/proxyv2: reduce max number of postgres connections (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19211 target=_blank rel="noopener noreferrer" class="">#19211</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/20139 target=_blank rel="noopener noreferrer" class="">#20139</a>)</li>
+<li class="">outpost/proxyv2: revalidate auth if session fails to load (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18063 target=_blank rel="noopener noreferrer" class="">#18063</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/20058 target=_blank rel="noopener noreferrer" class="">#20058</a>)</li>
+<li class="">providers/oauth2: add logout+jwt token type for oidc logout token. (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19554 target=_blank rel="noopener noreferrer" class="">#19554</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19674 target=_blank rel="noopener noreferrer" class="">#19674</a>)</li>
+<li class="">providers/oauth2: use compare_digest for client_secret comparison (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19979 target=_blank rel="noopener noreferrer" class="">#19979</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19982 target=_blank rel="noopener noreferrer" class="">#19982</a>)</li>
+<li class="">recovery: consume token in transaction (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19967 target=_blank rel="noopener noreferrer" class="">#19967</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19981 target=_blank rel="noopener noreferrer" class="">#19981</a>)</li>
+<li class="">root: update client-go generation (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19762 target=_blank rel="noopener noreferrer" class="">#19762</a> and <a href=https://github.com/goauthentik/authentik/issues/19906 target=_blank rel="noopener noreferrer" class="">#19906</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19933 target=_blank rel="noopener noreferrer" class="">#19933</a>)</li>
+<li class="">security: <a class="" href=/security/cves/CVE-2026-25227/>CVE-2026-25227</a> (<a href=https://github.com/goauthentik/authentik/issues/20227 target=_blank rel="noopener noreferrer" class="">#20227</a>)</li>
+<li class="">security: <a class="" href=/security/cves/CVE-2026-25748/>CVE-2026-25748</a> (<a href=https://github.com/goauthentik/authentik/issues/20228 target=_blank rel="noopener noreferrer" class="">#20228</a>)</li>
+<li class="">security: <a class="" href=/security/cves/CVE-2026-25922/>CVE-2026-25922</a> (<a href=https://github.com/goauthentik/authentik/issues/20229 target=_blank rel="noopener noreferrer" class="">#20229</a>)</li>
+<li class="">web/admin: Fix haveibeenpwned link in PasswordPolicyForm (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18984 target=_blank rel="noopener noreferrer" class="">#18984</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18988 target=_blank rel="noopener noreferrer" class="">#18988</a>)</li>
+<li class="">web/admin: add banner to flow import form (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19288 target=_blank rel="noopener noreferrer" class="">#19288</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19292 target=_blank rel="noopener noreferrer" class="">#19292</a>)</li>
+<li class="">web/admin: fix dark theme on map (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18985 target=_blank rel="noopener noreferrer" class="">#18985</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18986 target=_blank rel="noopener noreferrer" class="">#18986</a>)</li>
+<li class="">web/admin: fix impersonation form requesting data without being opened (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19673 target=_blank rel="noopener noreferrer" class="">#19673</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19711 target=_blank rel="noopener noreferrer" class="">#19711</a>)</li>
+<li class="">web/elements: hidden secrets not propagating (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19029 target=_blank rel="noopener noreferrer" class="">#19029</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19376 target=_blank rel="noopener noreferrer" class="">#19376</a>)</li>
+<li class="">web/flow: Fix spurious double submit on ak-stage-autosubmit (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/18727 target=_blank rel="noopener noreferrer" class="">#18727</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/18932 target=_blank rel="noopener noreferrer" class="">#18932</a>)</li>
+<li class="">web/sfe: downgrade bootstrap, add access denied test (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19763 target=_blank rel="noopener noreferrer" class="">#19763</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19764 target=_blank rel="noopener noreferrer" class="">#19764</a>)</li>
+<li class="">web: fix slug auto-updating when editing existing applications (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/19169 target=_blank rel="noopener noreferrer" class="">#19169</a> to version-2025.10) (<a href=https://github.com/goauthentik/authentik/issues/19172 target=_blank rel="noopener noreferrer" class="">#19172</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=api-changes>API Changes<a href=#api-changes class=hash-link aria-label="Direct link to API Changes" title="Direct link to API Changes" translate=no>​</a></h2>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=whats-changed>What's Changed<a href=#whats-changed class=hash-link aria-label="Direct link to What's Changed" title="Direct link to What's Changed" translate=no>​</a></h4>
+<hr/>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersgoogle_workspaceid><code>GET</code> /providers/google_workspace/{id}/<a href=#get-providersgoogle_workspaceid class=hash-link aria-label="Direct link to get-providersgoogle_workspaceid" title="Direct link to get-providersgoogle_workspaceid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type>Return Type:<a href=#return-type class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-providersgoogle_workspaceid><code>PUT</code> /providers/google_workspace/{id}/<a href=#put-providersgoogle_workspaceid class=hash-link aria-label="Direct link to put-providersgoogle_workspaceid" title="Direct link to put-providersgoogle_workspaceid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request>Request:<a href=#request class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-1>Return Type:<a href=#return-type-1 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-providersgoogle_workspaceid><code>PATCH</code> /providers/google_workspace/{id}/<a href=#patch-providersgoogle_workspaceid class=hash-link aria-label="Direct link to patch-providersgoogle_workspaceid" title="Direct link to patch-providersgoogle_workspaceid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-1>Request:<a href=#request-1 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-2>Return Type:<a href=#return-type-2 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersmicrosoft_entraid><code>GET</code> /providers/microsoft_entra/{id}/<a href=#get-providersmicrosoft_entraid class=hash-link aria-label="Direct link to get-providersmicrosoft_entraid" title="Direct link to get-providersmicrosoft_entraid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-3>Return Type:<a href=#return-type-3 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-providersmicrosoft_entraid><code>PUT</code> /providers/microsoft_entra/{id}/<a href=#put-providersmicrosoft_entraid class=hash-link aria-label="Direct link to put-providersmicrosoft_entraid" title="Direct link to put-providersmicrosoft_entraid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-2>Request:<a href=#request-2 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-4>Return Type:<a href=#return-type-4 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-providersmicrosoft_entraid><code>PATCH</code> /providers/microsoft_entra/{id}/<a href=#patch-providersmicrosoft_entraid class=hash-link aria-label="Direct link to patch-providersmicrosoft_entraid" title="Direct link to patch-providersmicrosoft_entraid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-3>Request:<a href=#request-3 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-5>Return Type:<a href=#return-type-5 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersscimid><code>GET</code> /providers/scim/{id}/<a href=#get-providersscimid class=hash-link aria-label="Direct link to get-providersscimid" title="Direct link to get-providersscimid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-6>Return Type:<a href=#return-type-6 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-providersscimid><code>PUT</code> /providers/scim/{id}/<a href=#put-providersscimid class=hash-link aria-label="Direct link to put-providersscimid" title="Direct link to put-providersscimid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-4>Request:<a href=#request-4 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-7>Return Type:<a href=#return-type-7 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-providersscimid><code>PATCH</code> /providers/scim/{id}/<a href=#patch-providersscimid class=hash-link aria-label="Direct link to patch-providersscimid" title="Direct link to patch-providersscimid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-5>Request:<a href=#request-5 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-8>Return Type:<a href=#return-type-8 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-providersgoogle_workspace><code>POST</code> /providers/google_workspace/<a href=#post-providersgoogle_workspace class=hash-link aria-label="Direct link to post-providersgoogle_workspace" title="Direct link to post-providersgoogle_workspace" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-6>Request:<a href=#request-6 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-9>Return Type:<a href=#return-type-9 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersgoogle_workspace><code>GET</code> /providers/google_workspace/<a href=#get-providersgoogle_workspace class=hash-link aria-label="Direct link to get-providersgoogle_workspace" title="Direct link to get-providersgoogle_workspace" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-10>Return Type:<a href=#return-type-10 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > GoogleWorkspaceProvider Serializer</p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-providersmicrosoft_entra><code>POST</code> /providers/microsoft_entra/<a href=#post-providersmicrosoft_entra class=hash-link aria-label="Direct link to post-providersmicrosoft_entra" title="Direct link to post-providersmicrosoft_entra" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-7>Request:<a href=#request-7 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-11>Return Type:<a href=#return-type-11 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersmicrosoft_entra><code>GET</code> /providers/microsoft_entra/<a href=#get-providersmicrosoft_entra class=hash-link aria-label="Direct link to get-providersmicrosoft_entra" title="Direct link to get-providersmicrosoft_entra" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-12>Return Type:<a href=#return-type-12 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > MicrosoftEntraProvider Serializer</p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-providersscim><code>POST</code> /providers/scim/<a href=#post-providersscim class=hash-link aria-label="Direct link to post-providersscim" title="Direct link to post-providersscim" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-8>Request:<a href=#request-8 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-13>Return Type:<a href=#return-type-13 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersscim><code>GET</code> /providers/scim/<a href=#get-providersscim class=hash-link aria-label="Direct link to get-providersscim" title="Direct link to get-providersscim" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-14>Return Type:<a href=#return-type-14 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > SCIMProvider Serializer</p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-coretransactionalapplications><code>PUT</code> /core/transactional/applications/<a href=#put-coretransactionalapplications class=hash-link aria-label="Direct link to put-coretransactionalapplications" title="Direct link to put-coretransactionalapplications" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-9>Request:<a href=#request-9 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<p>Updated <code>authentik_providers_microsoft_entra.microsoftentraprovider</code> provider_model:</p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<p>Updated <code>authentik_providers_google_workspace.googleworkspaceprovider</code> provider_model:</p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+<p>Updated <code>authentik_providers_scim.scimprovider</code> provider_model:</p>
+<ul>
+<li class="">
+<p>Added property <code>sync_page_size</code> (integer)</p>
+<blockquote>
+<p>Controls the number of objects synced in a single task</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>sync_page_timeout</code> (string)</p>
+<blockquote>
+<p>Timeout for synchronization of a single page</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><hr class=divider_hZCZ /><div class="theme-admonition theme-admonition-note admonition_WCGJ alert alert--secondary admonitionContrib_Zv8a margin-top--sm theme-doc-footer-edit-meta-row"><div class=admonitionContent_pbrs><div class=admonitionHeader_FPxu><strong>Help us improve this content</strong></div><p>We welcome your knowledge and expertise. If you see areas of the documentation that you can improve (fix a typo, correct a technical detail, add additional context, etc.) we would really appreciate your contribution.<div class=row><div class="col col--12"><ul><li><a href=https://github.com/goauthentik/authentik/edit/main/website/docs/releases/2025/v2025.10.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page>Edit on GitHub</a><li><a href=https://docs.goauthentik.io/docs/developer-docs/ target=_blank rel="noreferrer noopener">Contributor Guide</a><li><a href=https://github.com/goauthentik/authentik/issues/new target=_blank rel="noreferrer noopener">Open an issue</a><li><a href=https://goauthentik.io/pricing/ target=_blank rel="noreferrer noopener">Get Enterprise Support</a></ul></div></div></div></div><div class=row><div class="col lastUpdated_BkBT"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/releases/2025.12/><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>2025.12</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/releases/2025.8/><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>2025.8</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#highlights class="table-of-contents__link toc-highlight">Highlights</a><li><a href=#breaking-changes class="table-of-contents__link toc-highlight">Breaking changes</a><ul><li><a href=#redis-removal class="table-of-contents__link toc-highlight">Redis removal</a><li><a href=#default-oauth-scope-mappings class="table-of-contents__link toc-highlight">Default OAuth scope mappings</a></ul><li><a href=#new-features-and-improvements class="table-of-contents__link toc-highlight">New features and improvements</a><ul><li><a href=#scim-provider-oauth-support- class="table-of-contents__link toc-highlight">SCIM provider OAuth support</a><li><a href=#radius-eap-tls-support- class="table-of-contents__link toc-highlight">RADIUS EAP-TLS support</a><li><a href=#saml-and-oauth2-provider-single-logout-support class="table-of-contents__link toc-highlight">SAML and OAuth2 provider Single Logout support</a><li><a href=#telegram-source class="table-of-contents__link toc-highlight">Telegram source</a><li><a href=#refined-flow-and-user-library class="table-of-contents__link toc-highlight">Refined flow and user library</a><li><a href=#additional-noteworthy-improvements class="table-of-contents__link toc-highlight">Additional noteworthy improvements</a></ul><li><a href=#new-integration-guides class="table-of-contents__link toc-highlight">New integration guides</a><li><a href=#upgrading class="table-of-contents__link toc-highlight">Upgrading</a><ul><li><a href=#docker-compose class="table-of-contents__link toc-highlight">Docker Compose</a><li><a href=#kubernetes class="table-of-contents__link toc-highlight">Kubernetes</a></ul><li><a href=#minor-changesfixes class="table-of-contents__link toc-highlight">Minor changes/fixes</a><li><a href=#fixed-in-2025101 class="table-of-contents__link toc-highlight">Fixed in 2025.10.1</a><li><a href=#fixed-in-2025102 class="table-of-contents__link toc-highlight">Fixed in 2025.10.2</a><li><a href=#fixed-in-2025103 class="table-of-contents__link toc-highlight">Fixed in 2025.10.3</a><li><a href=#fixed-in-2025104 class="table-of-contents__link toc-highlight">Fixed in 2025.10.4</a><li><a href=#api-changes class="table-of-contents__link toc-highlight">API Changes</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Authentik Security Inc. Built with Docusaurus.</div></div></div></footer></div></body>

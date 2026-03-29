@@ -1,0 +1,2824 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-releases/2024/v2024.12" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>Release 2024.12 | authentik</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true name=twitter:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true property=og:url content=https://docs.goauthentik.io/releases/2024.12/ /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Release 2024.12 | authentik"/><meta data-rh=true name=description content=Highlights /><meta data-rh=true property=og:description content=Highlights /><link data-rh=true rel=icon href=/img/icon.png /><link data-rh=true rel=canonical href=https://docs.goauthentik.io/releases/2024.12/ /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2024.12/ hreflang=en /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2024.12/ hreflang=x-default /><link data-rh=true rel=preconnect href=https://36ROD0O0FV-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://docs.goauthentik.io/releases","name":"Release Notes","position":1},{"@type":"ListItem","item":"https://docs.goauthentik.io/releases/2024.12","name":"2024.12","position":2}]}</script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-9MVR9WZFZH"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-9MVR9WZFZH",{anonymize_ip:!0})</script><link rel=search type=application/opensearchdescription+xml title=authentik href=/opensearch.xml><link rel=stylesheet href=/assets/css/styles.96891979.css /><script src=/assets/js/runtime~main.48e1a0ed.js defer></script><script src=/assets/js/main.0769e9dc.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/icon_left_brand.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a href=https://goauthentik.io/ target=_self rel="noopener noreferrer" class=navbar__brand><div class=navbar__logo><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--dark_yETr"/></div></a><a href=https://goauthentik.io/features target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Features</a><a href=https://integrations.goauthentik.io target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Integrations</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" target=_self href=/>Documentation</a><a href=https://goauthentik.io/pricing/ target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Pricing</a><a href=https://goauthentik.io/blog target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/goauthentik/authentik target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=github aria-label=GitHub></a><a href=https://goauthentik.io/discord target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=discord aria-label=Discord></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="navbar__item dropdown dropdown--hoverable dropdown--right ak-version-selector"><div aria-haspopup=true aria-expanded=false role=button class="navbar__link menu__link">Version: <!-- -->Pre-release</div><ul class="dropdown__menu menu__list-item--collapsed"><li><a href=https://version-2026-2.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2026.2</a><li><a href=https://version-2025-12.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2025.12</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/><span title="Welcome to authentik" class=linkLabel_fEdy>Welcome to authentik</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/core/glossary/><span title="Core Concepts" class=categoryLinkLabel_ufhF>Core Concepts</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/enterprise/><span title=Enterprise class=categoryLinkLabel_ufhF>Enterprise</span></a><button aria-label="Expand sidebar category 'Enterprise'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/install-config/><span title="Installation and Configuration" class=categoryLinkLabel_ufhF>Installation and Configuration</span></a><button aria-label="Expand sidebar category 'Installation and Configuration'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/add-secure-apps/applications/><span title="Add and Secure Applications" class=categoryLinkLabel_ufhF>Add and Secure Applications</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/customize/><span title="Customize your instance" class=categoryLinkLabel_ufhF>Customize your instance</span></a><button aria-label="Expand sidebar category 'Customize your instance'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/users-sources/user/><span title="Manage Users and Sources" class=categoryLinkLabel_ufhF>Manage Users and Sources</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/background-tasks/><span title="System Management" class=categoryLinkLabel_ufhF>System Management</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/endpoint-devices/><span title="Endpoint Devices (Early Preview)" class=categoryLinkLabel_ufhF>Endpoint Devices (Early Preview)</span></a><button aria-label="Expand sidebar category 'Endpoint Devices (Early Preview)'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/developer-docs/><span title="Developer Documentation" class=categoryLinkLabel_ufhF>Developer Documentation</span></a><button aria-label="Expand sidebar category 'Developer Documentation'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/security/><span title=Security class=categoryLinkLabel_ufhF>Security</span></a><button aria-label="Expand sidebar category 'Security'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/troubleshooting/><span title=Troubleshooting class=categoryLinkLabel_ufhF>Troubleshooting</span></a><button aria-label="Expand sidebar category 'Troubleshooting'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--active" href=/releases/><span title="Release Notes" class=categoryLinkLabel_ufhF>Release Notes</span></a><button aria-label="Collapse sidebar category 'Release Notes'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2026.2/><span title=2026.2 class=linkLabel_fEdy>2026.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.12/><span title=2025.12 class=linkLabel_fEdy>2025.12</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true tabindex=0 href=/releases/2025.10/><span title="Previous versions" class=categoryLinkLabel_ufhF>Previous versions</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.10/><span title=2025.10 class=linkLabel_fEdy>2025.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.8/><span title=2025.8 class=linkLabel_fEdy>2025.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.6/><span title=2025.6 class=linkLabel_fEdy>2025.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.4/><span title=2025.4 class=linkLabel_fEdy>2025.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.2/><span title=2025.2 class=linkLabel_fEdy>2025.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/releases/2024.12/><span title=2024.12 class=linkLabel_fEdy>2024.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.10/><span title=2024.10 class=linkLabel_fEdy>2024.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.8/><span title=2024.8 class=linkLabel_fEdy>2024.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.6/><span title=2024.6 class=linkLabel_fEdy>2024.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.4/><span title=2024.4 class=linkLabel_fEdy>2024.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.2/><span title=2024.2 class=linkLabel_fEdy>2024.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.10/><span title=2023.10 class=linkLabel_fEdy>2023.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.8/><span title=2023.8 class=linkLabel_fEdy>2023.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.6/><span title=2023.6 class=linkLabel_fEdy>2023.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.5/><span title=2023.5 class=linkLabel_fEdy>2023.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.4/><span title=2023.4 class=linkLabel_fEdy>2023.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.3/><span title=2023.3 class=linkLabel_fEdy>2023.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.2/><span title=2023.2 class=linkLabel_fEdy>2023.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.1/><span title=2023.1 class=linkLabel_fEdy>2023.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.12/><span title=2022.12 class=linkLabel_fEdy>2022.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.11/><span title=2022.11 class=linkLabel_fEdy>2022.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.10/><span title=2022.10 class=linkLabel_fEdy>2022.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.9/><span title=2022.9 class=linkLabel_fEdy>2022.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.8/><span title=2022.8 class=linkLabel_fEdy>2022.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.7/><span title=2022.7 class=linkLabel_fEdy>2022.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.6/><span title=2022.6 class=linkLabel_fEdy>2022.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.5/><span title=2022.5 class=linkLabel_fEdy>2022.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.4/><span title=2022.4 class=linkLabel_fEdy>2022.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.3/><span title=2022.3 class=linkLabel_fEdy>2022.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.2/><span title=2022.2 class=linkLabel_fEdy>2022.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.1/><span title=2022.1 class=linkLabel_fEdy>2022.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.12/><span title=2021.12 class=linkLabel_fEdy>2021.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.10/><span title=2021.10 class=linkLabel_fEdy>2021.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.9/><span title=2021.9 class=linkLabel_fEdy>2021.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.8/><span title=2021.8 class=linkLabel_fEdy>2021.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.7/><span title=2021.7 class=linkLabel_fEdy>2021.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.6/><span title=2021.6 class=linkLabel_fEdy>2021.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.5/><span title=2021.5 class=linkLabel_fEdy>2021.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.4/><span title=2021.4 class=linkLabel_fEdy>2021.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.3/><span title=2021.3 class=linkLabel_fEdy>2021.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.2/><span title=2021.2 class=linkLabel_fEdy>2021.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.1/><span title=2021.1 class=linkLabel_fEdy>2021.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.14/><span title=0.14 class=linkLabel_fEdy>0.14</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.13/><span title=0.13 class=linkLabel_fEdy>0.13</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.12/><span title=0.12 class=linkLabel_fEdy>0.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.11/><span title=0.11 class=linkLabel_fEdy>0.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.10/><span title=0.10 class=linkLabel_fEdy>0.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.9/><span title=0.9 class=linkLabel_fEdy>0.9</span></a></ul></ul></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><a class=breadcrumbs__link href=/releases/><span>Release Notes</span></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Previous versions</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>2024.12</span></ul></nav><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Release 2024.12</h1></header><h2 class="anchor anchorTargetStickyNavbar_tleR" id=highlights>Highlights<a href=#highlights class=hash-link aria-label="Direct link to Highlights" title="Direct link to Highlights" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Redirect stage</strong> Conditionally redirect users to other flows and URLs.</li>
+<li class=""><strong>Application entitlements</strong> <span class="badge badge--preview" title="This feature is in preview and may change in the future." aria-description="Preview badge" role=img>Preview</span> Additional granular permission configuration on an application-level basis.</li>
+<li class=""><strong>CloudFormation</strong> <span class="badge badge--preview" title="This feature is in preview and may change in the future." aria-description="Preview badge" role=img>Preview</span> One-click deploy on AWS.</li>
+<li class=""><strong>Policies in the application wizard</strong> Configure access restriction while creating an application.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=breaking-changes>Breaking changes<a href=#breaking-changes class=hash-link aria-label="Direct link to Breaking changes" title="Direct link to Breaking changes" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p><strong>Impersonation now requires providing a reason</strong></p>
+<p>You can disable this behavior in the <strong>Admin interface</strong> under <strong>System</strong> > <strong>Settings</strong>.</p>
+</li>
+<li class="">
+<p><strong>Deprecated PostgreSQL <code>USE_PGBOUNCER</code> and <code>USE_PGPOOL</code> settings</strong></p>
+<p>With this release, the <code>AUTHENTIK_POSTGRESQL__USE_PGBOUNCER</code> and <code>AUTHENTIK_POSTGRESQL__USE_PGPOOL</code> settings have been deprecated in favor of exposing the underlying database settings: <code>AUTHENTIK_POSTGRESQL__CONN_MAX_AGE</code> and <code>AUTHENTIK_POSTGRESQL__DISABLE_SERVER_SIDE_CURSORS</code>.</p>
+<p>If you are using PgBouncer or PgPool as connection poolers and wish to maintain the same behavior as previous versions, <code>AUTHENTIK_POSTGRESQL__DISABLE_SERVER_SIDE_CURSORS</code> must be set to <code>true</code>. Moreover, if you are using PgBouncer <code>AUTHENTIK_POSTGRESQL__CONN_MAX_AGE</code> must be set to <code>null</code>.</p>
+<p>The newly exposed settings allow supporting a wider set of connection pooler configurations. For details on how these settings interact with different configurations of connection poolers, please refer to the <a class="" href=/install-config/configuration/#postgresql-settings>PostgreSQL documentation</a>.</p>
+<p>These settings will be removed in a future version.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=new-features>New features<a href=#new-features class=hash-link aria-label="Direct link to New features" title="Direct link to New features" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p><strong>Redirect stage</strong></p>
+<p>This new stage allows redirecting a user to another flow or external URL. This allows for dynamically choosing which flow runs depending on user attributes or other factors, or redirection to another URL.</p>
+</li>
+<li class="">
+<p><strong>Application entitlements</strong> <span class="badge badge--preview" title="This feature is in preview and may change in the future." aria-description="Preview badge" role=img>Preview</span></p>
+<p>Centrally configure permissions by granting entitlements to groups and users on an application-level basis.</p>
+</li>
+<li class="">
+<p><strong>Policies in the application wizard</strong></p>
+<p>In the application creation wizard, administrators can now configure policy bindings along with the other application settings.</p>
+</li>
+<li class="">
+<p><strong>CloudFormation</strong> <span class="badge badge--preview" title="This feature is in preview and may change in the future." aria-description="Preview badge" role=img>Preview</span></p>
+<p>Deploy authentik in your own AWS environment with one click using our new <a class="" href=/install-config/install/aws/>AWS CloudFormation template</a>.</p>
+</li>
+<li class="">
+<p><strong>OAuth2 provider federation</strong></p>
+<p>Configure <a class="" href=/add-secure-apps/providers/oauth2/machine_to_machine/#authentik-issued-jwts>OAuth2 provider federation</a> to allow exchanging authentication tokens between multiple providers.</p>
+</li>
+<li class="">
+<p><strong>Silent authorization flow</strong></p>
+<p>When authorization flows don't require user interaction, authentik redirects the user directly back to the application, improving user experience.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=upgrading>Upgrading<a href=#upgrading class=hash-link aria-label="Direct link to Upgrading" title="Direct link to Upgrading" translate=no>​</a></h2>
+<p>This release does not introduce any new requirements. You can follow the upgrade instructions below; for more detailed information about upgrading authentik, refer to our <a class="" href=/install-config/upgrade/>Upgrade documentation</a>.</p>
+<div class="theme-admonition theme-admonition-warning admonition_WCGJ alert alert--warning"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 16 16"><path fill-rule=evenodd d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg></span>warning</div><div class=admonitionContent_pbrs><p>When you upgrade, be aware that the version of the authentik instance and of any outposts must be the same. We recommend that you always upgrade any outposts at the same time you upgrade your authentik instance.</div></div>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=docker-compose>Docker Compose<a href=#docker-compose class=hash-link aria-label="Direct link to Docker Compose" title="Direct link to Docker Compose" translate=no>​</a></h3>
+<p>To upgrade, download the new docker-compose file and update the Docker stack with the new version, using these commands:</p>
+<div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token function" style="color:hsl(221, 87%, 60%)">wget</span><span class="token plain"> </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-O</span><span class="token plain"> docker-compose.yml https://goauthentik.io/version/2024.12/docker-compose.yml</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain"></span><span class="token function" style="color:hsl(221, 87%, 60%)">docker</span><span class="token plain"> compose up </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-d</span><br/></span></code></pre></div></div>
+<p>The <code>-O</code> flag retains the downloaded file's name, overwriting any existing local file with the same name.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=kubernetes>Kubernetes<a href=#kubernetes class=hash-link aria-label="Direct link to Kubernetes" title="Direct link to Kubernetes" translate=no>​</a></h3>
+<p>Upgrade the Helm Chart to the new version, using the following commands:</p>
+<div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">helm repo update</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">helm upgrade authentik authentik/authentik </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-f</span><span class="token plain"> values.yaml </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">--version</span><span class="token plain"> ^2024.12</span><br/></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=minor-changesfixes>Minor changes/fixes<a href=#minor-changesfixes class=hash-link aria-label="Direct link to Minor changes/fixes" title="Direct link to Minor changes/fixes" translate=no>​</a></h2>
+<ul>
+<li class="">blueprints: add AtIndex tag (<a href=https://github.com/goauthentik/authentik/issues/12386 target=_blank rel="noopener noreferrer" class="">#12386</a>)</li>
+<li class="">blueprints: add default Password policy (<a href=https://github.com/goauthentik/authentik/issues/11793 target=_blank rel="noopener noreferrer" class="">#11793</a>)</li>
+<li class="">core: add <code>None</code> check to a device's <code>extra_description</code> (<a href=https://github.com/goauthentik/authentik/issues/11904 target=_blank rel="noopener noreferrer" class="">#11904</a>)</li>
+<li class="">core: add ability to provide reason for impersonation (<a href=https://github.com/goauthentik/authentik/issues/11951 target=_blank rel="noopener noreferrer" class="">#11951</a>)</li>
+<li class="">core: add support to set policy bindings in transactional endpoint (<a href=https://github.com/goauthentik/authentik/issues/10399 target=_blank rel="noopener noreferrer" class="">#10399</a>)</li>
+<li class="">core: app entitlements (<a href=https://github.com/goauthentik/authentik/issues/12090 target=_blank rel="noopener noreferrer" class="">#12090</a>)</li>
+<li class="">core: fix source_flow_manager throwing error when authenticated user attempts to re-authenticate with existing link (<a href=https://github.com/goauthentik/authentik/issues/12080 target=_blank rel="noopener noreferrer" class="">#12080</a>)</li>
+<li class="">core: use versioned_script for path only (<a href=https://github.com/goauthentik/authentik/issues/12003 target=_blank rel="noopener noreferrer" class="">#12003</a>)</li>
+<li class="">crypto: validate that generated certificate's name is unique (<a href=https://github.com/goauthentik/authentik/issues/12015 target=_blank rel="noopener noreferrer" class="">#12015</a>)</li>
+<li class="">enterprise/rac: fix API Schema for invalidation_flow (<a href=https://github.com/goauthentik/authentik/issues/11907 target=_blank rel="noopener noreferrer" class="">#11907</a>)</li>
+<li class="">enterprise/stages/authenticator_endpoint_gdtc: don't set frame options globally (<a href=https://github.com/goauthentik/authentik/issues/12311 target=_blank rel="noopener noreferrer" class="">#12311</a>)</li>
+<li class="">enterprise: allow deletion/modification of users when in read-only mode (<a href=https://github.com/goauthentik/authentik/issues/12289 target=_blank rel="noopener noreferrer" class="">#12289</a>)</li>
+<li class="">events: notification_cleanup: avoid unnecessary loop (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12417 target=_blank rel="noopener noreferrer" class="">#12417</a>) (<a href=https://github.com/goauthentik/authentik/issues/12418 target=_blank rel="noopener noreferrer" class="">#12418</a>)</li>
+<li class="">flows: better test stage's challenge responses (<a href=https://github.com/goauthentik/authentik/issues/12316 target=_blank rel="noopener noreferrer" class="">#12316</a>)</li>
+<li class="">flows: silent authz flow (<a href=https://github.com/goauthentik/authentik/issues/12213 target=_blank rel="noopener noreferrer" class="">#12213</a>)</li>
+<li class="">internal: add CSP header to files in <code>/media</code> (<a href=https://github.com/goauthentik/authentik/issues/12092 target=_blank rel="noopener noreferrer" class="">#12092</a>)</li>
+<li class="">lifecycle: fix ak exit status not being passed (<a href=https://github.com/goauthentik/authentik/issues/12024 target=_blank rel="noopener noreferrer" class="">#12024</a>)</li>
+<li class="">lifecycle: fix kdc5-config missing (<a href=https://github.com/goauthentik/authentik/issues/11826 target=_blank rel="noopener noreferrer" class="">#11826</a>)</li>
+<li class="">lifecycle: fix missing krb5 deps for full testing in image (<a href=https://github.com/goauthentik/authentik/issues/11815 target=_blank rel="noopener noreferrer" class="">#11815</a>)</li>
+<li class="">providers/ldap: fix global search_full_directory permission not being sufficient (<a href=https://github.com/goauthentik/authentik/issues/12028 target=_blank rel="noopener noreferrer" class="">#12028</a>)</li>
+<li class="">providers/oauth2: Add provider federation between OAuth2 Providers (<a href=https://github.com/goauthentik/authentik/issues/12083 target=_blank rel="noopener noreferrer" class="">#12083</a>)</li>
+<li class="">providers/oauth2: allow m2m for JWKS without alg in keys (<a href=https://github.com/goauthentik/authentik/issues/12196 target=_blank rel="noopener noreferrer" class="">#12196</a>)</li>
+<li class="">providers/oauth2: fix manual device code entry (<a href=https://github.com/goauthentik/authentik/issues/12017 target=_blank rel="noopener noreferrer" class="">#12017</a>)</li>
+<li class="">providers/oauth2: fix migration (<a href=https://github.com/goauthentik/authentik/issues/12138 target=_blank rel="noopener noreferrer" class="">#12138</a>)</li>
+<li class="">providers/oauth2: fix migration dependencies (<a href=https://github.com/goauthentik/authentik/issues/12123 target=_blank rel="noopener noreferrer" class="">#12123</a>)</li>
+<li class="">providers/oauth2: fix redirect uri input (<a href=https://github.com/goauthentik/authentik/issues/12122 target=_blank rel="noopener noreferrer" class="">#12122</a>)</li>
+<li class="">providers/oauth2: fix size limited index for tokens (<a href=https://github.com/goauthentik/authentik/issues/11879 target=_blank rel="noopener noreferrer" class="">#11879</a>)</li>
+<li class="">providers/oauth2: make session deletion cascade to tokens (<a href=https://github.com/goauthentik/authentik/issues/12343 target=_blank rel="noopener noreferrer" class="">#12343</a>)</li>
+<li class="">providers/proxy: fix Issuer when AUTHENTIK_HOST_BROWSER is set (<a href=https://github.com/goauthentik/authentik/issues/11968 target=_blank rel="noopener noreferrer" class="">#11968</a>)</li>
+<li class="">providers/proxy: fix redirect_uri (<a href=https://github.com/goauthentik/authentik/issues/12121 target=_blank rel="noopener noreferrer" class="">#12121</a>)</li>
+<li class="">providers/scim: accept string and int for SCIM IDs (<a href=https://github.com/goauthentik/authentik/issues/12093 target=_blank rel="noopener noreferrer" class="">#12093</a>)</li>
+<li class="">rbac: fix incorrect object_description for object-level permissions (<a href=https://github.com/goauthentik/authentik/issues/12029 target=_blank rel="noopener noreferrer" class="">#12029</a>)</li>
+<li class="">root: check remote IP for proxy protocol same as HTTP/etc (<a href=https://github.com/goauthentik/authentik/issues/12094 target=_blank rel="noopener noreferrer" class="">#12094</a>)</li>
+<li class="">root: expose CONN_MAX_AGE, CONN_HEALTH_CHECKS and DISABLE_SERVER_SIDE_CURSORS for PostgreSQL config (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/10159 target=_blank rel="noopener noreferrer" class="">#10159</a>) (<a href=https://github.com/goauthentik/authentik/issues/12419 target=_blank rel="noopener noreferrer" class="">#12419</a>)</li>
+<li class="">root: fix activation of locale not being scoped (<a href=https://github.com/goauthentik/authentik/issues/12091 target=_blank rel="noopener noreferrer" class="">#12091</a>)</li>
+<li class="">root: fix database ssl options not set correctly (<a href=https://github.com/goauthentik/authentik/issues/12180 target=_blank rel="noopener noreferrer" class="">#12180</a>)</li>
+<li class="">root: fix health status code (<a href=https://github.com/goauthentik/authentik/issues/12255 target=_blank rel="noopener noreferrer" class="">#12255</a>)</li>
+<li class="">root: fix missing entries in codeowners (<a href=https://github.com/goauthentik/authentik/issues/12369 target=_blank rel="noopener noreferrer" class="">#12369</a>)</li>
+<li class="">root: fix override locale only if it is not empty (<a href=https://github.com/goauthentik/authentik/issues/12283 target=_blank rel="noopener noreferrer" class="">#12283</a>)</li>
+<li class="">root: fix ssl settings for read replicas not being applied (<a href=https://github.com/goauthentik/authentik/issues/12341 target=_blank rel="noopener noreferrer" class="">#12341</a>)</li>
+<li class="">root: lock setuptools to prevent docker install issue</li>
+<li class="">root: support running authentik in subpath (<a href=https://github.com/goauthentik/authentik/issues/8675 target=_blank rel="noopener noreferrer" class="">#8675</a>)</li>
+<li class="">root: use healthcheck in depends_on for postgres and redis (<a href=https://github.com/goauthentik/authentik/issues/12301 target=_blank rel="noopener noreferrer" class="">#12301</a>)</li>
+<li class="">security: fix CVE 2024 52287 (<a href=https://github.com/goauthentik/authentik/issues/12114 target=_blank rel="noopener noreferrer" class="">#12114</a>)</li>
+<li class="">security: fix CVE 2024 52289 (<a href=https://github.com/goauthentik/authentik/issues/12113 target=_blank rel="noopener noreferrer" class="">#12113</a>)</li>
+<li class="">security: fix CVE 2024 52307 (<a href=https://github.com/goauthentik/authentik/issues/12115 target=_blank rel="noopener noreferrer" class="">#12115</a>)</li>
+<li class="">sources/kerberos: add kadmin type setting, provide additional context to property mappings (<a href=https://github.com/goauthentik/authentik/issues/12286 target=_blank rel="noopener noreferrer" class="">#12286</a>)</li>
+<li class="">sources/kerberos: add kiprop to ignored system principals (<a href=https://github.com/goauthentik/authentik/issues/11852 target=_blank rel="noopener noreferrer" class="">#11852</a>)</li>
+<li class="">sources/kerberos: use new python-kadmin implementation (<a href=https://github.com/goauthentik/authentik/issues/11932 target=_blank rel="noopener noreferrer" class="">#11932</a>)</li>
+<li class="">sources/oauth: allow creation of user connection objects with parameters (<a href=https://github.com/goauthentik/authentik/issues/12195 target=_blank rel="noopener noreferrer" class="">#12195</a>)</li>
+<li class="">sources/saml: fix redirect not kept through SAML Source (<a href=https://github.com/goauthentik/authentik/issues/12372 target=_blank rel="noopener noreferrer" class="">#12372</a>)</li>
+<li class="">stages/captcha: Run interactive captcha in Frame (<a href=https://github.com/goauthentik/authentik/issues/11857 target=_blank rel="noopener noreferrer" class="">#11857</a>)</li>
+<li class="">stages/identification: fix invalid challenge warning when no captcha stage is set (<a href=https://github.com/goauthentik/authentik/issues/12312 target=_blank rel="noopener noreferrer" class="">#12312</a>)</li>
+<li class="">stages/password: use recovery flow from brand (<a href=https://github.com/goauthentik/authentik/issues/11953 target=_blank rel="noopener noreferrer" class="">#11953</a>)</li>
+<li class="">stages/redirect: create redirect stage (<a href=https://github.com/goauthentik/authentik/issues/12275 target=_blank rel="noopener noreferrer" class="">#12275</a>)</li>
+<li class="">web/admin: add application bindings to the application wizard (<a href=https://github.com/goauthentik/authentik/issues/11462 target=_blank rel="noopener noreferrer" class="">#11462</a>)</li>
+<li class="">web/admin: auto-prefill user path for new users based on selected path (<a href=https://github.com/goauthentik/authentik/issues/12070 target=_blank rel="noopener noreferrer" class="">#12070</a>)</li>
+<li class="">web/admin: better footer links (<a href=https://github.com/goauthentik/authentik/issues/12004 target=_blank rel="noopener noreferrer" class="">#12004</a>)</li>
+<li class="">web/admin: bugfix: dual select initialization revision (<a href=https://github.com/goauthentik/authentik/issues/12051 target=_blank rel="noopener noreferrer" class="">#12051</a>)</li>
+<li class="">web/admin: fix brand title not respected in application list (<a href=https://github.com/goauthentik/authentik/issues/12068 target=_blank rel="noopener noreferrer" class="">#12068</a>)</li>
+<li class="">web/admin: fix code-based MFA toggle not working in wizard (<a href=https://github.com/goauthentik/authentik/issues/11854 target=_blank rel="noopener noreferrer" class="">#11854</a>)</li>
+<li class="">web/admin: fix prompt stage wording (<a href=https://github.com/goauthentik/authentik/issues/12384 target=_blank rel="noopener noreferrer" class="">#12384</a>)</li>
+<li class="">web/admin: provide default invalidation flows for LDAP and Radius (<a href=https://github.com/goauthentik/authentik/issues/11861 target=_blank rel="noopener noreferrer" class="">#11861</a>)</li>
+<li class="">web/flows: fix invisible captcha call (<a href=https://github.com/goauthentik/authentik/issues/12048 target=_blank rel="noopener noreferrer" class="">#12048</a>)</li>
+<li class="">web/flows: resize captcha iframes (<a href=https://github.com/goauthentik/authentik/issues/12260 target=_blank rel="noopener noreferrer" class="">#12260</a>)</li>
+<li class="">web/flows: update flow background (<a href=https://github.com/goauthentik/authentik/issues/12339 target=_blank rel="noopener noreferrer" class="">#12339</a>)</li>
+<li class="">web: add italian locale (<a href=https://github.com/goauthentik/authentik/issues/11958 target=_blank rel="noopener noreferrer" class="">#11958</a>)</li>
+<li class="">web: backport fix impersonate api (<a href=https://github.com/goauthentik/authentik/issues/12184 target=_blank rel="noopener noreferrer" class="">#12184</a>)</li>
+<li class="">web: fix bug that prevented error reporting in current wizard. (<a href=https://github.com/goauthentik/authentik/issues/12033 target=_blank rel="noopener noreferrer" class="">#12033</a>)</li>
+<li class="">web: fix missing status code on failed build (<a href=https://github.com/goauthentik/authentik/issues/11903 target=_blank rel="noopener noreferrer" class="">#11903</a>)</li>
+<li class="">web: simplify <code>?inline</code> handler for Storybook (<a href=https://github.com/goauthentik/authentik/issues/12246 target=_blank rel="noopener noreferrer" class="">#12246</a>)</li>
+<li class="">web: update tests for Chromedriver 131 (<a href=https://github.com/goauthentik/authentik/issues/12199 target=_blank rel="noopener noreferrer" class="">#12199</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2024121>Fixed in 2024.12.1<a href=#fixed-in-2024121 class=hash-link aria-label="Direct link to Fixed in 2024.12.1" title="Direct link to Fixed in 2024.12.1" translate=no>​</a></h2>
+<ul>
+<li class="">internal: fix URL generation for websocket connection (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12439 target=_blank rel="noopener noreferrer" class="">#12439</a>) (<a href=https://github.com/goauthentik/authentik/issues/12440 target=_blank rel="noopener noreferrer" class="">#12440</a>)</li>
+<li class="">website/docs: add content about bindings (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/11787 target=_blank rel="noopener noreferrer" class="">#11787</a>) (<a href=https://github.com/goauthentik/authentik/issues/12428 target=_blank rel="noopener noreferrer" class="">#12428</a>)</li>
+<li class="">website/docs: add new section about impersonation (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12328 target=_blank rel="noopener noreferrer" class="">#12328</a>) (<a href=https://github.com/goauthentik/authentik/issues/12424 target=_blank rel="noopener noreferrer" class="">#12424</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2024122>Fixed in 2024.12.2<a href=#fixed-in-2024122 class=hash-link aria-label="Direct link to Fixed in 2024.12.2" title="Direct link to Fixed in 2024.12.2" translate=no>​</a></h2>
+<ul>
+<li class="">core: fix error when creating new user with default path (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12609 target=_blank rel="noopener noreferrer" class="">#12609</a>) (<a href=https://github.com/goauthentik/authentik/issues/12612 target=_blank rel="noopener noreferrer" class="">#12612</a>)</li>
+<li class="">internal: fix missing trailing slash in outpost websocket (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12470 target=_blank rel="noopener noreferrer" class="">#12470</a>) (<a href=https://github.com/goauthentik/authentik/issues/12471 target=_blank rel="noopener noreferrer" class="">#12471</a>)</li>
+<li class="">providers/saml: fix invalid SAML Response when assertion and response are signed (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12611 target=_blank rel="noopener noreferrer" class="">#12611</a>) (<a href=https://github.com/goauthentik/authentik/issues/12613 target=_blank rel="noopener noreferrer" class="">#12613</a>)</li>
+<li class="">rbac: permissions endpoint: allow authenticated users (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12608 target=_blank rel="noopener noreferrer" class="">#12608</a>) (<a href=https://github.com/goauthentik/authentik/issues/12610 target=_blank rel="noopener noreferrer" class="">#12610</a>)</li>
+<li class="">sources/kerberos: authenticate with the user's username instead of the first username in authentik (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12497 target=_blank rel="noopener noreferrer" class="">#12497</a>) (<a href=https://github.com/goauthentik/authentik/issues/12579 target=_blank rel="noopener noreferrer" class="">#12579</a>)</li>
+<li class="">web: fix source selection and outpost integration health (<a href=https://github.com/goauthentik/authentik/issues/12530 target=_blank rel="noopener noreferrer" class="">#12530</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2024123>Fixed in 2024.12.3<a href=#fixed-in-2024123 class=hash-link aria-label="Direct link to Fixed in 2024.12.3" title="Direct link to Fixed in 2024.12.3" translate=no>​</a></h2>
+<ul>
+<li class="">core: fix application entitlements not creatable with blueprints (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12673 target=_blank rel="noopener noreferrer" class="">#12673</a>) (<a href=https://github.com/goauthentik/authentik/issues/12784 target=_blank rel="noopener noreferrer" class="">#12784</a>)</li>
+<li class="">core: fix permissions for admin device listing (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12787 target=_blank rel="noopener noreferrer" class="">#12787</a>) (<a href=https://github.com/goauthentik/authentik/issues/12791 target=_blank rel="noopener noreferrer" class="">#12791</a>)</li>
+<li class="">enterprise/rac: Improve client connection status & bugfixes (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12684 target=_blank rel="noopener noreferrer" class="">#12684</a>) (<a href=https://github.com/goauthentik/authentik/issues/12727 target=_blank rel="noopener noreferrer" class="">#12727</a>)</li>
+<li class="">flows: clear flow state before redirecting to final URL (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12788 target=_blank rel="noopener noreferrer" class="">#12788</a>) (<a href=https://github.com/goauthentik/authentik/issues/12801 target=_blank rel="noopener noreferrer" class="">#12801</a>)</li>
+<li class="">lifecycle: better pre release test (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12806 target=_blank rel="noopener noreferrer" class="">#12806</a>) (<a href=https://github.com/goauthentik/authentik/issues/12808 target=_blank rel="noopener noreferrer" class="">#12808</a>)</li>
+<li class="">lifecycle: build binary dependencies which link against SSL directly (<a href=https://github.com/goauthentik/authentik/issues/12724 target=_blank rel="noopener noreferrer" class="">#12724</a>)</li>
+<li class="">lifecycle: fix cryptography's OpenSSL path (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12753 target=_blank rel="noopener noreferrer" class="">#12753</a>) (<a href=https://github.com/goauthentik/authentik/issues/12759 target=_blank rel="noopener noreferrer" class="">#12759</a>)</li>
+<li class="">lifecycle: update python to 3.12.8 (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12783 target=_blank rel="noopener noreferrer" class="">#12783</a>) (<a href=https://github.com/goauthentik/authentik/issues/12786 target=_blank rel="noopener noreferrer" class="">#12786</a>)</li>
+<li class="">rbac: exclude permissions for internal models (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12803 target=_blank rel="noopener noreferrer" class="">#12803</a>) (<a href=https://github.com/goauthentik/authentik/issues/12807 target=_blank rel="noopener noreferrer" class="">#12807</a>)</li>
+<li class="">sources: allow uuid or slug to be used for retrieving a source (<a href=https://github.com/goauthentik/authentik/issues/12772 target=_blank rel="noopener noreferrer" class="">#12772</a>)</li>
+<li class="">stages/redirect: fix query parameter when redirecting to flow (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/12750 target=_blank rel="noopener noreferrer" class="">#12750</a>) (<a href=https://github.com/goauthentik/authentik/issues/12752 target=_blank rel="noopener noreferrer" class="">#12752</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2024124>Fixed in 2024.12.4<a href=#fixed-in-2024124 class=hash-link aria-label="Direct link to Fixed in 2024.12.4" title="Direct link to Fixed in 2024.12.4" translate=no>​</a></h2>
+<ul>
+<li class="">core: fix generic sources not being fetchable by pk (<a href=https://github.com/goauthentik/authentik/issues/12896 target=_blank rel="noopener noreferrer" class="">#12896</a>)</li>
+<li class="">core: fix non-exploitable open redirect (<a href=https://github.com/goauthentik/authentik/issues/13696 target=_blank rel="noopener noreferrer" class="">#13696</a>)</li>
+<li class="">flows: fix inspector permission check (<a href=https://github.com/goauthentik/authentik/issues/12907 target=_blank rel="noopener noreferrer" class="">#12907</a>)</li>
+<li class="">security: fix CVE-2025-29928 (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/13695 target=_blank rel="noopener noreferrer" class="">#13695</a>) (<a href=https://github.com/goauthentik/authentik/issues/13701 target=_blank rel="noopener noreferrer" class="">#13701</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2024125>Fixed in 2024.12.5<a href=#fixed-in-2024125 class=hash-link aria-label="Direct link to Fixed in 2024.12.5" title="Direct link to Fixed in 2024.12.5" translate=no>​</a></h2>
+<ul>
+<li class="">Revert "core: fix non-exploitable open redirect (<a href=https://github.com/goauthentik/authentik/issues/13696 target=_blank rel="noopener noreferrer" class="">#13696</a>)" (<a href=https://github.com/goauthentik/authentik/issues/13827 target=_blank rel="noopener noreferrer" class="">#13827</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=api-changes>API Changes<a href=#api-changes class=hash-link aria-label="Direct link to API Changes" title="Direct link to API Changes" translate=no>​</a></h2>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=whats-new>What's New<a href=#whats-new class=hash-link aria-label="Direct link to What's New" title="Direct link to What's New" translate=no>​</a></h4>
+<hr/>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreapplication_entitlements><code>GET</code> /core/application_entitlements/<a href=#get-coreapplication_entitlements class=hash-link aria-label="Direct link to get-coreapplication_entitlements" title="Direct link to get-coreapplication_entitlements" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-coreapplication_entitlements><code>POST</code> /core/application_entitlements/<a href=#post-coreapplication_entitlements class=hash-link aria-label="Direct link to post-coreapplication_entitlements" title="Direct link to post-coreapplication_entitlements" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreapplication_entitlementspbm_uuid><code>GET</code> /core/application_entitlements/{pbm_uuid}/<a href=#get-coreapplication_entitlementspbm_uuid class=hash-link aria-label="Direct link to get-coreapplication_entitlementspbm_uuid" title="Direct link to get-coreapplication_entitlementspbm_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-coreapplication_entitlementspbm_uuid><code>PUT</code> /core/application_entitlements/{pbm_uuid}/<a href=#put-coreapplication_entitlementspbm_uuid class=hash-link aria-label="Direct link to put-coreapplication_entitlementspbm_uuid" title="Direct link to put-coreapplication_entitlementspbm_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=delete-coreapplication_entitlementspbm_uuid><code>DELETE</code> /core/application_entitlements/{pbm_uuid}/<a href=#delete-coreapplication_entitlementspbm_uuid class=hash-link aria-label="Direct link to delete-coreapplication_entitlementspbm_uuid" title="Direct link to delete-coreapplication_entitlementspbm_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-coreapplication_entitlementspbm_uuid><code>PATCH</code> /core/application_entitlements/{pbm_uuid}/<a href=#patch-coreapplication_entitlementspbm_uuid class=hash-link aria-label="Direct link to patch-coreapplication_entitlementspbm_uuid" title="Direct link to patch-coreapplication_entitlementspbm_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreapplication_entitlementspbm_uuidused_by><code>GET</code> /core/application_entitlements/{pbm_uuid}/used_by/<a href=#get-coreapplication_entitlementspbm_uuidused_by class=hash-link aria-label="Direct link to get-coreapplication_entitlementspbm_uuidused_by" title="Direct link to get-coreapplication_entitlementspbm_uuidused_by" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-stagesredirect><code>GET</code> /stages/redirect/<a href=#get-stagesredirect class=hash-link aria-label="Direct link to get-stagesredirect" title="Direct link to get-stagesredirect" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-stagesredirect><code>POST</code> /stages/redirect/<a href=#post-stagesredirect class=hash-link aria-label="Direct link to post-stagesredirect" title="Direct link to post-stagesredirect" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-stagesredirectstage_uuid><code>GET</code> /stages/redirect/{stage_uuid}/<a href=#get-stagesredirectstage_uuid class=hash-link aria-label="Direct link to get-stagesredirectstage_uuid" title="Direct link to get-stagesredirectstage_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-stagesredirectstage_uuid><code>PUT</code> /stages/redirect/{stage_uuid}/<a href=#put-stagesredirectstage_uuid class=hash-link aria-label="Direct link to put-stagesredirectstage_uuid" title="Direct link to put-stagesredirectstage_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=delete-stagesredirectstage_uuid><code>DELETE</code> /stages/redirect/{stage_uuid}/<a href=#delete-stagesredirectstage_uuid class=hash-link aria-label="Direct link to delete-stagesredirectstage_uuid" title="Direct link to delete-stagesredirectstage_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-stagesredirectstage_uuid><code>PATCH</code> /stages/redirect/{stage_uuid}/<a href=#patch-stagesredirectstage_uuid class=hash-link aria-label="Direct link to patch-stagesredirectstage_uuid" title="Direct link to patch-stagesredirectstage_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-stagesredirectstage_uuidused_by><code>GET</code> /stages/redirect/{stage_uuid}/used_by/<a href=#get-stagesredirectstage_uuidused_by class=hash-link aria-label="Direct link to get-stagesredirectstage_uuidused_by" title="Direct link to get-stagesredirectstage_uuidused_by" translate=no>​</a></h5>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=whats-changed>What's Changed<a href=#whats-changed class=hash-link aria-label="Direct link to What's Changed" title="Direct link to What's Changed" translate=no>​</a></h4>
+<hr/>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-adminsettings><code>GET</code> /admin/settings/<a href=#get-adminsettings class=hash-link aria-label="Direct link to get-adminsettings" title="Direct link to get-adminsettings" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type>Return Type:<a href=#return-type class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>impersonation_require_reason</code> (boolean)<!-- -->
+<blockquote>
+<p>Require administrators to provide a reason for impersonating a user.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-adminsettings><code>PUT</code> /admin/settings/<a href=#put-adminsettings class=hash-link aria-label="Direct link to put-adminsettings" title="Direct link to put-adminsettings" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request>Request:<a href=#request class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>impersonation_require_reason</code> (boolean)<!-- -->
+<blockquote>
+<p>Require administrators to provide a reason for impersonating a user.</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-1>Return Type:<a href=#return-type-1 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>impersonation_require_reason</code> (boolean)<!-- -->
+<blockquote>
+<p>Require administrators to provide a reason for impersonating a user.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-adminsettings><code>PATCH</code> /admin/settings/<a href=#patch-adminsettings class=hash-link aria-label="Direct link to patch-adminsettings" title="Direct link to patch-adminsettings" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-1>Request:<a href=#request-1 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>impersonation_require_reason</code> (boolean)<!-- -->
+<blockquote>
+<p>Require administrators to provide a reason for impersonating a user.</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-2>Return Type:<a href=#return-type-2 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>impersonation_require_reason</code> (boolean)<!-- -->
+<blockquote>
+<p>Require administrators to provide a reason for impersonating a user.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-coreusersidimpersonate><code>POST</code> /core/users/{id}/impersonate/<a href=#post-coreusersidimpersonate class=hash-link aria-label="Direct link to post-coreusersidimpersonate" title="Direct link to post-coreusersidimpersonate" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-2>Request:<a href=#request-2 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesevent_matcherpolicy_uuid><code>GET</code> /policies/event_matcher/{policy_uuid}/<a href=#get-policiesevent_matcherpolicy_uuid class=hash-link aria-label="Direct link to get-policiesevent_matcherpolicy_uuid" title="Direct link to get-policiesevent_matcherpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-3>Return Type:<a href=#return-type-3 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-policiesevent_matcherpolicy_uuid><code>PUT</code> /policies/event_matcher/{policy_uuid}/<a href=#put-policiesevent_matcherpolicy_uuid class=hash-link aria-label="Direct link to put-policiesevent_matcherpolicy_uuid" title="Direct link to put-policiesevent_matcherpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-3>Request:<a href=#request-3 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-4>Return Type:<a href=#return-type-4 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-policiesevent_matcherpolicy_uuid><code>PATCH</code> /policies/event_matcher/{policy_uuid}/<a href=#patch-policiesevent_matcherpolicy_uuid class=hash-link aria-label="Direct link to patch-policiesevent_matcherpolicy_uuid" title="Direct link to patch-policiesevent_matcherpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-4>Request:<a href=#request-4 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-5>Return Type:<a href=#return-type-5 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionskerberosid><code>GET</code> /sources/group_connections/kerberos/{id}/<a href=#get-sourcesgroup_connectionskerberosid class=hash-link aria-label="Direct link to get-sourcesgroup_connectionskerberosid" title="Direct link to get-sourcesgroup_connectionskerberosid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-6>Return Type:<a href=#return-type-6 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+<ul>
+<li class="">
+<p>Property <code>pk</code> (string)</p>
+</li>
+<li class="">
+<p>Property <code>name</code> (string)</p>
+<blockquote>
+<p>Source's display Name.</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>slug</code> (string)</p>
+<blockquote>
+<p>Internal source name, used in URLs.</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>enabled</code> (boolean)</p>
+</li>
+<li class="">
+<p>Property <code>authentication_flow</code> (string)</p>
+<blockquote>
+<p>Flow to use when authenticating existing users.</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>enrollment_flow</code> (string)</p>
+<blockquote>
+<p>Flow to use when enrolling new users.</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>user_property_mappings</code> (array)</p>
+<p>Items (string):</p>
+</li>
+<li class="">
+<p>Property <code>group_property_mappings</code> (array)</p>
+</li>
+<li class="">
+<p>Property <code>component</code> (string)</p>
+<blockquote>
+<p>Get object component so that we know how to edit the object</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>verbose_name</code> (string)</p>
+<blockquote>
+<p>Return object's verbose_name</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>verbose_name_plural</code> (string)</p>
+<blockquote>
+<p>Return object's plural verbose_name</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>meta_model_name</code> (string)</p>
+<blockquote>
+<p>Return internal model name</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>policy_engine_mode</code> (string)</p>
+<p>Enum values:</p>
+<ul>
+<li class=""><code>all</code></li>
+<li class=""><code>any</code></li>
+</ul>
+</li>
+<li class="">
+<p>Property <code>user_matching_mode</code> (string)</p>
+<blockquote>
+<p>How the source determines if an existing user should be authenticated or a new user enrolled.</p>
+</blockquote>
+<p>Enum values:</p>
+<ul>
+<li class=""><code>identifier</code></li>
+<li class=""><code>email_link</code></li>
+<li class=""><code>email_deny</code></li>
+<li class=""><code>username_link</code></li>
+<li class=""><code>username_deny</code></li>
+</ul>
+</li>
+<li class="">
+<p>Property <code>managed</code> (string)</p>
+<blockquote>
+<p>Objects that are managed by authentik. These objects are created and updated automatically. This flag only indicates that an object can be overwritten by migrations. You can still modify the objects via the API, but expect changes to be overwritten in a later update.</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>user_path_template</code> (string)</p>
+</li>
+<li class="">
+<p>Property <code>icon</code> (string)</p>
+<blockquote>
+<p>Get the URL to the Icon. If the name is /static or
+starts with http it is returned as-is</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesgroup_connectionskerberosid><code>PUT</code> /sources/group_connections/kerberos/{id}/<a href=#put-sourcesgroup_connectionskerberosid class=hash-link aria-label="Direct link to put-sourcesgroup_connectionskerberosid" title="Direct link to put-sourcesgroup_connectionskerberosid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-5>Request:<a href=#request-5 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-7>Return Type:<a href=#return-type-7 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesgroup_connectionskerberosid><code>PATCH</code> /sources/group_connections/kerberos/{id}/<a href=#patch-sourcesgroup_connectionskerberosid class=hash-link aria-label="Direct link to patch-sourcesgroup_connectionskerberosid" title="Direct link to patch-sourcesgroup_connectionskerberosid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-6>Request:<a href=#request-6 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-8>Return Type:<a href=#return-type-8 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionsoauthid><code>GET</code> /sources/group_connections/oauth/{id}/<a href=#get-sourcesgroup_connectionsoauthid class=hash-link aria-label="Direct link to get-sourcesgroup_connectionsoauthid" title="Direct link to get-sourcesgroup_connectionsoauthid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-9>Return Type:<a href=#return-type-9 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesgroup_connectionsoauthid><code>PUT</code> /sources/group_connections/oauth/{id}/<a href=#put-sourcesgroup_connectionsoauthid class=hash-link aria-label="Direct link to put-sourcesgroup_connectionsoauthid" title="Direct link to put-sourcesgroup_connectionsoauthid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-7>Request:<a href=#request-7 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-10>Return Type:<a href=#return-type-10 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesgroup_connectionsoauthid><code>PATCH</code> /sources/group_connections/oauth/{id}/<a href=#patch-sourcesgroup_connectionsoauthid class=hash-link aria-label="Direct link to patch-sourcesgroup_connectionsoauthid" title="Direct link to patch-sourcesgroup_connectionsoauthid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-8>Request:<a href=#request-8 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-11>Return Type:<a href=#return-type-11 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionsplexid><code>GET</code> /sources/group_connections/plex/{id}/<a href=#get-sourcesgroup_connectionsplexid class=hash-link aria-label="Direct link to get-sourcesgroup_connectionsplexid" title="Direct link to get-sourcesgroup_connectionsplexid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-12>Return Type:<a href=#return-type-12 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesgroup_connectionsplexid><code>PUT</code> /sources/group_connections/plex/{id}/<a href=#put-sourcesgroup_connectionsplexid class=hash-link aria-label="Direct link to put-sourcesgroup_connectionsplexid" title="Direct link to put-sourcesgroup_connectionsplexid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-9>Request:<a href=#request-9 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-13>Return Type:<a href=#return-type-13 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesgroup_connectionsplexid><code>PATCH</code> /sources/group_connections/plex/{id}/<a href=#patch-sourcesgroup_connectionsplexid class=hash-link aria-label="Direct link to patch-sourcesgroup_connectionsplexid" title="Direct link to patch-sourcesgroup_connectionsplexid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-10>Request:<a href=#request-10 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-14>Return Type:<a href=#return-type-14 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionssamlid><code>GET</code> /sources/group_connections/saml/{id}/<a href=#get-sourcesgroup_connectionssamlid class=hash-link aria-label="Direct link to get-sourcesgroup_connectionssamlid" title="Direct link to get-sourcesgroup_connectionssamlid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-15>Return Type:<a href=#return-type-15 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesgroup_connectionssamlid><code>PUT</code> /sources/group_connections/saml/{id}/<a href=#put-sourcesgroup_connectionssamlid class=hash-link aria-label="Direct link to put-sourcesgroup_connectionssamlid" title="Direct link to put-sourcesgroup_connectionssamlid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-11>Request:<a href=#request-11 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-16>Return Type:<a href=#return-type-16 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesgroup_connectionssamlid><code>PATCH</code> /sources/group_connections/saml/{id}/<a href=#patch-sourcesgroup_connectionssamlid class=hash-link aria-label="Direct link to patch-sourcesgroup_connectionssamlid" title="Direct link to patch-sourcesgroup_connectionssamlid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-12>Request:<a href=#request-12 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-17>Return Type:<a href=#return-type-17 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionsallid><code>GET</code> /sources/user_connections/all/{id}/<a href=#get-sourcesuser_connectionsallid class=hash-link aria-label="Direct link to get-sourcesuser_connectionsallid" title="Direct link to get-sourcesuser_connectionsallid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-18>Return Type:<a href=#return-type-18 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesuser_connectionsallid><code>PUT</code> /sources/user_connections/all/{id}/<a href=#put-sourcesuser_connectionsallid class=hash-link aria-label="Direct link to put-sourcesuser_connectionsallid" title="Direct link to put-sourcesuser_connectionsallid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-13>Request:<a href=#request-13 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-19>Return Type:<a href=#return-type-19 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesuser_connectionsallid><code>PATCH</code> /sources/user_connections/all/{id}/<a href=#patch-sourcesuser_connectionsallid class=hash-link aria-label="Direct link to patch-sourcesuser_connectionsallid" title="Direct link to patch-sourcesuser_connectionsallid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-14>Request:<a href=#request-14 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-20>Return Type:<a href=#return-type-20 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionskerberosid><code>GET</code> /sources/user_connections/kerberos/{id}/<a href=#get-sourcesuser_connectionskerberosid class=hash-link aria-label="Direct link to get-sourcesuser_connectionskerberosid" title="Direct link to get-sourcesuser_connectionskerberosid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-21>Return Type:<a href=#return-type-21 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesuser_connectionskerberosid><code>PUT</code> /sources/user_connections/kerberos/{id}/<a href=#put-sourcesuser_connectionskerberosid class=hash-link aria-label="Direct link to put-sourcesuser_connectionskerberosid" title="Direct link to put-sourcesuser_connectionskerberosid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-15>Request:<a href=#request-15 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+</ul>
+<ul>
+<li class="">Added property <code>source</code> (string)</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-22>Return Type:<a href=#return-type-22 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesuser_connectionskerberosid><code>PATCH</code> /sources/user_connections/kerberos/{id}/<a href=#patch-sourcesuser_connectionskerberosid class=hash-link aria-label="Direct link to patch-sourcesuser_connectionskerberosid" title="Direct link to patch-sourcesuser_connectionskerberosid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-16>Request:<a href=#request-16 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>source</code> (string)</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-23>Return Type:<a href=#return-type-23 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionsoauthid><code>GET</code> /sources/user_connections/oauth/{id}/<a href=#get-sourcesuser_connectionsoauthid class=hash-link aria-label="Direct link to get-sourcesuser_connectionsoauthid" title="Direct link to get-sourcesuser_connectionsoauthid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-24>Return Type:<a href=#return-type-24 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesuser_connectionsoauthid><code>PUT</code> /sources/user_connections/oauth/{id}/<a href=#put-sourcesuser_connectionsoauthid class=hash-link aria-label="Direct link to put-sourcesuser_connectionsoauthid" title="Direct link to put-sourcesuser_connectionsoauthid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-17>Request:<a href=#request-17 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+<li class=""><code>user</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-25>Return Type:<a href=#return-type-25 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesuser_connectionsoauthid><code>PATCH</code> /sources/user_connections/oauth/{id}/<a href=#patch-sourcesuser_connectionsoauthid class=hash-link aria-label="Direct link to patch-sourcesuser_connectionsoauthid" title="Direct link to patch-sourcesuser_connectionsoauthid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-18>Request:<a href=#request-18 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-26>Return Type:<a href=#return-type-26 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionsplexid><code>GET</code> /sources/user_connections/plex/{id}/<a href=#get-sourcesuser_connectionsplexid class=hash-link aria-label="Direct link to get-sourcesuser_connectionsplexid" title="Direct link to get-sourcesuser_connectionsplexid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-27>Return Type:<a href=#return-type-27 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesuser_connectionsplexid><code>PUT</code> /sources/user_connections/plex/{id}/<a href=#put-sourcesuser_connectionsplexid class=hash-link aria-label="Direct link to put-sourcesuser_connectionsplexid" title="Direct link to put-sourcesuser_connectionsplexid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-19>Request:<a href=#request-19 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+<li class=""><code>user</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-28>Return Type:<a href=#return-type-28 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesuser_connectionsplexid><code>PATCH</code> /sources/user_connections/plex/{id}/<a href=#patch-sourcesuser_connectionsplexid class=hash-link aria-label="Direct link to patch-sourcesuser_connectionsplexid" title="Direct link to patch-sourcesuser_connectionsplexid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-20>Request:<a href=#request-20 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-29>Return Type:<a href=#return-type-29 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionssamlid><code>GET</code> /sources/user_connections/saml/{id}/<a href=#get-sourcesuser_connectionssamlid class=hash-link aria-label="Direct link to get-sourcesuser_connectionssamlid" title="Direct link to get-sourcesuser_connectionssamlid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-30>Return Type:<a href=#return-type-30 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourcesuser_connectionssamlid><code>PUT</code> /sources/user_connections/saml/{id}/<a href=#put-sourcesuser_connectionssamlid class=hash-link aria-label="Direct link to put-sourcesuser_connectionssamlid" title="Direct link to put-sourcesuser_connectionssamlid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-21>Request:<a href=#request-21 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+<li class=""><code>user</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-31>Return Type:<a href=#return-type-31 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourcesuser_connectionssamlid><code>PATCH</code> /sources/user_connections/saml/{id}/<a href=#patch-sourcesuser_connectionssamlid class=hash-link aria-label="Direct link to patch-sourcesuser_connectionssamlid" title="Direct link to patch-sourcesuser_connectionssamlid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-22>Request:<a href=#request-22 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-32>Return Type:<a href=#return-type-32 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-flowsinstancesslug><code>GET</code> /flows/instances/{slug}/<a href=#get-flowsinstancesslug class=hash-link aria-label="Direct link to get-flowsinstancesslug" title="Direct link to get-flowsinstancesslug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-33>Return Type:<a href=#return-type-33 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-flowsinstancesslug><code>PUT</code> /flows/instances/{slug}/<a href=#put-flowsinstancesslug class=hash-link aria-label="Direct link to put-flowsinstancesslug" title="Direct link to put-flowsinstancesslug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-23>Request:<a href=#request-23 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-34>Return Type:<a href=#return-type-34 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-flowsinstancesslug><code>PATCH</code> /flows/instances/{slug}/<a href=#patch-flowsinstancesslug class=hash-link aria-label="Direct link to patch-flowsinstancesslug" title="Direct link to patch-flowsinstancesslug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-24>Request:<a href=#request-24 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-35>Return Type:<a href=#return-type-35 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-policiesevent_matcher><code>POST</code> /policies/event_matcher/<a href=#post-policiesevent_matcher class=hash-link aria-label="Direct link to post-policiesevent_matcher" title="Direct link to post-policiesevent_matcher" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-25>Request:<a href=#request-25 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-36>Return Type:<a href=#return-type-36 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesevent_matcher><code>GET</code> /policies/event_matcher/<a href=#get-policiesevent_matcher class=hash-link aria-label="Direct link to get-policiesevent_matcher" title="Direct link to get-policiesevent_matcher" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-37>Return Type:<a href=#return-type-37 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Event Matcher Policy Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<p>Match events created by selected application. When left empty, all applications are matched.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>authentik.stages.redirect</code></li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<blockquote>
+<p>Match events created by selected model. When left empty, all models are matched. When an app is selected, all the application's models are matched.</p>
+</blockquote>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-rbacpermissionsassigned_by_rolesuuidassign><code>POST</code> /rbac/permissions/assigned_by_roles/{uuid}/assign/<a href=#post-rbacpermissionsassigned_by_rolesuuidassign class=hash-link aria-label="Direct link to post-rbacpermissionsassigned_by_rolesuuidassign" title="Direct link to post-rbacpermissionsassigned_by_rolesuuidassign" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-26>Request:<a href=#request-26 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-rbacpermissionsassigned_by_rolesuuidunassign><code>PATCH</code> /rbac/permissions/assigned_by_roles/{uuid}/unassign/<a href=#patch-rbacpermissionsassigned_by_rolesuuidunassign class=hash-link aria-label="Direct link to patch-rbacpermissionsassigned_by_rolesuuidunassign" title="Direct link to patch-rbacpermissionsassigned_by_rolesuuidunassign" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-27>Request:<a href=#request-27 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-rbacpermissionsassigned_by_usersidassign><code>POST</code> /rbac/permissions/assigned_by_users/{id}/assign/<a href=#post-rbacpermissionsassigned_by_usersidassign class=hash-link aria-label="Direct link to post-rbacpermissionsassigned_by_usersidassign" title="Direct link to post-rbacpermissionsassigned_by_usersidassign" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-28>Request:<a href=#request-28 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-rbacpermissionsassigned_by_usersidunassign><code>PATCH</code> /rbac/permissions/assigned_by_users/{id}/unassign/<a href=#patch-rbacpermissionsassigned_by_usersidunassign class=hash-link aria-label="Direct link to patch-rbacpermissionsassigned_by_usersidunassign" title="Direct link to patch-rbacpermissionsassigned_by_usersidunassign" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-29>Request:<a href=#request-29 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>model</code> (string)</p>
+<p>Added enum values:</p>
+<ul>
+<li class=""><code>authentik_stages_redirect.redirectstage</code></li>
+<li class=""><code>authentik_core.applicationentitlement</code></li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionskerberos><code>GET</code> /sources/group_connections/kerberos/<a href=#get-sourcesgroup_connectionskerberos class=hash-link aria-label="Direct link to get-sourcesgroup_connectionskerberos" title="Direct link to get-sourcesgroup_connectionskerberos" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-38>Return Type:<a href=#return-type-38 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > OAuth Group-Source connection Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-sourcesgroup_connectionsoauth><code>POST</code> /sources/group_connections/oauth/<a href=#post-sourcesgroup_connectionsoauth class=hash-link aria-label="Direct link to post-sourcesgroup_connectionsoauth" title="Direct link to post-sourcesgroup_connectionsoauth" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-30>Request:<a href=#request-30 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-39>Return Type:<a href=#return-type-39 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionsoauth><code>GET</code> /sources/group_connections/oauth/<a href=#get-sourcesgroup_connectionsoauth class=hash-link aria-label="Direct link to get-sourcesgroup_connectionsoauth" title="Direct link to get-sourcesgroup_connectionsoauth" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-40>Return Type:<a href=#return-type-40 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > OAuth Group-Source connection Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-sourcesgroup_connectionsplex><code>POST</code> /sources/group_connections/plex/<a href=#post-sourcesgroup_connectionsplex class=hash-link aria-label="Direct link to post-sourcesgroup_connectionsplex" title="Direct link to post-sourcesgroup_connectionsplex" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-31>Request:<a href=#request-31 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>New content type : <code>application/json</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-41>Return Type:<a href=#return-type-41 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionsplex><code>GET</code> /sources/group_connections/plex/<a href=#get-sourcesgroup_connectionsplex class=hash-link aria-label="Direct link to get-sourcesgroup_connectionsplex" title="Direct link to get-sourcesgroup_connectionsplex" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-42>Return Type:<a href=#return-type-42 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Plex Group-Source connection Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesgroup_connectionssaml><code>GET</code> /sources/group_connections/saml/<a href=#get-sourcesgroup_connectionssaml class=hash-link aria-label="Direct link to get-sourcesgroup_connectionssaml" title="Direct link to get-sourcesgroup_connectionssaml" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-43>Return Type:<a href=#return-type-43 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > OAuth Group-Source connection Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+<li class="">
+<p>Changed property <code>identifier</code> (string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourceskerberosslug><code>GET</code> /sources/kerberos/{slug}/<a href=#get-sourceskerberosslug class=hash-link aria-label="Direct link to get-sourceskerberosslug" title="Direct link to get-sourceskerberosslug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-44>Return Type:<a href=#return-type-44 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>kadmin_type</code> (object)</p>
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+<p>Enum values:</p>
+<ul>
+<li class=""><code>MIT</code></li>
+<li class=""><code>Heimdal</code></li>
+<li class=""><code>other</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-sourceskerberosslug><code>PUT</code> /sources/kerberos/{slug}/<a href=#put-sourceskerberosslug class=hash-link aria-label="Direct link to put-sourceskerberosslug" title="Direct link to put-sourceskerberosslug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-32>Request:<a href=#request-32 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>kadmin_type</code> (object)<!-- -->
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-45>Return Type:<a href=#return-type-45 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>kadmin_type</code> (object)<!-- -->
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-sourceskerberosslug><code>PATCH</code> /sources/kerberos/{slug}/<a href=#patch-sourceskerberosslug class=hash-link aria-label="Direct link to patch-sourceskerberosslug" title="Direct link to patch-sourceskerberosslug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-33>Request:<a href=#request-33 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>kadmin_type</code> (object)<!-- -->
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-46>Return Type:<a href=#return-type-46 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>kadmin_type</code> (object)<!-- -->
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionsall><code>GET</code> /sources/user_connections/all/<a href=#get-sourcesuser_connectionsall class=hash-link aria-label="Direct link to get-sourcesuser_connectionsall" title="Direct link to get-sourcesuser_connectionsall" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-47>Return Type:<a href=#return-type-47 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > User source connection</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-sourcesuser_connectionskerberos><code>POST</code> /sources/user_connections/kerberos/<a href=#post-sourcesuser_connectionskerberos class=hash-link aria-label="Direct link to post-sourcesuser_connectionskerberos" title="Direct link to post-sourcesuser_connectionskerberos" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-34>Request:<a href=#request-34 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+</ul>
+<ul>
+<li class="">Added property <code>source</code> (string)</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-48>Return Type:<a href=#return-type-48 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionskerberos><code>GET</code> /sources/user_connections/kerberos/<a href=#get-sourcesuser_connectionskerberos class=hash-link aria-label="Direct link to get-sourcesuser_connectionskerberos" title="Direct link to get-sourcesuser_connectionskerberos" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-49>Return Type:<a href=#return-type-49 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Kerberos Source Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-sourcesuser_connectionsoauth><code>POST</code> /sources/user_connections/oauth/<a href=#post-sourcesuser_connectionsoauth class=hash-link aria-label="Direct link to post-sourcesuser_connectionsoauth" title="Direct link to post-sourcesuser_connectionsoauth" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-35>Request:<a href=#request-35 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+<li class=""><code>user</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-50>Return Type:<a href=#return-type-50 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionsoauth><code>GET</code> /sources/user_connections/oauth/<a href=#get-sourcesuser_connectionsoauth class=hash-link aria-label="Direct link to get-sourcesuser_connectionsoauth" title="Direct link to get-sourcesuser_connectionsoauth" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-51>Return Type:<a href=#return-type-51 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > OAuth Source Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-sourcesuser_connectionsplex><code>POST</code> /sources/user_connections/plex/<a href=#post-sourcesuser_connectionsplex class=hash-link aria-label="Direct link to post-sourcesuser_connectionsplex" title="Direct link to post-sourcesuser_connectionsplex" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-36>Request:<a href=#request-36 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+<li class=""><code>user</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-52>Return Type:<a href=#return-type-52 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionsplex><code>GET</code> /sources/user_connections/plex/<a href=#get-sourcesuser_connectionsplex class=hash-link aria-label="Direct link to get-sourcesuser_connectionsplex" title="Direct link to get-sourcesuser_connectionsplex" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-53>Return Type:<a href=#return-type-53 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Plex Source connection Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-sourcesuser_connectionssaml><code>POST</code> /sources/user_connections/saml/<a href=#post-sourcesuser_connectionssaml class=hash-link aria-label="Direct link to post-sourcesuser_connectionssaml" title="Direct link to post-sourcesuser_connectionssaml" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-37>Request:<a href=#request-37 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source</code></li>
+<li class=""><code>user</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Added property <code>source</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-54>Return Type:<a href=#return-type-54 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourcesuser_connectionssaml><code>GET</code> /sources/user_connections/saml/<a href=#get-sourcesuser_connectionssaml class=hash-link aria-label="Direct link to get-sourcesuser_connectionssaml" title="Direct link to get-sourcesuser_connectionssaml" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-55>Return Type:<a href=#return-type-55 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > SAML Source Serializer</p>
+<p>New required properties:</p>
+<ul>
+<li class=""><code>source_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Added property <code>source_obj</code> (object)</p>
+</li>
+<li class="">
+<p>Changed property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>source</code> (object -> string)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-stagesinvitationinvitationsinvite_uuid><code>GET</code> /stages/invitation/invitations/{invite_uuid}/<a href=#get-stagesinvitationinvitationsinvite_uuid class=hash-link aria-label="Direct link to get-stagesinvitationinvitationsinvite_uuid" title="Direct link to get-stagesinvitationinvitationsinvite_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-56>Return Type:<a href=#return-type-56 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>flow_obj</code> (object)</p>
+<blockquote>
+<p>Flow Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-stagesinvitationinvitationsinvite_uuid><code>PUT</code> /stages/invitation/invitations/{invite_uuid}/<a href=#put-stagesinvitationinvitationsinvite_uuid class=hash-link aria-label="Direct link to put-stagesinvitationinvitationsinvite_uuid" title="Direct link to put-stagesinvitationinvitationsinvite_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-57>Return Type:<a href=#return-type-57 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>flow_obj</code> (object)</p>
+<blockquote>
+<p>Flow Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-stagesinvitationinvitationsinvite_uuid><code>PATCH</code> /stages/invitation/invitations/{invite_uuid}/<a href=#patch-stagesinvitationinvitationsinvite_uuid class=hash-link aria-label="Direct link to patch-stagesinvitationinvitationsinvite_uuid" title="Direct link to patch-stagesinvitationinvitationsinvite_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-58>Return Type:<a href=#return-type-58 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>flow_obj</code> (object)</p>
+<blockquote>
+<p>Flow Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-flowsinstances><code>POST</code> /flows/instances/<a href=#post-flowsinstances class=hash-link aria-label="Direct link to post-flowsinstances" title="Direct link to post-flowsinstances" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-38>Request:<a href=#request-38 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-59>Return Type:<a href=#return-type-59 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-flowsinstances><code>GET</code> /flows/instances/<a href=#get-flowsinstances class=hash-link aria-label="Direct link to get-flowsinstances" title="Direct link to get-flowsinstances" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-60>Return Type:<a href=#return-type-60 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Flow Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersoauth2id><code>GET</code> /providers/oauth2/{id}/<a href=#get-providersoauth2id class=hash-link aria-label="Direct link to get-providersoauth2id" title="Direct link to get-providersoauth2id" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-61>Return Type:<a href=#return-type-61 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+<p>Items (string):</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+<p>Items (integer):</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-providersoauth2id><code>PUT</code> /providers/oauth2/{id}/<a href=#put-providersoauth2id class=hash-link aria-label="Direct link to put-providersoauth2id" title="Direct link to put-providersoauth2id" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-39>Request:<a href=#request-39 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-62>Return Type:<a href=#return-type-62 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-providersoauth2id><code>PATCH</code> /providers/oauth2/{id}/<a href=#patch-providersoauth2id class=hash-link aria-label="Direct link to patch-providersoauth2id" title="Direct link to patch-providersoauth2id" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-40>Request:<a href=#request-40 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-63>Return Type:<a href=#return-type-63 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersproxyid><code>GET</code> /providers/proxy/{id}/<a href=#get-providersproxyid class=hash-link aria-label="Direct link to get-providersproxyid" title="Direct link to get-providersproxyid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-64>Return Type:<a href=#return-type-64 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-providersproxyid><code>PUT</code> /providers/proxy/{id}/<a href=#put-providersproxyid class=hash-link aria-label="Direct link to put-providersproxyid" title="Direct link to put-providersproxyid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-41>Request:<a href=#request-41 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-65>Return Type:<a href=#return-type-65 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-providersproxyid><code>PATCH</code> /providers/proxy/{id}/<a href=#patch-providersproxyid class=hash-link aria-label="Direct link to patch-providersproxyid" title="Direct link to patch-providersproxyid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-42>Request:<a href=#request-42 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-66>Return Type:<a href=#return-type-66 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-rbacpermissionsassigned_by_roles><code>GET</code> /rbac/permissions/assigned_by_roles/<a href=#get-rbacpermissionsassigned_by_roles class=hash-link aria-label="Direct link to get-rbacpermissionsassigned_by_roles" title="Direct link to get-rbacpermissionsassigned_by_roles" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters>Parameters:<a href=#parameters class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Changed: <code>model</code> in <code>query</code></p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-rbacpermissionsassigned_by_users><code>GET</code> /rbac/permissions/assigned_by_users/<a href=#get-rbacpermissionsassigned_by_users class=hash-link aria-label="Direct link to get-rbacpermissionsassigned_by_users" title="Direct link to get-rbacpermissionsassigned_by_users" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters-1>Parameters:<a href=#parameters-1 class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Changed: <code>model</code> in <code>query</code></p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-sourceskerberos><code>POST</code> /sources/kerberos/<a href=#post-sourceskerberos class=hash-link aria-label="Direct link to post-sourceskerberos" title="Direct link to post-sourceskerberos" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-43>Request:<a href=#request-43 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>kadmin_type</code> (object)<!-- -->
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-67>Return Type:<a href=#return-type-67 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>kadmin_type</code> (object)<!-- -->
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-sourceskerberos><code>GET</code> /sources/kerberos/<a href=#get-sourceskerberos class=hash-link aria-label="Direct link to get-sourceskerberos" title="Direct link to get-sourceskerberos" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters-2>Parameters:<a href=#parameters-2 class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Added: <code>kadmin_type</code> in <code>query</code></p>
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-68>Return Type:<a href=#return-type-68 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Kerberos Source Serializer</p>
+<ul>
+<li class="">Added property <code>kadmin_type</code> (object)<!-- -->
+<blockquote>
+<p>KAdmin server type</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-stagesinvitationinvitations><code>POST</code> /stages/invitation/invitations/<a href=#post-stagesinvitationinvitations class=hash-link aria-label="Direct link to post-stagesinvitationinvitations" title="Direct link to post-stagesinvitationinvitations" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-69>Return Type:<a href=#return-type-69 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>flow_obj</code> (object)</p>
+<blockquote>
+<p>Flow Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-stagesinvitationinvitations><code>GET</code> /stages/invitation/invitations/<a href=#get-stagesinvitationinvitations class=hash-link aria-label="Direct link to get-stagesinvitationinvitations" title="Direct link to get-stagesinvitationinvitations" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-70>Return Type:<a href=#return-type-70 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Invitation Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>flow_obj</code> (object)</p>
+<blockquote>
+<p>Flow Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>authentication</code> (string)</p>
+<blockquote>
+<p>Required level of authentication and authorization to access a flow.</p>
+</blockquote>
+<p>Added enum value:</p>
+<ul>
+<li class=""><code>require_redirect</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-flowsexecutorflow_slug><code>GET</code> /flows/executor/{flow_slug}/<a href=#get-flowsexecutorflow_slug class=hash-link aria-label="Direct link to get-flowsexecutorflow_slug" title="Direct link to get-flowsexecutorflow_slug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-71>Return Type:<a href=#return-type-71 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>Updated <code>ak-stage-identification</code> component:</p>
+<ul>
+<li class="">Changed property <code>captcha_stage</code> (object -> object)<!-- -->
+<blockquote>
+<p>Site public key</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-flowsexecutorflow_slug><code>POST</code> /flows/executor/{flow_slug}/<a href=#post-flowsexecutorflow_slug class=hash-link aria-label="Direct link to post-flowsexecutorflow_slug" title="Direct link to post-flowsexecutorflow_slug" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-44>Request:<a href=#request-44 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<p>Added 'xak-flow-redirect' component:</p>
+<ul>
+<li class="">
+<p>Property <code>component</code> (string)</p>
+</li>
+<li class="">
+<p>Property <code>to</code> (string)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-72>Return Type:<a href=#return-type-72 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">
+<p>Changed content type : <code>application/json</code></p>
+<p>Updated <code>ak-stage-identification</code> component:</p>
+<ul>
+<li class="">Changed property <code>captcha_stage</code> (object -> object)<!-- -->
+<blockquote>
+<p>Site public key</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2access_tokensid><code>GET</code> /oauth2/access_tokens/{id}/<a href=#get-oauth2access_tokensid class=hash-link aria-label="Direct link to get-oauth2access_tokensid" title="Direct link to get-oauth2access_tokensid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-73>Return Type:<a href=#return-type-73 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<blockquote>
+<p>OAuth2Provider Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2authorization_codesid><code>GET</code> /oauth2/authorization_codes/{id}/<a href=#get-oauth2authorization_codesid class=hash-link aria-label="Direct link to get-oauth2authorization_codesid" title="Direct link to get-oauth2authorization_codesid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-74>Return Type:<a href=#return-type-74 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<blockquote>
+<p>OAuth2Provider Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2refresh_tokensid><code>GET</code> /oauth2/refresh_tokens/{id}/<a href=#get-oauth2refresh_tokensid class=hash-link aria-label="Direct link to get-oauth2refresh_tokensid" title="Direct link to get-oauth2refresh_tokensid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-75>Return Type:<a href=#return-type-75 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<blockquote>
+<p>OAuth2Provider Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-providersoauth2><code>POST</code> /providers/oauth2/<a href=#post-providersoauth2 class=hash-link aria-label="Direct link to post-providersoauth2" title="Direct link to post-providersoauth2" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-45>Request:<a href=#request-45 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-76>Return Type:<a href=#return-type-76 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersoauth2><code>GET</code> /providers/oauth2/<a href=#get-providersoauth2 class=hash-link aria-label="Direct link to get-providersoauth2" title="Direct link to get-providersoauth2" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-77>Return Type:<a href=#return-type-77 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > OAuth2Provider Serializer</p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-providersproxy><code>POST</code> /providers/proxy/<a href=#post-providersproxy class=hash-link aria-label="Direct link to post-providersproxy" title="Direct link to post-providersproxy" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-46>Request:<a href=#request-46 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-78>Return Type:<a href=#return-type-78 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-providersproxy><code>GET</code> /providers/proxy/<a href=#get-providersproxy class=hash-link aria-label="Direct link to get-providersproxy" title="Direct link to get-providersproxy" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-79>Return Type:<a href=#return-type-79 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > ProxyProvider Serializer</p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-coretransactionalapplications><code>PUT</code> /core/transactional/applications/<a href=#put-coretransactionalapplications class=hash-link aria-label="Direct link to put-coretransactionalapplications" title="Direct link to put-coretransactionalapplications" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-47>Request:<a href=#request-47 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>policy_bindings</code> (array)</p>
+<p>Items (object): > PolicyBindingSerializer which does not require target as target is set implicitly</p>
+<ul>
+<li class="">
+<p>Property <code>policy</code> (string)</p>
+</li>
+<li class="">
+<p>Property <code>group</code> (string)</p>
+</li>
+<li class="">
+<p>Property <code>user</code> (integer)</p>
+</li>
+<li class="">
+<p>Property <code>negate</code> (boolean)</p>
+<blockquote>
+<p>Negates the outcome of the policy. Messages are unaffected.</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>enabled</code> (boolean)</p>
+</li>
+<li class="">
+<p>Property <code>order</code> (integer)</p>
+</li>
+<li class="">
+<p>Property <code>timeout</code> (integer)</p>
+<blockquote>
+<p>Timeout after which Policy execution is terminated.</p>
+</blockquote>
+</li>
+<li class="">
+<p>Property <code>failure_result</code> (boolean)</p>
+<blockquote>
+<p>Result if the Policy execution fails.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<p>Updated <code>authentik_providers_proxy.proxyprovider</code> provider_model:</p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+<p>Updated <code>authentik_providers_oauth2.oauth2provider</code> provider_model:</p>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2access_tokens><code>GET</code> /oauth2/access_tokens/<a href=#get-oauth2access_tokens class=hash-link aria-label="Direct link to get-oauth2access_tokens" title="Direct link to get-oauth2access_tokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-80>Return Type:<a href=#return-type-80 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and RefreshToken</p>
+<ul>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<blockquote>
+<p>OAuth2Provider Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2authorization_codes><code>GET</code> /oauth2/authorization_codes/<a href=#get-oauth2authorization_codes class=hash-link aria-label="Direct link to get-oauth2authorization_codes" title="Direct link to get-oauth2authorization_codes" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-81>Return Type:<a href=#return-type-81 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and ExpiringBaseGrant</p>
+<ul>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<blockquote>
+<p>OAuth2Provider Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2refresh_tokens><code>GET</code> /oauth2/refresh_tokens/<a href=#get-oauth2refresh_tokens class=hash-link aria-label="Direct link to get-oauth2refresh_tokens" title="Direct link to get-oauth2refresh_tokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-82>Return Type:<a href=#return-type-82 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and RefreshToken</p>
+<ul>
+<li class="">
+<p>Changed property <code>provider</code> (object)</p>
+<blockquote>
+<p>OAuth2Provider Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Added property <code>jwt_federation_sources</code> (array)</p>
+</li>
+<li class="">
+<p>Added property <code>jwt_federation_providers</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>jwks_sources</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><hr class=divider_hZCZ /><div class="theme-admonition theme-admonition-note admonition_WCGJ alert alert--secondary admonitionContrib_Zv8a margin-top--sm theme-doc-footer-edit-meta-row"><div class=admonitionContent_pbrs><div class=admonitionHeader_FPxu><strong>Help us improve this content</strong></div><p>We welcome your knowledge and expertise. If you see areas of the documentation that you can improve (fix a typo, correct a technical detail, add additional context, etc.) we would really appreciate your contribution.<div class=row><div class="col col--12"><ul><li><a href=https://github.com/goauthentik/authentik/edit/main/website/docs/releases/2024/v2024.12.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page>Edit on GitHub</a><li><a href=https://docs.goauthentik.io/docs/developer-docs/ target=_blank rel="noreferrer noopener">Contributor Guide</a><li><a href=https://github.com/goauthentik/authentik/issues/new target=_blank rel="noreferrer noopener">Open an issue</a><li><a href=https://goauthentik.io/pricing/ target=_blank rel="noreferrer noopener">Get Enterprise Support</a></ul></div></div></div></div><div class=row><div class="col lastUpdated_BkBT"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/releases/2025.2/><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>2025.2</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/releases/2024.10/><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>2024.10</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#highlights class="table-of-contents__link toc-highlight">Highlights</a><li><a href=#breaking-changes class="table-of-contents__link toc-highlight">Breaking changes</a><li><a href=#new-features class="table-of-contents__link toc-highlight">New features</a><li><a href=#upgrading class="table-of-contents__link toc-highlight">Upgrading</a><ul><li><a href=#docker-compose class="table-of-contents__link toc-highlight">Docker Compose</a><li><a href=#kubernetes class="table-of-contents__link toc-highlight">Kubernetes</a></ul><li><a href=#minor-changesfixes class="table-of-contents__link toc-highlight">Minor changes/fixes</a><li><a href=#fixed-in-2024121 class="table-of-contents__link toc-highlight">Fixed in 2024.12.1</a><li><a href=#fixed-in-2024122 class="table-of-contents__link toc-highlight">Fixed in 2024.12.2</a><li><a href=#fixed-in-2024123 class="table-of-contents__link toc-highlight">Fixed in 2024.12.3</a><li><a href=#fixed-in-2024124 class="table-of-contents__link toc-highlight">Fixed in 2024.12.4</a><li><a href=#fixed-in-2024125 class="table-of-contents__link toc-highlight">Fixed in 2024.12.5</a><li><a href=#api-changes class="table-of-contents__link toc-highlight">API Changes</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Authentik Security Inc. Built with Docusaurus.</div></div></div></footer></div></body>

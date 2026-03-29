@@ -1,0 +1,289 @@
+import "#admin/groups/ak-group-form";
+import "#admin/policies/PolicyBindingForm";
+import "#admin/policies/PolicyWizard";
+import "#admin/rbac/ObjectPermissionModal";
+import "#admin/users/UserForm";
+import "#components/ak-status-label";
+import "#elements/Tabs";
+import "#elements/forms/DeleteBulkForm";
+import "#elements/forms/ModalForm";
+
+import { DEFAULT_CONFIG } from "#common/api/config";
+import { PFSize } from "#common/enums";
+import { PolicyBindingCheckTarget, PolicyBindingCheckTargetToLabel } from "#common/policies/utils";
+
+import { CustomFormElementTagName } from "#elements/forms/unsafe";
+import { PaginatedResponse, Table, TableColumn } from "#elements/table/Table";
+import { SlottedTemplateResult } from "#elements/types";
+import { StrictUnsafe } from "#elements/utils/unsafe";
+
+import { PolicyBindingForm, PolicyBindingNotice } from "#admin/policies/PolicyBindingForm";
+import { policyEngineModes } from "#admin/policies/PolicyEngineModes";
+import { UserForm } from "#admin/users/UserForm";
+
+import { ModelEnum, PoliciesApi, PolicyBinding } from "@goauthentik/api";
+
+import { msg, str } from "@lit/localize";
+import { css, CSSResult, html, nothing, TemplateResult } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+
+@customElement("ak-bound-policies-list")
+export class BoundPoliciesList<T extends PolicyBinding = PolicyBinding> extends Table<T> {
+    @property()
+    target?: string;
+
+    @property()
+    policyEngineMode: string = "";
+
+    @property({ type: Array })
+    allowedTypes: PolicyBindingCheckTarget[] = [
+        PolicyBindingCheckTarget.Policy,
+        PolicyBindingCheckTarget.Group,
+        PolicyBindingCheckTarget.User,
+    ];
+
+    @property({ type: Array })
+    typeNotices: PolicyBindingNotice[] = [];
+
+    checkbox = true;
+    clearOnRefresh = true;
+
+    order = "order";
+
+    protected bindingEditForm = "ak-policy-binding-form";
+
+    static styles: CSSResult[] = [
+        ...super.styles,
+        css`
+            /* Align policy engine description to left padding of the card title */
+            .policy-desc {
+                padding-left: var(--pf-global--spacer--lg);
+            }
+        `,
+    ];
+
+    get allowedTypesLabel(): string {
+        return this.allowedTypes.map((ct) => PolicyBindingCheckTargetToLabel(ct)).join(" / ");
+    }
+
+    async apiEndpoint(): Promise<PaginatedResponse<T>> {
+        return new PoliciesApi(DEFAULT_CONFIG).policiesBindingsList({
+            ...(await this.defaultEndpointConfig()),
+            target: this.target || "",
+        }) as Promise<PaginatedResponse<T>>;
+    }
+
+    protected override rowLabel(item: PolicyBinding): string | null {
+        return item.order?.toString() ?? null;
+    }
+
+    protected columns: TableColumn[] = [
+        [msg("Order"), "order"],
+        [this.allowedTypesLabel],
+        [msg("Enabled"), "enabled"],
+        [msg("Timeout"), "timeout"],
+        [msg("Actions"), null, msg("Row Actions")],
+    ];
+
+    getPolicyUserGroupRowLabel(item: PolicyBinding): string {
+        if (item.policy) {
+            return msg(str`Policy ${item.policyObj?.name}`);
+        } else if (item.group) {
+            return msg(str`Group ${item.groupObj?.name}`);
+        } else if (item.user) {
+            return msg(str`User ${item.userObj?.name || item.userObj?.username}`);
+        }
+        return msg("-");
+    }
+
+    getPolicyUserGroupRow(item: PolicyBinding): TemplateResult {
+        const label = this.getPolicyUserGroupRowLabel(item);
+        if (item.user) {
+            return html` <a href=${`#/identity/users/${item.user}`}> ${label} </a> `;
+        }
+        if (item.group) {
+            return html` <a href=${`#/identity/groups/${item.group}`}> ${label} </a> `;
+        }
+        return html`${label}`;
+    }
+
+    getObjectEditButton(item: PolicyBinding): SlottedTemplateResult {
+        if (item.policy) {
+            return html`<ak-forms-modal>
+                ${StrictUnsafe<CustomFormElementTagName>(item.policyObj?.component, {
+                    slot: "form",
+                    instancePk: item.policyObj?.pk,
+                    submitLabel: msg("Save Changes"),
+                    headline: msg(str`Update ${item.policyObj?.name}`, {
+                        id: "form.headline.update",
+                    }),
+                })}
+
+                <button slot="trigger" class="pf-c-button pf-m-secondary">
+                    ${msg("Edit Policy")}
+                </button>
+            </ak-forms-modal>`;
+        } else if (item.group) {
+            return html`<ak-forms-modal>
+                <span slot="submit">${msg("Save Changes")}</span>
+                <span slot="header">${msg("Update Group")}</span>
+                <ak-group-form slot="form" .instancePk=${item.groupObj?.pk}> </ak-group-form>
+                <button slot="trigger" class="pf-c-button pf-m-secondary">
+                    ${msg("Edit Group")}
+                </button>
+            </ak-forms-modal>`;
+        } else if (item.user) {
+            return html`<button
+                slot="trigger"
+                class="pf-c-button pf-m-secondary"
+                ${UserForm.asEditModalInvoker(item.userObj?.pk)}
+            >
+                ${msg("Edit User")}
+            </button>`;
+        }
+        return nothing;
+    }
+
+    renderToolbarSelected(): TemplateResult {
+        const disabled = this.selectedElements.length < 1;
+        return html`<ak-forms-delete-bulk
+            object-label=${msg("Policy binding(s)")}
+            .objects=${this.selectedElements}
+            .metadata=${(item: PolicyBinding) => {
+                return [
+                    { key: msg("Order"), value: item.order.toString() },
+                    {
+                        key: this.allowedTypesLabel,
+                        value: this.getPolicyUserGroupRowLabel(item),
+                    },
+                ];
+            }}
+            .usedBy=${(item: PolicyBinding) => {
+                return new PoliciesApi(DEFAULT_CONFIG).policiesBindingsUsedByList({
+                    policyBindingUuid: item.pk,
+                });
+            }}
+            .delete=${(item: PolicyBinding) => {
+                return new PoliciesApi(DEFAULT_CONFIG).policiesBindingsDestroy({
+                    policyBindingUuid: item.pk,
+                });
+            }}
+        >
+            <button ?disabled=${disabled} slot="trigger" class="pf-c-button pf-m-danger">
+                ${msg("Delete")}
+            </button>
+        </ak-forms-delete-bulk>`;
+    }
+
+    row(item: PolicyBinding): SlottedTemplateResult[] {
+        return [
+            html`<pre>${item.order}</pre>`,
+            html`${this.getPolicyUserGroupRow(item)}`,
+            html`<ak-status-label type="warning" ?good=${item.enabled}></ak-status-label>`,
+            html`${item.timeout}`,
+            html` ${this.getObjectEditButton(item)}
+                <ak-forms-modal size=${PFSize.Medium}>
+                    <span slot="submit">${msg("Save Changes")}</span>
+                    <span slot="header">${msg("Update Binding")}</span>
+                    ${StrictUnsafe<PolicyBindingForm>(this.bindingEditForm, {
+                        slot: "form",
+                        instancePk: item.pk,
+                        allowedTypes: this.allowedTypes,
+                        typeNotices: this.typeNotices,
+                        targetPk: this.target || "",
+
+                        submitLabel: msg("Save Changes"),
+                        headline: msg("Update Binding"),
+                    })}
+                    <button slot="trigger" class="pf-c-button pf-m-secondary">
+                        ${msg("Edit Binding")}
+                    </button>
+                </ak-forms-modal>
+                <ak-rbac-object-permission-modal
+                    model=${ModelEnum.AuthentikPoliciesPolicybinding}
+                    objectPk=${item.pk}
+                >
+                </ak-rbac-object-permission-modal>`,
+        ];
+    }
+
+    renderEmpty(): TemplateResult {
+        return super.renderEmpty(
+            html`<ak-empty-state icon="pf-icon-module"
+                ><span>${msg("No Policies bound.")}</span>
+                <div slot="body">${msg("No policies are currently bound to this object.")}</div>
+                <fieldset class="pf-c-form__group pf-m-action" slot="primary">
+                    <legend class="sr-only">${msg("Policy actions")}</legend>
+                    <ak-policy-wizard
+                        createText=${msg("Create and bind Policy")}
+                        showBindingPage
+                        bindingTarget=${ifDefined(this.target)}
+                    ></ak-policy-wizard>
+                    <ak-forms-modal size=${PFSize.Medium}>
+                        ${StrictUnsafe<PolicyBindingForm>(this.bindingEditForm, {
+                            slot: "form",
+                            allowedTypes: this.allowedTypes,
+                            typeNotices: this.typeNotices,
+                            targetPk: this.target || "",
+
+                            submitLabel: msg("Create"),
+                            headline: msg("Create Binding"),
+                        })}
+                        <button slot="trigger" class="pf-c-button pf-m-primary">
+                            ${msg("Bind existing policy/group/user")}
+                        </button>
+                    </ak-forms-modal>
+                </fieldset>
+            </ak-empty-state>`,
+        );
+    }
+
+    renderToolbar(): TemplateResult {
+        return html`${this.allowedTypes.includes(PolicyBindingCheckTarget.Policy)
+                ? html`<ak-policy-wizard
+                      createText=${msg("Create and bind Policy")}
+                      showBindingPage
+                      bindingTarget=${ifDefined(this.target)}
+                  ></ak-policy-wizard>`
+                : nothing}
+            <ak-forms-modal size=${PFSize.Medium}>
+                ${StrictUnsafe<PolicyBindingForm>(this.bindingEditForm, {
+                    slot: "form",
+                    allowedTypes: this.allowedTypes,
+                    typeNotices: this.typeNotices,
+                    targetPk: this.target || "",
+
+                    submitLabel: msg("Create"),
+                    headline: msg("Create Binding"),
+                })}
+
+                <button slot="trigger" class="pf-c-button pf-m-primary">
+                    ${msg(str`Bind existing ${this.allowedTypesLabel}`)}
+                </button>
+            </ak-forms-modal> `;
+    }
+
+    renderPolicyEngineMode() {
+        const policyEngineMode = policyEngineModes.find(
+            (pem) => pem.value === this.policyEngineMode,
+        );
+        if (policyEngineMode === undefined) {
+            return nothing;
+        }
+        return html`<p class="policy-desc">
+            ${msg(str`The currently selected policy engine mode is ${policyEngineMode.label}:`)}
+            ${policyEngineMode.description}
+        </p>`;
+    }
+
+    renderToolbarContainer(): SlottedTemplateResult {
+        return html`${this.renderPolicyEngineMode()} ${super.renderToolbarContainer()}`;
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        "ak-bound-policies-list": BoundPoliciesList;
+    }
+}

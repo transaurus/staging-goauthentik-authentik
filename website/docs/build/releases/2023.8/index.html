@@ -1,0 +1,1542 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-releases/2023/v2023.8" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>Release 2023.8 | authentik</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true name=twitter:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true property=og:url content=https://docs.goauthentik.io/releases/2023.8/ /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Release 2023.8 | authentik"/><meta data-rh=true name=description content="Breaking changes"/><meta data-rh=true property=og:description content="Breaking changes"/><link data-rh=true rel=icon href=/img/icon.png /><link data-rh=true rel=canonical href=https://docs.goauthentik.io/releases/2023.8/ /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2023.8/ hreflang=en /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2023.8/ hreflang=x-default /><link data-rh=true rel=preconnect href=https://36ROD0O0FV-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://docs.goauthentik.io/releases","name":"Release Notes","position":1},{"@type":"ListItem","item":"https://docs.goauthentik.io/releases/2023.8","name":"2023.8","position":2}]}</script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-9MVR9WZFZH"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-9MVR9WZFZH",{anonymize_ip:!0})</script><link rel=search type=application/opensearchdescription+xml title=authentik href=/opensearch.xml><link rel=stylesheet href=/assets/css/styles.96891979.css /><script src=/assets/js/runtime~main.48e1a0ed.js defer></script><script src=/assets/js/main.0769e9dc.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/icon_left_brand.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a href=https://goauthentik.io/ target=_self rel="noopener noreferrer" class=navbar__brand><div class=navbar__logo><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--dark_yETr"/></div></a><a href=https://goauthentik.io/features target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Features</a><a href=https://integrations.goauthentik.io target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Integrations</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" target=_self href=/>Documentation</a><a href=https://goauthentik.io/pricing/ target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Pricing</a><a href=https://goauthentik.io/blog target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/goauthentik/authentik target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=github aria-label=GitHub></a><a href=https://goauthentik.io/discord target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=discord aria-label=Discord></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="navbar__item dropdown dropdown--hoverable dropdown--right ak-version-selector"><div aria-haspopup=true aria-expanded=false role=button class="navbar__link menu__link">Version: <!-- -->Pre-release</div><ul class="dropdown__menu menu__list-item--collapsed"><li><a href=https://version-2026-2.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2026.2</a><li><a href=https://version-2025-12.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2025.12</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/><span title="Welcome to authentik" class=linkLabel_fEdy>Welcome to authentik</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/core/glossary/><span title="Core Concepts" class=categoryLinkLabel_ufhF>Core Concepts</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/enterprise/><span title=Enterprise class=categoryLinkLabel_ufhF>Enterprise</span></a><button aria-label="Expand sidebar category 'Enterprise'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/install-config/><span title="Installation and Configuration" class=categoryLinkLabel_ufhF>Installation and Configuration</span></a><button aria-label="Expand sidebar category 'Installation and Configuration'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/add-secure-apps/applications/><span title="Add and Secure Applications" class=categoryLinkLabel_ufhF>Add and Secure Applications</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/customize/><span title="Customize your instance" class=categoryLinkLabel_ufhF>Customize your instance</span></a><button aria-label="Expand sidebar category 'Customize your instance'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/users-sources/user/><span title="Manage Users and Sources" class=categoryLinkLabel_ufhF>Manage Users and Sources</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/background-tasks/><span title="System Management" class=categoryLinkLabel_ufhF>System Management</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/endpoint-devices/><span title="Endpoint Devices (Early Preview)" class=categoryLinkLabel_ufhF>Endpoint Devices (Early Preview)</span></a><button aria-label="Expand sidebar category 'Endpoint Devices (Early Preview)'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/developer-docs/><span title="Developer Documentation" class=categoryLinkLabel_ufhF>Developer Documentation</span></a><button aria-label="Expand sidebar category 'Developer Documentation'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/security/><span title=Security class=categoryLinkLabel_ufhF>Security</span></a><button aria-label="Expand sidebar category 'Security'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/troubleshooting/><span title=Troubleshooting class=categoryLinkLabel_ufhF>Troubleshooting</span></a><button aria-label="Expand sidebar category 'Troubleshooting'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--active" href=/releases/><span title="Release Notes" class=categoryLinkLabel_ufhF>Release Notes</span></a><button aria-label="Collapse sidebar category 'Release Notes'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2026.2/><span title=2026.2 class=linkLabel_fEdy>2026.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.12/><span title=2025.12 class=linkLabel_fEdy>2025.12</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true tabindex=0 href=/releases/2025.10/><span title="Previous versions" class=categoryLinkLabel_ufhF>Previous versions</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.10/><span title=2025.10 class=linkLabel_fEdy>2025.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.8/><span title=2025.8 class=linkLabel_fEdy>2025.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.6/><span title=2025.6 class=linkLabel_fEdy>2025.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.4/><span title=2025.4 class=linkLabel_fEdy>2025.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.2/><span title=2025.2 class=linkLabel_fEdy>2025.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.12/><span title=2024.12 class=linkLabel_fEdy>2024.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.10/><span title=2024.10 class=linkLabel_fEdy>2024.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.8/><span title=2024.8 class=linkLabel_fEdy>2024.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.6/><span title=2024.6 class=linkLabel_fEdy>2024.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.4/><span title=2024.4 class=linkLabel_fEdy>2024.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.2/><span title=2024.2 class=linkLabel_fEdy>2024.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.10/><span title=2023.10 class=linkLabel_fEdy>2023.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/releases/2023.8/><span title=2023.8 class=linkLabel_fEdy>2023.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.6/><span title=2023.6 class=linkLabel_fEdy>2023.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.5/><span title=2023.5 class=linkLabel_fEdy>2023.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.4/><span title=2023.4 class=linkLabel_fEdy>2023.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.3/><span title=2023.3 class=linkLabel_fEdy>2023.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.2/><span title=2023.2 class=linkLabel_fEdy>2023.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.1/><span title=2023.1 class=linkLabel_fEdy>2023.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.12/><span title=2022.12 class=linkLabel_fEdy>2022.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.11/><span title=2022.11 class=linkLabel_fEdy>2022.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.10/><span title=2022.10 class=linkLabel_fEdy>2022.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.9/><span title=2022.9 class=linkLabel_fEdy>2022.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.8/><span title=2022.8 class=linkLabel_fEdy>2022.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.7/><span title=2022.7 class=linkLabel_fEdy>2022.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.6/><span title=2022.6 class=linkLabel_fEdy>2022.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.5/><span title=2022.5 class=linkLabel_fEdy>2022.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.4/><span title=2022.4 class=linkLabel_fEdy>2022.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.3/><span title=2022.3 class=linkLabel_fEdy>2022.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.2/><span title=2022.2 class=linkLabel_fEdy>2022.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.1/><span title=2022.1 class=linkLabel_fEdy>2022.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.12/><span title=2021.12 class=linkLabel_fEdy>2021.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.10/><span title=2021.10 class=linkLabel_fEdy>2021.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.9/><span title=2021.9 class=linkLabel_fEdy>2021.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.8/><span title=2021.8 class=linkLabel_fEdy>2021.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.7/><span title=2021.7 class=linkLabel_fEdy>2021.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.6/><span title=2021.6 class=linkLabel_fEdy>2021.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.5/><span title=2021.5 class=linkLabel_fEdy>2021.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.4/><span title=2021.4 class=linkLabel_fEdy>2021.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.3/><span title=2021.3 class=linkLabel_fEdy>2021.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.2/><span title=2021.2 class=linkLabel_fEdy>2021.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.1/><span title=2021.1 class=linkLabel_fEdy>2021.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.14/><span title=0.14 class=linkLabel_fEdy>0.14</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.13/><span title=0.13 class=linkLabel_fEdy>0.13</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.12/><span title=0.12 class=linkLabel_fEdy>0.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.11/><span title=0.11 class=linkLabel_fEdy>0.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.10/><span title=0.10 class=linkLabel_fEdy>0.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.9/><span title=0.9 class=linkLabel_fEdy>0.9</span></a></ul></ul></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><a class=breadcrumbs__link href=/releases/><span>Release Notes</span></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Previous versions</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>2023.8</span></ul></nav><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Release 2023.8</h1></header><h2 class="anchor anchorTargetStickyNavbar_tleR" id=breaking-changes>Breaking changes<a href=#breaking-changes class=hash-link aria-label="Direct link to Breaking changes" title="Direct link to Breaking changes" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>Removal of PostgreSQL 11 support</p>
+<p>As announced in the <a class="" href=/releases/2023.5/>2023.5</a> release notes (and postponed by a release), this release requires PostgreSQL 12 or newer. This is due to a changed requirement in a framework we use, Django.</p>
+<p>This does not affect docker-compose installations (as these already ship with PostgreSQL 12), however it is still recommended to upgrade to a newer version when convenient.</p>
+<p>For Kubernetes install, a manual one-time migration has to be done: <a class="" href=/troubleshooting/postgres/upgrade_kubernetes/>Upgrading PostgreSQL on Kubernetes</a></p>
+</li>
+<li class="">
+<p>Changed nested Group membership behaviour</p>
+<p>In previous versions, nested groups were handled very inconsistently. Binding a group to an application/etc would check the membership recursively, however when using <code>user.ak_groups.all()</code> would only return direct memberships. Additionally, using <code>user.group_attributes()</code> would do the same and only merge all group attributes for direct memberships.</p>
+<p>This has been changed to always use the same logic as when checking for access, which means dealing with complex group structures is a lot more consistent.</p>
+<p>Policies that do use <code>user.ak_groups.all()</code> will retain the current behaviour, to use the new behaviour replace the call with <code>user.all_groups()</code>.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=new-features>New features<a href=#new-features class=hash-link aria-label="Direct link to New features" title="Direct link to New features" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>Enterprise (preview)</p>
+<p>This is the first release to include the <em>Enterprise</em> section, where you can acquire a license in our Customer Portal and get enterprise licenses for your authentik instance. See more info <a class="" href=/enterprise/>here</a></p>
+</li>
+<li class="">
+<p>Config reloading</p>
+<p>For better security and to better support running in a cloud-native environment, authentik now supports dynamic PostgreSQL and Email credentials. In previous versions, both the authentik server and worker containers required restarting to detect the new credentials. In 2023.8, these credentials are automatically refreshed just before they are used. This means you can use something like <a href=https://vaultproject.io target=_blank rel="noopener noreferrer" class="">Hashicorp Vault</a> to manage short-term credentials that are rotated once a day or even more frequently without needing to restart authentik.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=upgrading>Upgrading<a href=#upgrading class=hash-link aria-label="Direct link to Upgrading" title="Direct link to Upgrading" translate=no>​</a></h2>
+<p>This release changes the PostgreSQL dependency to require Version 12 or later, which only affects Kubernetes installs. See <a class="" href=/troubleshooting/postgres/upgrade_kubernetes/>here</a> for more info on upgrading.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=docker-compose>docker-compose<a href=#docker-compose class=hash-link aria-label="Direct link to docker-compose" title="Direct link to docker-compose" translate=no>​</a></h3>
+<p>To upgrade, download the new docker-compose file and update the Docker stack with the new version, using these commands:</p>
+<div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token function" style="color:hsl(221, 87%, 60%)">wget</span><span class="token plain"> </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-O</span><span class="token plain"> docker-compose.yml https://goauthentik.io/version/2023.8/docker-compose.yml</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain"></span><span class="token function" style="color:hsl(221, 87%, 60%)">docker-compose</span><span class="token plain"> up </span><span class="token parameter variable" style="color:hsl(221, 87%, 60%)">-d</span><br/></span></code></pre></div></div>
+<p>The <code>-O</code> flag retains the downloaded file's name, overwriting any existing local file with the same name.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=kubernetes>Kubernetes<a href=#kubernetes class=hash-link aria-label="Direct link to Kubernetes" title="Direct link to Kubernetes" translate=no>​</a></h3>
+<p>Update your values to use the new images:</p>
+<div class="language-yaml codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-yaml codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token key atrule" style="color:hsl(35, 99%, 36%)">image</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">:</span><span class="token plain"></span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">    </span><span class="token key atrule" style="color:hsl(35, 99%, 36%)">repository</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">:</span><span class="token plain"> ghcr.io/goauthentik/server</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">    </span><span class="token key atrule" style="color:hsl(35, 99%, 36%)">tag</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">:</span><span class="token plain"> 2023.8.0</span><br/></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=minor-changesfixes>Minor changes/fixes<a href=#minor-changesfixes class=hash-link aria-label="Direct link to Minor changes/fixes" title="Direct link to Minor changes/fixes" translate=no>​</a></h2>
+<ul>
+<li class="">*: fix api errors raised in general validate() to specify a field (<a href=https://github.com/goauthentik/authentik/issues/6663 target=_blank rel="noopener noreferrer" class="">#6663</a>)</li>
+<li class="">api: optimize pagination in API schema (<a href=https://github.com/goauthentik/authentik/issues/6478 target=_blank rel="noopener noreferrer" class="">#6478</a>)</li>
+<li class="">blueprints: fix blueprint importer logging potentially sensitive data (<a href=https://github.com/goauthentik/authentik/issues/6567 target=_blank rel="noopener noreferrer" class="">#6567</a>)</li>
+<li class="">blueprints: fix tag values not resolved correctly (<a href=https://github.com/goauthentik/authentik/issues/6653 target=_blank rel="noopener noreferrer" class="">#6653</a>)</li>
+<li class="">blueprints: prevent duplicate password stage in default flow when using combined identification stage (<a href=https://github.com/goauthentik/authentik/issues/6432 target=_blank rel="noopener noreferrer" class="">#6432</a>)</li>
+<li class="">core: bump django from 4.1.7 to 4.2 (<a href=https://github.com/goauthentik/authentik/issues/5238 target=_blank rel="noopener noreferrer" class="">#5238</a>)</li>
+<li class="">core: fix UUID filter field for users api (<a href=https://github.com/goauthentik/authentik/issues/6203 target=_blank rel="noopener noreferrer" class="">#6203</a>)</li>
+<li class="">core: fix filtering users by type attribute (<a href=https://github.com/goauthentik/authentik/issues/6638 target=_blank rel="noopener noreferrer" class="">#6638</a>)</li>
+<li class="">core: rework recursive group membership (<a href=https://github.com/goauthentik/authentik/issues/6017 target=_blank rel="noopener noreferrer" class="">#6017</a>)</li>
+<li class="">enterprise: add more info to enterprise forecast (<a href=https://github.com/goauthentik/authentik/issues/6292 target=_blank rel="noopener noreferrer" class="">#6292</a>)</li>
+<li class="">enterprise: initial enterprise (<a href=https://github.com/goauthentik/authentik/issues/5721 target=_blank rel="noopener noreferrer" class="">#5721</a>)</li>
+<li class="">events: fix authentik_system_tasks metric status label (<a href=https://github.com/goauthentik/authentik/issues/6252 target=_blank rel="noopener noreferrer" class="">#6252</a>)</li>
+<li class="">events: fix monitored task not removing state (<a href=https://github.com/goauthentik/authentik/issues/6386 target=_blank rel="noopener noreferrer" class="">#6386</a>)</li>
+<li class="">outposts/ldap: add more tests (<a href=https://github.com/goauthentik/authentik/issues/6188 target=_blank rel="noopener noreferrer" class="">#6188</a>)</li>
+<li class="">outposts/ldap: add test for attribute filtering (<a href=https://github.com/goauthentik/authentik/issues/6189 target=_blank rel="noopener noreferrer" class="">#6189</a>)</li>
+<li class="">outposts: Fix infinite self-recursion in traefik reconciler (<a href=https://github.com/goauthentik/authentik/issues/6336 target=_blank rel="noopener noreferrer" class="">#6336</a>)</li>
+<li class="">outposts: fix Kubernetes patch processing (<a href=https://github.com/goauthentik/authentik/issues/6338 target=_blank rel="noopener noreferrer" class="">#6338</a>)</li>
+<li class="">outposts: make metrics compliant with Prometheus best-practices (<a href=https://github.com/goauthentik/authentik/issues/6398 target=_blank rel="noopener noreferrer" class="">#6398</a>)</li>
+<li class="">outposts: support json patch for Kubernetes (<a href=https://github.com/goauthentik/authentik/issues/6319 target=_blank rel="noopener noreferrer" class="">#6319</a>)</li>
+<li class="">providers/oauth2: fix aud (Audience) field type which can be a list of… (<a href=https://github.com/goauthentik/authentik/issues/6447 target=_blank rel="noopener noreferrer" class="">#6447</a>)</li>
+<li class="">providers/oauth2: fix grant_type password raising an exception (<a href=https://github.com/goauthentik/authentik/issues/6333 target=_blank rel="noopener noreferrer" class="">#6333</a>)</li>
+<li class="">providers/oauth2: fix id_token being saved incorrectly leading to lost claims (<a href=https://github.com/goauthentik/authentik/issues/6645 target=_blank rel="noopener noreferrer" class="">#6645</a>)</li>
+<li class="">providers/proxy: fix JWKS URL in embedded outpost (<a href=https://github.com/goauthentik/authentik/issues/6644 target=_blank rel="noopener noreferrer" class="">#6644</a>)</li>
+<li class="">providers/proxy: only intercept auth header when a value is set (<a href=https://github.com/goauthentik/authentik/issues/6488 target=_blank rel="noopener noreferrer" class="">#6488</a>)</li>
+<li class="">providers/proxy: set outpost session cookie to httponly and secure wh… (<a href=https://github.com/goauthentik/authentik/issues/6482 target=_blank rel="noopener noreferrer" class="">#6482</a>)</li>
+<li class="">root: always use persistent database connections (<a href=https://github.com/goauthentik/authentik/issues/6560 target=_blank rel="noopener noreferrer" class="">#6560</a>)</li>
+<li class="">root: config: config discovery parity between Go and Python</li>
+<li class="">root: config: remove redundant default configs</li>
+<li class="">root: migrate bootstrap to blueprints (<a href=https://github.com/goauthentik/authentik/issues/6433 target=_blank rel="noopener noreferrer" class="">#6433</a>)</li>
+<li class="">root: partial Live-updating config (<a href=https://github.com/goauthentik/authentik/issues/5959 target=_blank rel="noopener noreferrer" class="">#5959</a>)</li>
+<li class="">root: replace builtin psycopg libpq binary implementation with distro… (<a href=https://github.com/goauthentik/authentik/issues/6448 target=_blank rel="noopener noreferrer" class="">#6448</a>)</li>
+<li class="">root: set csrf cookie's secure flag same as session (<a href=https://github.com/goauthentik/authentik/issues/6350 target=_blank rel="noopener noreferrer" class="">#6350</a>)</li>
+<li class="">sources/ldap: check nsaccountlock for FreeIPA/389-ds (<a href=https://github.com/goauthentik/authentik/issues/6270 target=_blank rel="noopener noreferrer" class="">#6270</a>)</li>
+<li class="">sources/ldap: fix ldap_sync cli command not running in foreground (<a href=https://github.com/goauthentik/authentik/issues/6325 target=_blank rel="noopener noreferrer" class="">#6325</a>)</li>
+<li class="">sources/ldap: fix syncing large LDAP directories (<a href=https://github.com/goauthentik/authentik/issues/6384 target=_blank rel="noopener noreferrer" class="">#6384</a>)</li>
+<li class="">stages/authenticator_static: make static token size adjustable (<a href=https://github.com/goauthentik/authentik/issues/6565 target=_blank rel="noopener noreferrer" class="">#6565</a>)</li>
+<li class="">web/admin: adjust style of page header (<a href=https://github.com/goauthentik/authentik/issues/6355 target=_blank rel="noopener noreferrer" class="">#6355</a>)</li>
+<li class="">web/admin: fix EventMatcherPolicyForm empty values (<a href=https://github.com/goauthentik/authentik/issues/6539 target=_blank rel="noopener noreferrer" class="">#6539</a>)</li>
+<li class="">web/admin: fix admin overview layout (<a href=https://github.com/goauthentik/authentik/issues/6220 target=_blank rel="noopener noreferrer" class="">#6220</a>)</li>
+<li class="">web/admin: fix user sorting by active field (<a href=https://github.com/goauthentik/authentik/issues/6485 target=_blank rel="noopener noreferrer" class="">#6485</a>)</li>
+<li class="">web/admin: hide pagination when no data is loaded yet (<a href=https://github.com/goauthentik/authentik/issues/6353 target=_blank rel="noopener noreferrer" class="">#6353</a>)</li>
+<li class="">web/admin: make version clickable for stable releases (<a href=https://github.com/goauthentik/authentik/issues/6626 target=_blank rel="noopener noreferrer" class="">#6626</a>)</li>
+<li class="">web/admin: only show token expiry when token is set to expire (<a href=https://github.com/goauthentik/authentik/issues/6643 target=_blank rel="noopener noreferrer" class="">#6643</a>)</li>
+<li class="">web/admin: set required flag to false for user attributes (<a href=https://github.com/goauthentik/authentik/issues/6418 target=_blank rel="noopener noreferrer" class="">#6418</a>)</li>
+<li class="">web/common: make API errors more prominent in developer tools (<a href=https://github.com/goauthentik/authentik/issues/6637 target=_blank rel="noopener noreferrer" class="">#6637</a>)</li>
+<li class="">web/elements: improve table error handling, prevent infinite loading … (<a href=https://github.com/goauthentik/authentik/issues/6636 target=_blank rel="noopener noreferrer" class="">#6636</a>)</li>
+<li class="">web/flows: fix identification stage band color (<a href=https://github.com/goauthentik/authentik/issues/6489 target=_blank rel="noopener noreferrer" class="">#6489</a>)</li>
+<li class="">web/flows: update flow background (<a href=https://github.com/goauthentik/authentik/issues/6579 target=_blank rel="noopener noreferrer" class="">#6579</a>)</li>
+<li class="">web/user: fix alignment between image icons and fallback text icons (<a href=https://github.com/goauthentik/authentik/issues/6416 target=_blank rel="noopener noreferrer" class="">#6416</a>)</li>
+<li class="">web/user: fix app icon size for user interface</li>
+<li class="">web/user: fix background alignment (<a href=https://github.com/goauthentik/authentik/issues/6383 target=_blank rel="noopener noreferrer" class="">#6383</a>)</li>
+<li class="">web/user: fix user settings colours on dark theme (<a href=https://github.com/goauthentik/authentik/issues/6499 target=_blank rel="noopener noreferrer" class="">#6499</a>)</li>
+<li class="">web/user: fix user settings elements not being in cards (<a href=https://github.com/goauthentik/authentik/issues/6608 target=_blank rel="noopener noreferrer" class="">#6608</a>)</li>
+<li class="">web/user: only render expand element when required (<a href=https://github.com/goauthentik/authentik/issues/6641 target=_blank rel="noopener noreferrer" class="">#6641</a>)</li>
+<li class="">web: fix app icon rendering, style refinements (<a href=https://github.com/goauthentik/authentik/issues/6409 target=_blank rel="noopener noreferrer" class="">#6409</a>)</li>
+<li class="">web: refactor locale handler into top-level context handler (<a href=https://github.com/goauthentik/authentik/issues/6022 target=_blank rel="noopener noreferrer" class="">#6022</a>)</li>
+<li class="">web: replace deprecated terser rollup plugin, remove unused plugin (<a href=https://github.com/goauthentik/authentik/issues/6615 target=_blank rel="noopener noreferrer" class="">#6615</a>)</li>
+<li class="">web: rework and expand tooltips (<a href=https://github.com/goauthentik/authentik/issues/6435 target=_blank rel="noopener noreferrer" class="">#6435</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-202381>Fixed in 2023.8.1<a href=#fixed-in-202381 class=hash-link aria-label="Direct link to Fixed in 2023.8.1" title="Direct link to Fixed in 2023.8.1" translate=no>​</a></h2>
+<ul>
+<li class="">blueprints: fix policy exception causing password stage to be skipped after upgrade (<a href=https://github.com/goauthentik/authentik/issues/6674 target=_blank rel="noopener noreferrer" class="">#6674</a>)</li>
+<li class="">root: revert persistent connections causing postgres out of connections errors (<a href=https://github.com/goauthentik/authentik/issues/6677 target=_blank rel="noopener noreferrer" class="">#6677</a>)</li>
+<li class="">web: fix notification drawer scrolling (<a href=https://github.com/goauthentik/authentik/issues/6675 target=_blank rel="noopener noreferrer" class="">#6675</a>)</li>
+<li class="">web/admin: fix version link to release notes (<a href=https://github.com/goauthentik/authentik/issues/6676 target=_blank rel="noopener noreferrer" class="">#6676</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-202382>Fixed in 2023.8.2<a href=#fixed-in-202382 class=hash-link aria-label="Direct link to Fixed in 2023.8.2" title="Direct link to Fixed in 2023.8.2" translate=no>​</a></h2>
+<ul>
+<li class="">core: make groups' parent_name nullable as it might not be set (<a href=https://github.com/goauthentik/authentik/issues/6700 target=_blank rel="noopener noreferrer" class="">#6700</a>)</li>
+<li class="">crypto: fix certificate has_key filter (<a href=https://github.com/goauthentik/authentik/issues/6727 target=_blank rel="noopener noreferrer" class="">#6727</a>)</li>
+<li class="">events: fix missing application names from most used applications (<a href=https://github.com/goauthentik/authentik/issues/6689 target=_blank rel="noopener noreferrer" class="">#6689</a>)</li>
+<li class="">policies/reputation: fix reputation not expiring (<a href=https://github.com/goauthentik/authentik/issues/6714 target=_blank rel="noopener noreferrer" class="">#6714</a>)</li>
+<li class="">providers/oauth2: fix incorrect scope permissions shown (<a href=https://github.com/goauthentik/authentik/issues/6696 target=_blank rel="noopener noreferrer" class="">#6696</a>)</li>
+<li class="">providers/saml: fix SAML metadata import API requiring flow slug inst… (<a href=https://github.com/goauthentik/authentik/issues/6729 target=_blank rel="noopener noreferrer" class="">#6729</a>)</li>
+<li class="">root: expand exception logging (<a href=https://github.com/goauthentik/authentik/issues/6690 target=_blank rel="noopener noreferrer" class="">#6690</a>)</li>
+<li class="">web/admin: clear other options depending on what the binding targets (<a href=https://github.com/goauthentik/authentik/issues/6703 target=_blank rel="noopener noreferrer" class="">#6703</a>)</li>
+<li class="">web/admin: fix ak-toggle-group for policy and blueprint uses (<a href=https://github.com/goauthentik/authentik/issues/6687 target=_blank rel="noopener noreferrer" class="">#6687</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-202383>Fixed in 2023.8.3<a href=#fixed-in-202383 class=hash-link aria-label="Direct link to Fixed in 2023.8.3" title="Direct link to Fixed in 2023.8.3" translate=no>​</a></h2>
+<ul>
+<li class="">core: bump celery from 5.3.1 to 5.3.4</li>
+<li class="">core: bump django from 4.2.4 to 4.2.5 (<a href=https://github.com/goauthentik/authentik/issues/6751 target=_blank rel="noopener noreferrer" class="">#6751</a>)</li>
+<li class="">core: remove celery's duplicate max_tasks_per_child (<a href=https://github.com/goauthentik/authentik/issues/6840 target=_blank rel="noopener noreferrer" class="">#6840</a>)</li>
+<li class="">policies/reputation: require either check to be enabled (<a href=https://github.com/goauthentik/authentik/issues/6764 target=_blank rel="noopener noreferrer" class="">#6764</a>)</li>
+<li class="">providers/scim: check that a provider exists before starting scim task (<a href=https://github.com/goauthentik/authentik/issues/6841 target=_blank rel="noopener noreferrer" class="">#6841</a>)</li>
+<li class="">root: fix broken celery dependency (<a href=https://github.com/goauthentik/authentik/issues/6744 target=_blank rel="noopener noreferrer" class="">#6744</a>)</li>
+<li class="">root: lock node to 20.5 (<a href=https://github.com/goauthentik/authentik/issues/6776 target=_blank rel="noopener noreferrer" class="">#6776</a>)</li>
+<li class="">sources/ldap: don't prefetch useless items (<a href=https://github.com/goauthentik/authentik/issues/6812 target=_blank rel="noopener noreferrer" class="">#6812</a>)</li>
+<li class="">sources/ldap: fix FreeIPA nsaccountlock sync (<a href=https://github.com/goauthentik/authentik/issues/6745 target=_blank rel="noopener noreferrer" class="">#6745</a>)</li>
+<li class="">sources/ldap: fix task timeout for ldap_sync_all and ldap_sync_single (<a href=https://github.com/goauthentik/authentik/issues/6809 target=_blank rel="noopener noreferrer" class="">#6809</a>)</li>
+<li class="">stages/password: fix failed_attempts_before_cancel allowing one too m… (<a href=https://github.com/goauthentik/authentik/issues/6763 target=_blank rel="noopener noreferrer" class="">#6763</a>)</li>
+<li class="">web/admin: fix application icon size (<a href=https://github.com/goauthentik/authentik/issues/6738 target=_blank rel="noopener noreferrer" class="">#6738</a>)</li>
+<li class="">web/admin: fix not being able to unset flows (<a href=https://github.com/goauthentik/authentik/issues/6838 target=_blank rel="noopener noreferrer" class="">#6838</a>)</li>
+<li class="">web/admin: fix not being able to unset certificates (<a href=https://github.com/goauthentik/authentik/issues/6767 target=_blank rel="noopener noreferrer" class="">#6767</a>)</li>
+<li class="">web: don't import entire SourceViewPage in flow and user interface (<a href=https://github.com/goauthentik/authentik/issues/6761 target=_blank rel="noopener noreferrer" class="">#6761</a>)</li>
+<li class="">web: replace ampersand (<a href=https://github.com/goauthentik/authentik/issues/6737 target=_blank rel="noopener noreferrer" class="">#6737</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-202384>Fixed in 2023.8.4<a href=#fixed-in-202384 class=hash-link aria-label="Direct link to Fixed in 2023.8.4" title="Direct link to Fixed in 2023.8.4" translate=no>​</a></h2>
+<ul>
+<li class="">security: fix <a class="" href=/security/cves/CVE-2023-46249/>CVE-2023-46249</a>, Reported by <a href=https://github.com/devSparkle target=_blank rel="noopener noreferrer" class="">@devSparkle</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-202385>Fixed in 2023.8.5<a href=#fixed-in-202385 class=hash-link aria-label="Direct link to Fixed in 2023.8.5" title="Direct link to Fixed in 2023.8.5" translate=no>​</a></h2>
+<ul>
+<li class="">security: fix <a class="" href=/security/cves/CVE-2023-48228/>CVE-2023-48228</a>, Reported by <a href=https://github.com/Sapd target=_blank rel="noopener noreferrer" class="">@Sapd</a> (<a href=https://github.com/goauthentik/authentik/issues/7666 target=_blank rel="noopener noreferrer" class="">#7666</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-202386>Fixed in 2023.8.6<a href=#fixed-in-202386 class=hash-link aria-label="Direct link to Fixed in 2023.8.6" title="Direct link to Fixed in 2023.8.6" translate=no>​</a></h2>
+<ul>
+<li class="">providers/oauth2: fix <a class="" href=/security/cves/CVE-2024-21637/>CVE-2024-21637</a>, Reported by <a href=https://github.com/lauritzh target=_blank rel="noopener noreferrer" class="">@lauritzh</a> (<a href=https://github.com/goauthentik/authentik/issues/8104 target=_blank rel="noopener noreferrer" class="">#8104</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-202387>Fixed in 2023.8.7<a href=#fixed-in-202387 class=hash-link aria-label="Direct link to Fixed in 2023.8.7" title="Direct link to Fixed in 2023.8.7" translate=no>​</a></h2>
+<ul>
+<li class="">providers/oauth2: fix <a class="" href=/security/cves/CVE-2024-23647/>CVE-2024-23647</a> (cherry-pick <a href=https://github.com/goauthentik/authentik/issues/8345 target=_blank rel="noopener noreferrer" class="">#8345</a>) (<a href=https://github.com/goauthentik/authentik/issues/8347 target=_blank rel="noopener noreferrer" class="">#8347</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=api-changes>API Changes<a href=#api-changes class=hash-link aria-label="Direct link to API Changes" title="Direct link to API Changes" translate=no>​</a></h2>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=whats-new>What's New<a href=#whats-new class=hash-link aria-label="Direct link to What's New" title="Direct link to What's New" translate=no>​</a></h4>
+<hr/>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-enterpriselicense><code>GET</code> /enterprise/license/<a href=#get-enterpriselicense class=hash-link aria-label="Direct link to get-enterpriselicense" title="Direct link to get-enterpriselicense" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-enterpriselicense><code>POST</code> /enterprise/license/<a href=#post-enterpriselicense class=hash-link aria-label="Direct link to post-enterpriselicense" title="Direct link to post-enterpriselicense" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-enterpriselicenselicense_uuid><code>GET</code> /enterprise/license/{license_uuid}/<a href=#get-enterpriselicenselicense_uuid class=hash-link aria-label="Direct link to get-enterpriselicenselicense_uuid" title="Direct link to get-enterpriselicenselicense_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-enterpriselicenselicense_uuid><code>PUT</code> /enterprise/license/{license_uuid}/<a href=#put-enterpriselicenselicense_uuid class=hash-link aria-label="Direct link to put-enterpriselicenselicense_uuid" title="Direct link to put-enterpriselicenselicense_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=delete-enterpriselicenselicense_uuid><code>DELETE</code> /enterprise/license/{license_uuid}/<a href=#delete-enterpriselicenselicense_uuid class=hash-link aria-label="Direct link to delete-enterpriselicenselicense_uuid" title="Direct link to delete-enterpriselicenselicense_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-enterpriselicenselicense_uuid><code>PATCH</code> /enterprise/license/{license_uuid}/<a href=#patch-enterpriselicenselicense_uuid class=hash-link aria-label="Direct link to patch-enterpriselicenselicense_uuid" title="Direct link to patch-enterpriselicenselicense_uuid" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-enterpriselicenselicense_uuidused_by><code>GET</code> /enterprise/license/{license_uuid}/used_by/<a href=#get-enterpriselicenselicense_uuidused_by class=hash-link aria-label="Direct link to get-enterpriselicenselicense_uuidused_by" title="Direct link to get-enterpriselicenselicense_uuidused_by" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-enterpriselicenseforecast><code>GET</code> /enterprise/license/forecast/<a href=#get-enterpriselicenseforecast class=hash-link aria-label="Direct link to get-enterpriselicenseforecast" title="Direct link to get-enterpriselicenseforecast" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-enterpriselicenseget_install_id><code>GET</code> /enterprise/license/get_install_id/<a href=#get-enterpriselicenseget_install_id class=hash-link aria-label="Direct link to get-enterpriselicenseget_install_id" title="Direct link to get-enterpriselicenseget_install_id" translate=no>​</a></h5>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-enterpriselicensesummary><code>GET</code> /enterprise/license/summary/<a href=#get-enterpriselicensesummary class=hash-link aria-label="Direct link to get-enterpriselicensesummary" title="Direct link to get-enterpriselicensesummary" translate=no>​</a></h5>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=whats-changed>What's Changed<a href=#whats-changed class=hash-link aria-label="Direct link to What's Changed" title="Direct link to What's Changed" translate=no>​</a></h4>
+<hr/>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesevent_matcherpolicy_uuid><code>GET</code> /policies/event_matcher/{policy_uuid}/<a href=#get-policiesevent_matcherpolicy_uuid class=hash-link aria-label="Direct link to get-policiesevent_matcherpolicy_uuid" title="Direct link to get-policiesevent_matcherpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type>Return Type:<a href=#return-type class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-policiesevent_matcherpolicy_uuid><code>PUT</code> /policies/event_matcher/{policy_uuid}/<a href=#put-policiesevent_matcherpolicy_uuid class=hash-link aria-label="Direct link to put-policiesevent_matcherpolicy_uuid" title="Direct link to put-policiesevent_matcherpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request>Request:<a href=#request class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-1>Return Type:<a href=#return-type-1 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-policiesevent_matcherpolicy_uuid><code>PATCH</code> /policies/event_matcher/{policy_uuid}/<a href=#patch-policiesevent_matcherpolicy_uuid class=hash-link aria-label="Direct link to patch-policiesevent_matcherpolicy_uuid" title="Direct link to patch-policiesevent_matcherpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-1>Request:<a href=#request-1 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-2>Return Type:<a href=#return-type-2 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-schema><code>GET</code> /schema/<a href=#get-schema class=hash-link aria-label="Direct link to get-schema" title="Direct link to get-schema" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters>Parameters:<a href=#parameters class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Changed: <code>lang</code> in <code>query</code></p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coretenants><code>GET</code> /core/tenants/<a href=#get-coretenants class=hash-link aria-label="Direct link to get-coretenants" title="Direct link to get-coretenants" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters-1>Parameters:<a href=#parameters-1 class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Changed: <code>branding_favicon</code> in <code>query</code></p>
+<p>Changed: <code>branding_logo</code> in <code>query</code></p>
+<p>Changed: <code>branding_title</code> in <code>query</code></p>
+<p>Changed: <code>default</code> in <code>query</code></p>
+<p>Changed: <code>domain</code> in <code>query</code></p>
+<p>Changed: <code>event_retention</code> in <code>query</code></p>
+<p>Changed: <code>flow_authentication</code> in <code>query</code></p>
+<p>Changed: <code>flow_device_code</code> in <code>query</code></p>
+<p>Changed: <code>flow_invalidation</code> in <code>query</code></p>
+<p>Changed: <code>flow_recovery</code> in <code>query</code></p>
+<p>Changed: <code>flow_unenrollment</code> in <code>query</code></p>
+<p>Changed: <code>flow_user_settings</code> in <code>query</code></p>
+<p>Changed: <code>tenant_uuid</code> in <code>query</code></p>
+<p>Changed: <code>web_certificate</code> in <code>query</code></p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coretokensidentifier><code>GET</code> /core/tokens/{identifier}/<a href=#get-coretokensidentifier class=hash-link aria-label="Direct link to get-coretokensidentifier" title="Direct link to get-coretokensidentifier" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-3>Return Type:<a href=#return-type-3 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Added property <code>type</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+<p>Enum values:</p>
+<ul>
+<li class=""><code>internal</code></li>
+<li class=""><code>external</code></li>
+<li class=""><code>service_account</code></li>
+<li class=""><code>internal_service_account</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-coretokensidentifier><code>PUT</code> /core/tokens/{identifier}/<a href=#put-coretokensidentifier class=hash-link aria-label="Direct link to put-coretokensidentifier" title="Direct link to put-coretokensidentifier" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-4>Return Type:<a href=#return-type-4 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-coretokensidentifier><code>PATCH</code> /core/tokens/{identifier}/<a href=#patch-coretokensidentifier class=hash-link aria-label="Direct link to patch-coretokensidentifier" title="Direct link to patch-coretokensidentifier" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-5>Return Type:<a href=#return-type-5 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreusersid><code>GET</code> /core/users/{id}/<a href=#get-coreusersid class=hash-link aria-label="Direct link to get-coreusersid" title="Direct link to get-coreusersid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-6>Return Type:<a href=#return-type-6 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-coreusersid><code>PUT</code> /core/users/{id}/<a href=#put-coreusersid class=hash-link aria-label="Direct link to put-coreusersid" title="Direct link to put-coreusersid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-2>Request:<a href=#request-2 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-7>Return Type:<a href=#return-type-7 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-coreusersid><code>PATCH</code> /core/users/{id}/<a href=#patch-coreusersid class=hash-link aria-label="Direct link to patch-coreusersid" title="Direct link to patch-coreusersid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-3>Request:<a href=#request-3 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-8>Return Type:<a href=#return-type-8 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-cryptocertificatekeypairs><code>GET</code> /crypto/certificatekeypairs/<a href=#get-cryptocertificatekeypairs class=hash-link aria-label="Direct link to get-cryptocertificatekeypairs" title="Direct link to get-cryptocertificatekeypairs" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters-2>Parameters:<a href=#parameters-2 class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Changed: <code>managed</code> in <code>query</code></p>
+<p>Changed: <code>name</code> in <code>query</code></p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesbindingspolicy_binding_uuid><code>GET</code> /policies/bindings/{policy_binding_uuid}/<a href=#get-policiesbindingspolicy_binding_uuid class=hash-link aria-label="Direct link to get-policiesbindingspolicy_binding_uuid" title="Direct link to get-policiesbindingspolicy_binding_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-9>Return Type:<a href=#return-type-9 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-policiesbindingspolicy_binding_uuid><code>PUT</code> /policies/bindings/{policy_binding_uuid}/<a href=#put-policiesbindingspolicy_binding_uuid class=hash-link aria-label="Direct link to put-policiesbindingspolicy_binding_uuid" title="Direct link to put-policiesbindingspolicy_binding_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-10>Return Type:<a href=#return-type-10 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-policiesbindingspolicy_binding_uuid><code>PATCH</code> /policies/bindings/{policy_binding_uuid}/<a href=#patch-policiesbindingspolicy_binding_uuid class=hash-link aria-label="Direct link to patch-policiesbindingspolicy_binding_uuid" title="Direct link to patch-policiesbindingspolicy_binding_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-11>Return Type:<a href=#return-type-11 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-policiesevent_matcher><code>POST</code> /policies/event_matcher/<a href=#post-policiesevent_matcher class=hash-link aria-label="Direct link to post-policiesevent_matcher" title="Direct link to post-policiesevent_matcher" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-4>Request:<a href=#request-4 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-12>Return Type:<a href=#return-type-12 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesevent_matcher><code>GET</code> /policies/event_matcher/<a href=#get-policiesevent_matcher class=hash-link aria-label="Direct link to get-policiesevent_matcher" title="Direct link to get-policiesevent_matcher" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-13>Return Type:<a href=#return-type-13 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Event Matcher Policy Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>app</code> (string)</p>
+<blockquote>
+<ul>
+<li class=""><code>authentik.admin</code> - authentik Admin</li>
+<li class=""><code>authentik.api</code> - authentik API</li>
+<li class=""><code>authentik.crypto</code> - authentik Crypto</li>
+<li class=""><code>authentik.events</code> - authentik Events</li>
+<li class=""><code>authentik.flows</code> - authentik Flows</li>
+<li class=""><code>authentik.outposts</code> - authentik Outpost</li>
+<li class=""><code>authentik.policies.dummy</code> - authentik Policies.Dummy</li>
+<li class=""><code>authentik.policies.event_matcher</code> - authentik Policies.Event Matcher</li>
+<li class=""><code>authentik.policies.expiry</code> - authentik Policies.Expiry</li>
+<li class=""><code>authentik.policies.expression</code> - authentik Policies.Expression</li>
+<li class=""><code>authentik.policies.password</code> - authentik Policies.Password</li>
+<li class=""><code>authentik.policies.reputation</code> - authentik Policies.Reputation</li>
+<li class=""><code>authentik.policies</code> - authentik Policies</li>
+<li class=""><code>authentik.providers.ldap</code> - authentik Providers.LDAP</li>
+<li class=""><code>authentik.providers.oauth2</code> - authentik Providers.OAuth2</li>
+<li class=""><code>authentik.providers.proxy</code> - authentik Providers.Proxy</li>
+<li class=""><code>authentik.providers.radius</code> - authentik Providers.Radius</li>
+<li class=""><code>authentik.providers.saml</code> - authentik Providers.SAML</li>
+<li class=""><code>authentik.providers.scim</code> - authentik Providers.SCIM</li>
+<li class=""><code>authentik.recovery</code> - authentik Recovery</li>
+<li class=""><code>authentik.sources.ldap</code> - authentik Sources.LDAP</li>
+<li class=""><code>authentik.sources.oauth</code> - authentik Sources.OAuth</li>
+<li class=""><code>authentik.sources.plex</code> - authentik Sources.Plex</li>
+<li class=""><code>authentik.sources.saml</code> - authentik Sources.SAML</li>
+<li class=""><code>authentik.stages.authenticator_duo</code> - authentik Stages.Authenticator.Duo</li>
+<li class=""><code>authentik.stages.authenticator_sms</code> - authentik Stages.Authenticator.SMS</li>
+<li class=""><code>authentik.stages.authenticator_static</code> - authentik Stages.Authenticator.Static</li>
+<li class=""><code>authentik.stages.authenticator_totp</code> - authentik Stages.Authenticator.TOTP</li>
+<li class=""><code>authentik.stages.authenticator_validate</code> - authentik Stages.Authenticator.Validate</li>
+<li class=""><code>authentik.stages.authenticator_webauthn</code> - authentik Stages.Authenticator.WebAuthn</li>
+<li class=""><code>authentik.stages.captcha</code> - authentik Stages.Captcha</li>
+<li class=""><code>authentik.stages.consent</code> - authentik Stages.Consent</li>
+<li class=""><code>authentik.stages.deny</code> - authentik Stages.Deny</li>
+<li class=""><code>authentik.stages.dummy</code> - authentik Stages.Dummy</li>
+<li class=""><code>authentik.stages.email</code> - authentik Stages.Email</li>
+<li class=""><code>authentik.stages.identification</code> - authentik Stages.Identification</li>
+<li class=""><code>authentik.stages.invitation</code> - authentik Stages.User Invitation</li>
+<li class=""><code>authentik.stages.password</code> - authentik Stages.Password</li>
+<li class=""><code>authentik.stages.prompt</code> - authentik Stages.Prompt</li>
+<li class=""><code>authentik.stages.user_delete</code> - authentik Stages.User Delete</li>
+<li class=""><code>authentik.stages.user_login</code> - authentik Stages.User Login</li>
+<li class=""><code>authentik.stages.user_logout</code> - authentik Stages.User Logout</li>
+<li class=""><code>authentik.stages.user_write</code> - authentik Stages.User Write</li>
+<li class=""><code>authentik.tenants</code> - authentik Tenants</li>
+<li class=""><code>authentik.blueprints</code> - authentik Blueprints</li>
+<li class=""><code>authentik.core</code> - authentik Core</li>
+<li class=""><code>authentik.enterprise</code> - authentik Enterprise</li>
+</ul>
+</blockquote>
+<p>Removed enum value:</p>
+<ul>
+<li class=""><code>authentik.lib</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-coretokens><code>POST</code> /core/tokens/<a href=#post-coretokens class=hash-link aria-label="Direct link to post-coretokens" title="Direct link to post-coretokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-14>Return Type:<a href=#return-type-14 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coretokens><code>GET</code> /core/tokens/<a href=#get-coretokens class=hash-link aria-label="Direct link to get-coretokens" title="Direct link to get-coretokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-15>Return Type:<a href=#return-type-15 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Token Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreuser_consentid><code>GET</code> /core/user_consent/{id}/<a href=#get-coreuser_consentid class=hash-link aria-label="Direct link to get-coreuser_consentid" title="Direct link to get-coreuser_consentid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-16>Return Type:<a href=#return-type-16 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-coreusers><code>POST</code> /core/users/<a href=#post-coreusers class=hash-link aria-label="Direct link to post-coreusers" title="Direct link to post-coreusers" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-5>Request:<a href=#request-5 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-17>Return Type:<a href=#return-type-17 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreusers><code>GET</code> /core/users/<a href=#get-coreusers class=hash-link aria-label="Direct link to get-coreusers" title="Direct link to get-coreusers" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters-3>Parameters:<a href=#parameters-3 class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Added: <code>type</code> in <code>query</code></p>
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+<p>Changed: <code>uuid</code> in <code>query</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-18>Return Type:<a href=#return-type-18 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > User Serializer</p>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreusersme><code>GET</code> /core/users/me/<a href=#get-coreusersme class=hash-link aria-label="Direct link to get-coreusersme" title="Direct link to get-coreusersme" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-19>Return Type:<a href=#return-type-19 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer for information a user can retrieve about themselves</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2access_tokensid><code>GET</code> /oauth2/access_tokens/{id}/<a href=#get-oauth2access_tokensid class=hash-link aria-label="Direct link to get-oauth2access_tokensid" title="Direct link to get-oauth2access_tokensid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-20>Return Type:<a href=#return-type-20 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2authorization_codesid><code>GET</code> /oauth2/authorization_codes/{id}/<a href=#get-oauth2authorization_codesid class=hash-link aria-label="Direct link to get-oauth2authorization_codesid" title="Direct link to get-oauth2authorization_codesid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-21>Return Type:<a href=#return-type-21 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2refresh_tokensid><code>GET</code> /oauth2/refresh_tokens/{id}/<a href=#get-oauth2refresh_tokensid class=hash-link aria-label="Direct link to get-oauth2refresh_tokensid" title="Direct link to get-oauth2refresh_tokensid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-22>Return Type:<a href=#return-type-22 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-policiesbindings><code>POST</code> /policies/bindings/<a href=#post-policiesbindings class=hash-link aria-label="Direct link to post-policiesbindings" title="Direct link to post-policiesbindings" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-23>Return Type:<a href=#return-type-23 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesbindings><code>GET</code> /policies/bindings/<a href=#get-policiesbindings class=hash-link aria-label="Direct link to get-policiesbindings" title="Direct link to get-policiesbindings" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-24>Return Type:<a href=#return-type-24 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > PolicyBinding Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-stagesauthenticatorstaticstage_uuid><code>GET</code> /stages/authenticator/static/{stage_uuid}/<a href=#get-stagesauthenticatorstaticstage_uuid class=hash-link aria-label="Direct link to get-stagesauthenticatorstaticstage_uuid" title="Direct link to get-stagesauthenticatorstaticstage_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-25>Return Type:<a href=#return-type-25 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-stagesauthenticatorstaticstage_uuid><code>PUT</code> /stages/authenticator/static/{stage_uuid}/<a href=#put-stagesauthenticatorstaticstage_uuid class=hash-link aria-label="Direct link to put-stagesauthenticatorstaticstage_uuid" title="Direct link to put-stagesauthenticatorstaticstage_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-6>Request:<a href=#request-6 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-26>Return Type:<a href=#return-type-26 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-stagesauthenticatorstaticstage_uuid><code>PATCH</code> /stages/authenticator/static/{stage_uuid}/<a href=#patch-stagesauthenticatorstaticstage_uuid class=hash-link aria-label="Direct link to patch-stagesauthenticatorstaticstage_uuid" title="Direct link to patch-stagesauthenticatorstaticstage_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-7>Request:<a href=#request-7 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-27>Return Type:<a href=#return-type-27 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreuser_consent><code>GET</code> /core/user_consent/<a href=#get-coreuser_consent class=hash-link aria-label="Direct link to get-coreuser_consent" title="Direct link to get-coreuser_consent" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-28>Return Type:<a href=#return-type-28 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > UserConsent Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2access_tokens><code>GET</code> /oauth2/access_tokens/<a href=#get-oauth2access_tokens class=hash-link aria-label="Direct link to get-oauth2access_tokens" title="Direct link to get-oauth2access_tokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-29>Return Type:<a href=#return-type-29 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and RefreshToken</p>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2authorization_codes><code>GET</code> /oauth2/authorization_codes/<a href=#get-oauth2authorization_codes class=hash-link aria-label="Direct link to get-oauth2authorization_codes" title="Direct link to get-oauth2authorization_codes" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-30>Return Type:<a href=#return-type-30 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and ExpiringBaseGrant</p>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2refresh_tokens><code>GET</code> /oauth2/refresh_tokens/<a href=#get-oauth2refresh_tokens class=hash-link aria-label="Direct link to get-oauth2refresh_tokens" title="Direct link to get-oauth2refresh_tokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-31>Return Type:<a href=#return-type-31 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and RefreshToken</p>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">Added property <code>type</code> (string)<!-- -->
+<blockquote>
+<ul>
+<li class=""><code>internal</code> - Internal</li>
+<li class=""><code>external</code> - External</li>
+<li class=""><code>service_account</code> - Service Account</li>
+<li class=""><code>internal_service_account</code> - Internal Service Account</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-stagesauthenticatorstatic><code>POST</code> /stages/authenticator/static/<a href=#post-stagesauthenticatorstatic class=hash-link aria-label="Direct link to post-stagesauthenticatorstatic" title="Direct link to post-stagesauthenticatorstatic" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-8>Request:<a href=#request-8 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-32>Return Type:<a href=#return-type-32 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-stagesauthenticatorstatic><code>GET</code> /stages/authenticator/static/<a href=#get-stagesauthenticatorstatic class=hash-link aria-label="Direct link to get-stagesauthenticatorstatic" title="Direct link to get-stagesauthenticatorstatic" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters-4>Parameters:<a href=#parameters-4 class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Added: <code>token_length</code> in <code>query</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-33>Return Type:<a href=#return-type-33 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > AuthenticatorStaticStage Serializer</p>
+<ul>
+<li class="">
+<p>Added property <code>token_length</code> (integer)</p>
+</li>
+<li class="">
+<p>Changed property <code>token_count</code> (integer)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><hr class=divider_hZCZ /><div class="theme-admonition theme-admonition-note admonition_WCGJ alert alert--secondary admonitionContrib_Zv8a margin-top--sm theme-doc-footer-edit-meta-row"><div class=admonitionContent_pbrs><div class=admonitionHeader_FPxu><strong>Help us improve this content</strong></div><p>We welcome your knowledge and expertise. If you see areas of the documentation that you can improve (fix a typo, correct a technical detail, add additional context, etc.) we would really appreciate your contribution.<div class=row><div class="col col--12"><ul><li><a href=https://github.com/goauthentik/authentik/edit/main/website/docs/releases/2023/v2023.8.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page>Edit on GitHub</a><li><a href=https://docs.goauthentik.io/docs/developer-docs/ target=_blank rel="noreferrer noopener">Contributor Guide</a><li><a href=https://github.com/goauthentik/authentik/issues/new target=_blank rel="noreferrer noopener">Open an issue</a><li><a href=https://goauthentik.io/pricing/ target=_blank rel="noreferrer noopener">Get Enterprise Support</a></ul></div></div></div></div><div class=row><div class="col lastUpdated_BkBT"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/releases/2023.10/><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>2023.10</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/releases/2023.6/><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>2023.6</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#breaking-changes class="table-of-contents__link toc-highlight">Breaking changes</a><li><a href=#new-features class="table-of-contents__link toc-highlight">New features</a><li><a href=#upgrading class="table-of-contents__link toc-highlight">Upgrading</a><ul><li><a href=#docker-compose class="table-of-contents__link toc-highlight">docker-compose</a><li><a href=#kubernetes class="table-of-contents__link toc-highlight">Kubernetes</a></ul><li><a href=#minor-changesfixes class="table-of-contents__link toc-highlight">Minor changes/fixes</a><li><a href=#fixed-in-202381 class="table-of-contents__link toc-highlight">Fixed in 2023.8.1</a><li><a href=#fixed-in-202382 class="table-of-contents__link toc-highlight">Fixed in 2023.8.2</a><li><a href=#fixed-in-202383 class="table-of-contents__link toc-highlight">Fixed in 2023.8.3</a><li><a href=#fixed-in-202384 class="table-of-contents__link toc-highlight">Fixed in 2023.8.4</a><li><a href=#fixed-in-202385 class="table-of-contents__link toc-highlight">Fixed in 2023.8.5</a><li><a href=#fixed-in-202386 class="table-of-contents__link toc-highlight">Fixed in 2023.8.6</a><li><a href=#fixed-in-202387 class="table-of-contents__link toc-highlight">Fixed in 2023.8.7</a><li><a href=#api-changes class="table-of-contents__link toc-highlight">API Changes</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Authentik Security Inc. Built with Docusaurus.</div></div></div></footer></div></body>

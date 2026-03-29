@@ -1,0 +1,422 @@
+import "#admin/applications/ApplicationAuthorizeChart";
+import "#admin/applications/ApplicationCheckAccessForm";
+import "#admin/applications/ApplicationForm";
+import "#admin/applications/entitlements/ApplicationEntitlementPage";
+import "#admin/policies/BoundPoliciesList";
+import "#admin/rbac/ak-rbac-object-permission-page";
+import "#admin/lifecycle/ObjectLifecyclePage";
+import "#admin/events/ObjectChangelog";
+import "#elements/AppIcon";
+import "#elements/EmptyState";
+import "#elements/Tabs";
+import "#elements/buttons/SpinnerButton/ak-spinner-button";
+import "#admin/applications/ApplicationEvents";
+
+import { DEFAULT_CONFIG } from "#common/api/config";
+import { APIError, parseAPIResponseError, pluckErrorDetail } from "#common/errors/network";
+
+import { AKElement } from "#elements/Base";
+import { WithLicenseSummary } from "#elements/mixins/license";
+
+import { setPageDetails } from "#components/ak-page-navbar";
+
+import { Application, ContentTypeEnum, CoreApi, ModelEnum, OutpostsApi } from "@goauthentik/api";
+
+import { msg, str } from "@lit/localize";
+import { CSSResult, html, nothing, PropertyValues, TemplateResult } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
+
+import PFBanner from "@patternfly/patternfly/components/Banner/banner.css";
+import PFButton from "@patternfly/patternfly/components/Button/button.css";
+import PFCard from "@patternfly/patternfly/components/Card/card.css";
+import PFContent from "@patternfly/patternfly/components/Content/content.css";
+import PFDescriptionList from "@patternfly/patternfly/components/DescriptionList/description-list.css";
+import PFList from "@patternfly/patternfly/components/List/list.css";
+import PFPage from "@patternfly/patternfly/components/Page/page.css";
+import PFFlex from "@patternfly/patternfly/layouts/Flex/flex.css";
+import PFGrid from "@patternfly/patternfly/layouts/Grid/grid.css";
+
+@customElement("ak-application-view")
+export class ApplicationViewPage extends WithLicenseSummary(AKElement) {
+    static styles: CSSResult[] = [
+        PFList,
+        PFBanner,
+        PFPage,
+        PFContent,
+        PFButton,
+        PFDescriptionList,
+        PFGrid,
+        PFFlex,
+        PFCard,
+    ];
+
+    //#region Properties
+
+    @property({ type: String })
+    public applicationSlug?: string;
+    //#endregion
+
+    //#region State
+
+    @state()
+    protected application?: Application;
+
+    @state()
+    protected error?: APIError;
+
+    @state()
+    protected missingOutpost = false;
+
+    //#endregion
+
+    //#region Lifecycle
+
+    protected fetchIsMissingOutpost(providersByPk: Array<number>) {
+        new OutpostsApi(DEFAULT_CONFIG)
+            .outpostsInstancesList({
+                providersByPk,
+                pageSize: 1,
+            })
+            .then((outposts) => {
+                if (outposts.pagination.count < 1) {
+                    this.missingOutpost = true;
+                }
+            });
+    }
+
+    protected fetchApplication(slug: string) {
+        new CoreApi(DEFAULT_CONFIG)
+            .coreApplicationsRetrieve({ slug })
+            .then((app) => {
+                this.application = app;
+                if (
+                    app.providerObj &&
+                    [
+                        ModelEnum.AuthentikProvidersProxyProxyprovider.toString(),
+                        ModelEnum.AuthentikProvidersLdapLdapprovider.toString(),
+                    ].includes(app.providerObj.metaModelName)
+                ) {
+                    this.fetchIsMissingOutpost([app.provider || 0]);
+                }
+            })
+            .catch(async (error) => {
+                this.error = await parseAPIResponseError(error);
+            });
+    }
+
+    public override willUpdate(changedProperties: PropertyValues<this>) {
+        if (changedProperties.has("applicationSlug") && this.applicationSlug) {
+            this.fetchApplication(this.applicationSlug);
+        }
+    }
+
+    //#region Render
+
+    renderTabOverview() {
+        if (!this.application) {
+            return nothing;
+        }
+        return html`<div class="pf-l-grid pf-m-gutter">
+            <div class="pf-c-card pf-l-grid__item pf-m-12-col pf-m-2-col-on-xl pf-m-2-col-on-2xl">
+                <div class="pf-c-card__title">${msg("Related")}</div>
+                <div class="pf-c-card__body">
+                    <dl class="pf-c-description-list">
+                        ${this.application.providerObj
+                            ? html`<div class="pf-c-description-list__group">
+                                  <dt class="pf-c-description-list__term">
+                                      <span class="pf-c-description-list__text"
+                                          >${msg("Provider")}</span
+                                      >
+                                  </dt>
+                                  <dd class="pf-c-description-list__description">
+                                      <div class="pf-c-description-list__text">
+                                          <a
+                                              href="#/core/providers/${this.application.providerObj
+                                                  ?.pk}"
+                                          >
+                                              ${this.application.providerObj?.name}
+                                              (${this.application.providerObj?.verboseName})
+                                          </a>
+                                      </div>
+                                  </dd>
+                              </div>`
+                            : nothing}
+                        ${(this.application.backchannelProvidersObj || []).length > 0
+                            ? html`<div class="pf-c-description-list__group">
+                                  <dt class="pf-c-description-list__term">
+                                      <span class="pf-c-description-list__text"
+                                          >${msg("Backchannel Providers")}</span
+                                      >
+                                  </dt>
+                                  <dd class="pf-c-description-list__description">
+                                      <div class="pf-c-description-list__text">
+                                          <ul class="pf-c-list">
+                                              ${this.application.backchannelProvidersObj.map(
+                                                  (provider) => {
+                                                      return html`
+                                                          <li>
+                                                              <a
+                                                                  href="#/core/providers/${provider.pk}"
+                                                              >
+                                                                  ${provider.name}
+                                                                  (${provider.verboseName})
+                                                              </a>
+                                                          </li>
+                                                      `;
+                                                  },
+                                              )}
+                                          </ul>
+                                      </div>
+                                  </dd>
+                              </div>`
+                            : nothing}
+                        <div class="pf-c-description-list__group">
+                            <dt class="pf-c-description-list__term">
+                                <span class="pf-c-description-list__text"
+                                    >${msg("Policy engine mode")}</span
+                                >
+                            </dt>
+                            <dd class="pf-c-description-list__description">
+                                <div class="pf-c-description-list__text pf-m-monospace">
+                                    ${this.application.policyEngineMode?.toUpperCase()}
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="pf-c-description-list__group">
+                            <dt class="pf-c-description-list__term">
+                                <span class="pf-c-description-list__text"
+                                    >${msg("Related actions")}</span
+                                >
+                            </dt>
+                            <dd class="pf-c-description-list__description">
+                                <div class="pf-c-description-list__text">
+                                    <ak-forms-modal>
+                                        <span slot="submit">${msg("Save Changes")}</span>
+                                        <span slot="header"> ${msg("Update Application")} </span>
+                                        <ak-application-form
+                                            slot="form"
+                                            .instancePk=${this.application.slug}
+                                        >
+                                        </ak-application-form>
+                                        <button
+                                            slot="trigger"
+                                            class="pf-c-button pf-m-secondary pf-m-block"
+                                        >
+                                            ${msg("Edit")}
+                                        </button>
+                                    </ak-forms-modal>
+                                    <ak-forms-modal .closeAfterSuccessfulSubmit=${false}>
+                                        <span slot="submit">${msg("Check")}</span>
+                                        <span slot="header">
+                                            ${msg("Check Application access")}
+                                        </span>
+                                        <ak-application-check-access-form
+                                            slot="form"
+                                            .application=${this.application}
+                                        >
+                                        </ak-application-check-access-form>
+                                        <button
+                                            slot="trigger"
+                                            class="pf-c-button pf-m-secondary pf-m-block"
+                                        >
+                                            ${msg("Check access")}
+                                        </button>
+                                    </ak-forms-modal>
+                                    ${this.application.launchUrl
+                                        ? html`<a
+                                              target="_blank"
+                                              href=${this.application.launchUrl}
+                                              slot="trigger"
+                                              class="pf-c-button pf-m-secondary pf-m-block"
+                                          >
+                                              ${msg("Launch")}
+                                          </a>`
+                                        : nothing}
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="pf-c-card pf-l-grid__item pf-m-12-col pf-m-10-col-on-xl pf-m-10-col-on-2xl">
+                <div class="pf-c-card__title">
+                    ${msg("Logins over the last week (per 8 hours)")}
+                </div>
+                <div class="pf-c-card__body">
+                    ${this.application &&
+                    html`<ak-charts-application-authorize application-id=${this.application.pk}>
+                    </ak-charts-application-authorize>`}
+                </div>
+            </div>
+            <div class="pf-c-card pf-l-grid__item pf-m-12-col">
+                <div class="pf-c-card__title">${msg("Events")}</div>
+                <ak-events-application application-id=${this.application.pk || ""}>
+                </ak-events-application>
+            </div>
+        </div>`;
+    }
+
+    render(): TemplateResult {
+        if (this.error) {
+            return html`<ak-empty-state icon="fa-ban"
+                ><span>${msg(str`Failed to fetch application "${this.applicationSlug}".`)}</span>
+                <div slot="body">${pluckErrorDetail(this.error)}</div>
+            </ak-empty-state>`;
+        }
+
+        if (!this.application) {
+            return html`<ak-empty-state default-label></ak-empty-state>`;
+        }
+
+        return html`<main>
+            <ak-tabs>
+                ${this.missingOutpost
+                    ? html`
+                          <div
+                              slot="header"
+                              class="pf-c-banner pf-m-warning"
+                              role="status"
+                              aria-live="polite"
+                          >
+                              <div class="pf-l-flex pf-m-space-items-sm">
+                                  <div class="pf-l-flex__item">
+                                      <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                                  </div>
+                                  <div class="pf-l-flex__item">
+                                      ${msg("Warning: Application is not used by any Outpost.", {
+                                          id: "application.outpost.missing.warning",
+                                      })}
+                                  </div>
+                              </div>
+                          </div>
+                      `
+                    : nothing}
+                <section
+                    role="tabpanel"
+                    tabindex="0"
+                    slot="page-overview"
+                    id="page-overview"
+                    aria-label="${msg("Overview")}"
+                    class="pf-c-page__main-section pf-m-no-padding-mobile"
+                >
+                    ${this.renderTabOverview()}
+                </section>
+                <section
+                    role="tabpanel"
+                    tabindex="0"
+                    slot="page-app-entitlements"
+                    id="page-app-entitlements"
+                    aria-label="${msg("Application entitlements")}"
+                >
+                    <div
+                        slot="header"
+                        class="pf-c-banner pf-m-info"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        <div class="pf-l-flex pf-m-space-items-sm">
+                            <div class="pf-l-flex__item">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            </div>
+                            <div class="pf-l-flex__item">
+                                ${msg("Application entitlements are in preview.", {
+                                    id: "application.entitlements.preview.info",
+                                })}
+                            </div>
+                            <div class="pf-l-flex__item">
+                                <a href="mailto:hello+feature/app-ent@goauthentik.io"
+                                    >${msg("Send us feedback!", {
+                                        id: "preview.send-us-feedback",
+                                    })}</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pf-c-page__main-section pf-m-no-padding-mobile">
+                        <div class="pf-c-card">
+                            <div class="pf-c-card__title">
+                                ${msg(
+                                    "These entitlements can be used to configure user access in this application.",
+                                )}
+                            </div>
+                            <ak-application-entitlements-list .app=${this.application.pk}>
+                            </ak-application-entitlements-list>
+                        </div>
+                    </div>
+                </section>
+                <section
+                    role="tabpanel"
+                    tabindex="0"
+                    slot="page-policy-bindings"
+                    id="page-policy-bindings"
+                    aria-label="${msg("Policy / Group / User Bindings")}"
+                    class="pf-c-page__main-section pf-m-no-padding-mobile"
+                >
+                    <div class="pf-c-card">
+                        <div class="pf-c-card__title">
+                            ${msg(
+                                "These policies control which users can access this application.",
+                            )}
+                        </div>
+                        <ak-bound-policies-list
+                            .target=${this.application.pk}
+                            .policyEngineMode=${this.application.policyEngineMode}
+                        >
+                        </ak-bound-policies-list>
+                    </div>
+                </section>
+                <div
+                    role="tabpanel"
+                    tabindex="0"
+                    slot="page-changelog"
+                    id="page-changelog"
+                    aria-label="${msg("Changelog")}"
+                    class="pf-c-page__main-section pf-m-no-padding-mobile"
+                >
+                    <div class="pf-c-card">
+                        <ak-object-changelog
+                            targetModelPk=${this.application.pk || ""}
+                            targetModelName=${ModelEnum.AuthentikCoreApplication}
+                        >
+                        </ak-object-changelog>
+                    </div>
+                </div>
+                <ak-rbac-object-permission-page
+                    role="tabpanel"
+                    tabindex="0"
+                    slot="page-permissions"
+                    id="page-permissions"
+                    aria-label="${msg("Permissions")}"
+                    model=${ModelEnum.AuthentikCoreApplication}
+                    objectPk=${this.application.pk}
+                ></ak-rbac-object-permission-page>
+                ${this.hasEnterpriseLicense
+                    ? html`<ak-object-lifecycle-page
+                          role="tabpanel"
+                          tabindex="0"
+                          slot="page-lifecycle"
+                          id="page-lifecycle"
+                          aria-label=${msg("Lifecycle")}
+                          model=${ContentTypeEnum.AuthentikCoreApplication}
+                          object-pk=${this.application.pk}
+                      ></ak-object-lifecycle-page>`
+                    : nothing}
+            </ak-tabs>
+        </main>`;
+    }
+
+    updated(changed: PropertyValues<this>) {
+        super.updated(changed);
+        setPageDetails({
+            header: this.application?.name ?? msg("Loading application..."),
+            description: this.application?.metaPublisher,
+            icon: this.application?.metaIconUrl,
+        });
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        "ak-application-view": ApplicationViewPage;
+    }
+}

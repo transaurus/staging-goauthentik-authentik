@@ -1,0 +1,1006 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-releases/2022/v2022.11" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>Release 2022.11 | authentik</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true name=twitter:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true property=og:url content=https://docs.goauthentik.io/releases/2022.11/ /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Release 2022.11 | authentik"/><meta data-rh=true name=description content="Breaking changes"/><meta data-rh=true property=og:description content="Breaking changes"/><link data-rh=true rel=icon href=/img/icon.png /><link data-rh=true rel=canonical href=https://docs.goauthentik.io/releases/2022.11/ /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2022.11/ hreflang=en /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/releases/2022.11/ hreflang=x-default /><link data-rh=true rel=preconnect href=https://36ROD0O0FV-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://docs.goauthentik.io/releases","name":"Release Notes","position":1},{"@type":"ListItem","item":"https://docs.goauthentik.io/releases/2022.11","name":"2022.11","position":2}]}</script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-9MVR9WZFZH"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-9MVR9WZFZH",{anonymize_ip:!0})</script><link rel=search type=application/opensearchdescription+xml title=authentik href=/opensearch.xml><link rel=stylesheet href=/assets/css/styles.96891979.css /><script src=/assets/js/runtime~main.48e1a0ed.js defer></script><script src=/assets/js/main.0769e9dc.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/icon_left_brand.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a href=https://goauthentik.io/ target=_self rel="noopener noreferrer" class=navbar__brand><div class=navbar__logo><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--dark_yETr"/></div></a><a href=https://goauthentik.io/features target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Features</a><a href=https://integrations.goauthentik.io target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Integrations</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" target=_self href=/>Documentation</a><a href=https://goauthentik.io/pricing/ target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Pricing</a><a href=https://goauthentik.io/blog target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/goauthentik/authentik target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=github aria-label=GitHub></a><a href=https://goauthentik.io/discord target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=discord aria-label=Discord></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="navbar__item dropdown dropdown--hoverable dropdown--right ak-version-selector"><div aria-haspopup=true aria-expanded=false role=button class="navbar__link menu__link">Version: <!-- -->Pre-release</div><ul class="dropdown__menu menu__list-item--collapsed"><li><a href=https://version-2026-2.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2026.2</a><li><a href=https://version-2025-12.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2025.12</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/><span title="Welcome to authentik" class=linkLabel_fEdy>Welcome to authentik</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/core/glossary/><span title="Core Concepts" class=categoryLinkLabel_ufhF>Core Concepts</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/enterprise/><span title=Enterprise class=categoryLinkLabel_ufhF>Enterprise</span></a><button aria-label="Expand sidebar category 'Enterprise'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/install-config/><span title="Installation and Configuration" class=categoryLinkLabel_ufhF>Installation and Configuration</span></a><button aria-label="Expand sidebar category 'Installation and Configuration'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/add-secure-apps/applications/><span title="Add and Secure Applications" class=categoryLinkLabel_ufhF>Add and Secure Applications</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/customize/><span title="Customize your instance" class=categoryLinkLabel_ufhF>Customize your instance</span></a><button aria-label="Expand sidebar category 'Customize your instance'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/users-sources/user/><span title="Manage Users and Sources" class=categoryLinkLabel_ufhF>Manage Users and Sources</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/background-tasks/><span title="System Management" class=categoryLinkLabel_ufhF>System Management</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/endpoint-devices/><span title="Endpoint Devices (Early Preview)" class=categoryLinkLabel_ufhF>Endpoint Devices (Early Preview)</span></a><button aria-label="Expand sidebar category 'Endpoint Devices (Early Preview)'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/developer-docs/><span title="Developer Documentation" class=categoryLinkLabel_ufhF>Developer Documentation</span></a><button aria-label="Expand sidebar category 'Developer Documentation'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/security/><span title=Security class=categoryLinkLabel_ufhF>Security</span></a><button aria-label="Expand sidebar category 'Security'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/troubleshooting/><span title=Troubleshooting class=categoryLinkLabel_ufhF>Troubleshooting</span></a><button aria-label="Expand sidebar category 'Troubleshooting'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--active" href=/releases/><span title="Release Notes" class=categoryLinkLabel_ufhF>Release Notes</span></a><button aria-label="Collapse sidebar category 'Release Notes'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2026.2/><span title=2026.2 class=linkLabel_fEdy>2026.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.12/><span title=2025.12 class=linkLabel_fEdy>2025.12</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true tabindex=0 href=/releases/2025.10/><span title="Previous versions" class=categoryLinkLabel_ufhF>Previous versions</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.10/><span title=2025.10 class=linkLabel_fEdy>2025.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.8/><span title=2025.8 class=linkLabel_fEdy>2025.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.6/><span title=2025.6 class=linkLabel_fEdy>2025.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.4/><span title=2025.4 class=linkLabel_fEdy>2025.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2025.2/><span title=2025.2 class=linkLabel_fEdy>2025.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.12/><span title=2024.12 class=linkLabel_fEdy>2024.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.10/><span title=2024.10 class=linkLabel_fEdy>2024.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.8/><span title=2024.8 class=linkLabel_fEdy>2024.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.6/><span title=2024.6 class=linkLabel_fEdy>2024.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.4/><span title=2024.4 class=linkLabel_fEdy>2024.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2024.2/><span title=2024.2 class=linkLabel_fEdy>2024.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.10/><span title=2023.10 class=linkLabel_fEdy>2023.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.8/><span title=2023.8 class=linkLabel_fEdy>2023.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.6/><span title=2023.6 class=linkLabel_fEdy>2023.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.5/><span title=2023.5 class=linkLabel_fEdy>2023.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.4/><span title=2023.4 class=linkLabel_fEdy>2023.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.3/><span title=2023.3 class=linkLabel_fEdy>2023.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.2/><span title=2023.2 class=linkLabel_fEdy>2023.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2023.1/><span title=2023.1 class=linkLabel_fEdy>2023.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.12/><span title=2022.12 class=linkLabel_fEdy>2022.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/releases/2022.11/><span title=2022.11 class=linkLabel_fEdy>2022.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.10/><span title=2022.10 class=linkLabel_fEdy>2022.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.9/><span title=2022.9 class=linkLabel_fEdy>2022.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.8/><span title=2022.8 class=linkLabel_fEdy>2022.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.7/><span title=2022.7 class=linkLabel_fEdy>2022.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.6/><span title=2022.6 class=linkLabel_fEdy>2022.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.5/><span title=2022.5 class=linkLabel_fEdy>2022.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.4/><span title=2022.4 class=linkLabel_fEdy>2022.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.3/><span title=2022.3 class=linkLabel_fEdy>2022.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.2/><span title=2022.2 class=linkLabel_fEdy>2022.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2022.1/><span title=2022.1 class=linkLabel_fEdy>2022.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.12/><span title=2021.12 class=linkLabel_fEdy>2021.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.10/><span title=2021.10 class=linkLabel_fEdy>2021.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.9/><span title=2021.9 class=linkLabel_fEdy>2021.9</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.8/><span title=2021.8 class=linkLabel_fEdy>2021.8</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.7/><span title=2021.7 class=linkLabel_fEdy>2021.7</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.6/><span title=2021.6 class=linkLabel_fEdy>2021.6</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.5/><span title=2021.5 class=linkLabel_fEdy>2021.5</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.4/><span title=2021.4 class=linkLabel_fEdy>2021.4</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.3/><span title=2021.3 class=linkLabel_fEdy>2021.3</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.2/><span title=2021.2 class=linkLabel_fEdy>2021.2</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/2021.1/><span title=2021.1 class=linkLabel_fEdy>2021.1</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.14/><span title=0.14 class=linkLabel_fEdy>0.14</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.13/><span title=0.13 class=linkLabel_fEdy>0.13</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.12/><span title=0.12 class=linkLabel_fEdy>0.12</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.11/><span title=0.11 class=linkLabel_fEdy>0.11</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.10/><span title=0.10 class=linkLabel_fEdy>0.10</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/releases/0.9/><span title=0.9 class=linkLabel_fEdy>0.9</span></a></ul></ul></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><a class=breadcrumbs__link href=/releases/><span>Release Notes</span></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Previous versions</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>2022.11</span></ul></nav><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Release 2022.11</h1></header><h2 class="anchor anchorTargetStickyNavbar_tleR" id=breaking-changes>Breaking changes<a href=#breaking-changes class=hash-link aria-label="Direct link to Breaking changes" title="Direct link to Breaking changes" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>Have I Been Pwned policy is deprecated</p>
+<p>The policy has been merged with the password policy which provides the same functionality. Existing Have I Been Pwned policies will automatically be migrated.</p>
+</li>
+<li class="">
+<p>Instead of using multiple redis databases, authentik now uses a single redis database</p>
+<p>This will temporarily loose some cached information after the upgrade, like cached system tasks and policy results. This data will be re-cached in the background.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=new-features>New features<a href=#new-features class=hash-link aria-label="Direct link to New features" title="Direct link to New features" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>authentik now runs on Python 3.11</p>
+</li>
+<li class="">
+<p>Expanded password policy</p>
+<p>The "Have I been Pwned" policy has been merged into the password policy, and additionally passwords can be checked using <a href=https://github.com/dropbox/zxcvbn target=_blank rel="noopener noreferrer" class="">zxcvbn</a> to provider concise feedback.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=upgrading>Upgrading<a href=#upgrading class=hash-link aria-label="Direct link to Upgrading" title="Direct link to Upgrading" translate=no>​</a></h2>
+<p>This release does not introduce any new requirements.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=docker-compose>docker-compose<a href=#docker-compose class=hash-link aria-label="Direct link to docker-compose" title="Direct link to docker-compose" translate=no>​</a></h3>
+<p>Download the docker-compose file for 2022.11 from <a href=https://goauthentik.io/version/2022.11/docker-compose.yml target=_blank rel="noopener noreferrer" class="">here</a>. Afterwards, simply run <code>docker-compose up -d</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=kubernetes>Kubernetes<a href=#kubernetes class=hash-link aria-label="Direct link to Kubernetes" title="Direct link to Kubernetes" translate=no>​</a></h3>
+<p>Update your values to use the new images:</p>
+<div class="language-yaml codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-yaml codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token key atrule" style="color:hsl(35, 99%, 36%)">image</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">:</span><span class="token plain"></span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">    </span><span class="token key atrule" style="color:hsl(35, 99%, 36%)">repository</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">:</span><span class="token plain"> ghcr.io/goauthentik/server</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">    </span><span class="token key atrule" style="color:hsl(35, 99%, 36%)">tag</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">:</span><span class="token plain"> 2022.11.1</span><br/></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=minor-changesfixes>Minor changes/fixes<a href=#minor-changesfixes class=hash-link aria-label="Direct link to Minor changes/fixes" title="Direct link to Minor changes/fixes" translate=no>​</a></h2>
+<ul>
+<li class="">api: fix missing scheme in securitySchemes</li>
+<li class="">blueprints: Fixed bug causing blueprint instance context be discarded (<a href=https://github.com/goauthentik/authentik/issues/3990 target=_blank rel="noopener noreferrer" class="">#3990</a>)</li>
+<li class="">core: fix error when propertymappings return complex value</li>
+<li class="">core: simplify group serializer for user API endpoint (<a href=https://github.com/goauthentik/authentik/issues/3899 target=_blank rel="noopener noreferrer" class="">#3899</a>)</li>
+<li class="">events: deepcopy event kwargs to prevent objects being removed, remove workaround</li>
+<li class="">events: sanitize generator for json safety</li>
+<li class="">lib: fix complex objects being included in event context for ak_create_event</li>
+<li class="">lifecycle: fix incorrect messages looped</li>
+<li class="">outposts/kubernetes: ingress class (<a href=https://github.com/goauthentik/authentik/issues/4002 target=_blank rel="noopener noreferrer" class="">#4002</a>)</li>
+<li class="">policies: only cache policies for authenticated users</li>
+<li class="">policies/password: merge hibp add zxcvbn (<a href=https://github.com/goauthentik/authentik/issues/4001 target=_blank rel="noopener noreferrer" class="">#4001</a>)</li>
+<li class="">providers/oauth2: fix inconsistent expiry encoded in JWT</li>
+<li class="">root: make sentry DSN configurable (<a href=https://github.com/goauthentik/authentik/issues/4016 target=_blank rel="noopener noreferrer" class="">#4016</a>)</li>
+<li class="">root: relicense and launch blog post</li>
+<li class="">root: use single redis db (<a href=https://github.com/goauthentik/authentik/issues/4009 target=_blank rel="noopener noreferrer" class="">#4009</a>)</li>
+<li class="">sources: add custom icon support (<a href=https://github.com/goauthentik/authentik/issues/4022 target=_blank rel="noopener noreferrer" class="">#4022</a>)</li>
+<li class="">stages/authenticator_*: cleanup</li>
+<li class="">stages/authenticator_validate: add flag to configure user_verification for webauthn devices</li>
+<li class="">stages/invitation: directly delete invitation now that flow plan is saved in email token</li>
+<li class="">web: fix twitter icon</li>
+<li class="">web/flows: always hide static user info when its not set in the flow</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2022111>Fixed in 2022.11.1<a href=#fixed-in-2022111 class=hash-link aria-label="Direct link to Fixed in 2022.11.1" title="Direct link to Fixed in 2022.11.1" translate=no>​</a></h2>
+<ul>
+<li class="">blueprints: add desired state attribute to objects (<a href=https://github.com/goauthentik/authentik/issues/4061 target=_blank rel="noopener noreferrer" class="">#4061</a>)</li>
+<li class="">core: fix tab-complete in shell</li>
+<li class="">root: fix build on arm64</li>
+<li class="">stages/email: add test for email translation</li>
+<li class="">web/admin: fix error when importing duo devices</li>
+<li class="">web/admin: reset cookie_domain when setting non-domain forward auth</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2022112>Fixed in 2022.11.2<a href=#fixed-in-2022112 class=hash-link aria-label="Direct link to Fixed in 2022.11.2" title="Direct link to Fixed in 2022.11.2" translate=no>​</a></h2>
+<ul>
+<li class="">*: fix <a class="" href=/security/cves/CVE-2022-46145/>CVE-2022-46145</a>, Reported by <a href=https://github.com/sdimovv target=_blank rel="noopener noreferrer" class="">@sdimovv</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2022113>Fixed in 2022.11.3<a href=#fixed-in-2022113 class=hash-link aria-label="Direct link to Fixed in 2022.11.3" title="Direct link to Fixed in 2022.11.3" translate=no>​</a></h2>
+<ul>
+<li class="">web: fix Flow Form failing to load due to outdated API client</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=fixed-in-2022114>Fixed in 2022.11.4<a href=#fixed-in-2022114 class=hash-link aria-label="Direct link to Fixed in 2022.11.4" title="Direct link to Fixed in 2022.11.4" translate=no>​</a></h2>
+<ul>
+<li class="">*: fix <a class="" href=/security/cves/CVE-2022-46172/>CVE-2022-46172</a>, Reported by <a href=https://github.com/DreamingRaven target=_blank rel="noopener noreferrer" class="">@DreamingRaven</a></li>
+<li class="">*: fix <a class="" href=/security/cves/CVE-2022-23555/>CVE-2022-23555</a>, Reported by <a href=https://github.com/fuomag9 target=_blank rel="noopener noreferrer" class="">@fuomag9</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=api-changes>API Changes<a href=#api-changes class=hash-link aria-label="Direct link to API Changes" title="Direct link to API Changes" translate=no>​</a></h2>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=whats-changed>What's Changed<a href=#whats-changed class=hash-link aria-label="Direct link to What's Changed" title="Direct link to What's Changed" translate=no>​</a></h4>
+<hr/>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiespasswordpolicy_uuid><code>GET</code> /policies/password/{policy_uuid}/<a href=#get-policiespasswordpolicy_uuid class=hash-link aria-label="Direct link to get-policiespasswordpolicy_uuid" title="Direct link to get-policiespasswordpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type>Return Type:<a href=#return-type class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-policiespasswordpolicy_uuid><code>PUT</code> /policies/password/{policy_uuid}/<a href=#put-policiespasswordpolicy_uuid class=hash-link aria-label="Direct link to put-policiespasswordpolicy_uuid" title="Direct link to put-policiespasswordpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request>Request:<a href=#request class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-1>Return Type:<a href=#return-type-1 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-policiespasswordpolicy_uuid><code>PATCH</code> /policies/password/{policy_uuid}/<a href=#patch-policiespasswordpolicy_uuid class=hash-link aria-label="Direct link to patch-policiespasswordpolicy_uuid" title="Direct link to patch-policiespasswordpolicy_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-1>Request:<a href=#request-1 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-2>Return Type:<a href=#return-type-2 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coretokensidentifier><code>GET</code> /core/tokens/{identifier}/<a href=#get-coretokensidentifier class=hash-link aria-label="Direct link to get-coretokensidentifier" title="Direct link to get-coretokensidentifier" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-3>Return Type:<a href=#return-type-3 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-coretokensidentifier><code>PUT</code> /core/tokens/{identifier}/<a href=#put-coretokensidentifier class=hash-link aria-label="Direct link to put-coretokensidentifier" title="Direct link to put-coretokensidentifier" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-4>Return Type:<a href=#return-type-4 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-coretokensidentifier><code>PATCH</code> /core/tokens/{identifier}/<a href=#patch-coretokensidentifier class=hash-link aria-label="Direct link to patch-coretokensidentifier" title="Direct link to patch-coretokensidentifier" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-5>Return Type:<a href=#return-type-5 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreusersid><code>GET</code> /core/users/{id}/<a href=#get-coreusersid class=hash-link aria-label="Direct link to get-coreusersid" title="Direct link to get-coreusersid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-6>Return Type:<a href=#return-type-6 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-coreusersid><code>PUT</code> /core/users/{id}/<a href=#put-coreusersid class=hash-link aria-label="Direct link to put-coreusersid" title="Direct link to put-coreusersid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-7>Return Type:<a href=#return-type-7 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-coreusersid><code>PATCH</code> /core/users/{id}/<a href=#patch-coreusersid class=hash-link aria-label="Direct link to patch-coreusersid" title="Direct link to patch-coreusersid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-8>Return Type:<a href=#return-type-8 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesbindingspolicy_binding_uuid><code>GET</code> /policies/bindings/{policy_binding_uuid}/<a href=#get-policiesbindingspolicy_binding_uuid class=hash-link aria-label="Direct link to get-policiesbindingspolicy_binding_uuid" title="Direct link to get-policiesbindingspolicy_binding_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-9>Return Type:<a href=#return-type-9 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=put-policiesbindingspolicy_binding_uuid><code>PUT</code> /policies/bindings/{policy_binding_uuid}/<a href=#put-policiesbindingspolicy_binding_uuid class=hash-link aria-label="Direct link to put-policiesbindingspolicy_binding_uuid" title="Direct link to put-policiesbindingspolicy_binding_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-10>Return Type:<a href=#return-type-10 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=patch-policiesbindingspolicy_binding_uuid><code>PATCH</code> /policies/bindings/{policy_binding_uuid}/<a href=#patch-policiesbindingspolicy_binding_uuid class=hash-link aria-label="Direct link to patch-policiesbindingspolicy_binding_uuid" title="Direct link to patch-policiesbindingspolicy_binding_uuid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-11>Return Type:<a href=#return-type-11 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-policiespassword><code>POST</code> /policies/password/<a href=#post-policiespassword class=hash-link aria-label="Direct link to post-policiespassword" title="Direct link to post-policiespassword" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=request-2>Request:<a href=#request-2 class=hash-link aria-label="Direct link to Request:" title="Direct link to Request:" translate=no>​</a></h6>
+<p>Changed content type : <code>application/json</code></p>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-12>Return Type:<a href=#return-type-12 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiespassword><code>GET</code> /policies/password/<a href=#get-policiespassword class=hash-link aria-label="Direct link to get-policiespassword" title="Direct link to get-policiespassword" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=parameters>Parameters:<a href=#parameters class=hash-link aria-label="Direct link to Parameters:" title="Direct link to Parameters:" translate=no>​</a></h6>
+<p>Added: <code>check_have_i_been_pwned</code> in <code>query</code></p>
+<p>Added: <code>check_static_rules</code> in <code>query</code></p>
+<p>Added: <code>check_zxcvbn</code> in <code>query</code></p>
+<p>Added: <code>hibp_allowed_count</code> in <code>query</code></p>
+<p>Added: <code>zxcvbn_score_threshold</code> in <code>query</code></p>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-13>Return Type:<a href=#return-type-13 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Password Policy Serializer</p>
+<ul>
+<li class="">
+<p>Added property <code>check_static_rules</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_have_i_been_pwned</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>check_zxcvbn</code> (boolean)</p>
+</li>
+<li class="">
+<p>Added property <code>hibp_allowed_count</code> (integer)</p>
+<blockquote>
+<p>How many times the password hash is allowed to be on haveibeenpwned</p>
+</blockquote>
+</li>
+<li class="">
+<p>Added property <code>zxcvbn_score_threshold</code> (integer)</p>
+<blockquote>
+<p>If the zxcvbn score is equal or less than this value, the policy will fail.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-coretokens><code>POST</code> /core/tokens/<a href=#post-coretokens class=hash-link aria-label="Direct link to post-coretokens" title="Direct link to post-coretokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-14>Return Type:<a href=#return-type-14 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coretokens><code>GET</code> /core/tokens/<a href=#get-coretokens class=hash-link aria-label="Direct link to get-coretokens" title="Direct link to get-coretokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-15>Return Type:<a href=#return-type-15 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Token Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreuser_consentid><code>GET</code> /core/user_consent/{id}/<a href=#get-coreuser_consentid class=hash-link aria-label="Direct link to get-coreuser_consentid" title="Direct link to get-coreuser_consentid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-16>Return Type:<a href=#return-type-16 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-coreusers><code>POST</code> /core/users/<a href=#post-coreusers class=hash-link aria-label="Direct link to post-coreusers" title="Direct link to post-coreusers" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-17>Return Type:<a href=#return-type-17 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreusers><code>GET</code> /core/users/<a href=#get-coreusers class=hash-link aria-label="Direct link to get-coreusers" title="Direct link to get-coreusers" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-18>Return Type:<a href=#return-type-18 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > User Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2authorization_codesid><code>GET</code> /oauth2/authorization_codes/{id}/<a href=#get-oauth2authorization_codesid class=hash-link aria-label="Direct link to get-oauth2authorization_codesid" title="Direct link to get-oauth2authorization_codesid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-19>Return Type:<a href=#return-type-19 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2refresh_tokensid><code>GET</code> /oauth2/refresh_tokens/{id}/<a href=#get-oauth2refresh_tokensid class=hash-link aria-label="Direct link to get-oauth2refresh_tokensid" title="Direct link to get-oauth2refresh_tokensid" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-20>Return Type:<a href=#return-type-20 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=post-policiesbindings><code>POST</code> /policies/bindings/<a href=#post-policiesbindings class=hash-link aria-label="Direct link to post-policiesbindings" title="Direct link to post-policiesbindings" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-21>Return Type:<a href=#return-type-21 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>201 Created</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-policiesbindings><code>GET</code> /policies/bindings/<a href=#get-policiesbindings class=hash-link aria-label="Direct link to get-policiesbindings" title="Direct link to get-policiesbindings" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-22>Return Type:<a href=#return-type-22 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > PolicyBinding Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>user_obj</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-coreuser_consent><code>GET</code> /core/user_consent/<a href=#get-coreuser_consent class=hash-link aria-label="Direct link to get-coreuser_consent" title="Direct link to get-coreuser_consent" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-23>Return Type:<a href=#return-type-23 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > UserConsent Serializer</p>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2authorization_codes><code>GET</code> /oauth2/authorization_codes/<a href=#get-oauth2authorization_codes class=hash-link aria-label="Direct link to get-oauth2authorization_codes" title="Direct link to get-oauth2authorization_codes" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-24>Return Type:<a href=#return-type-24 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and ExpiringBaseGrant</p>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=get-oauth2refresh_tokens><code>GET</code> /oauth2/refresh_tokens/<a href=#get-oauth2refresh_tokens class=hash-link aria-label="Direct link to get-oauth2refresh_tokens" title="Direct link to get-oauth2refresh_tokens" translate=no>​</a></h5>
+<h6 class="anchor anchorTargetStickyNavbar_tleR" id=return-type-25>Return Type:<a href=#return-type-25 class=hash-link aria-label="Direct link to Return Type:" title="Direct link to Return Type:" translate=no>​</a></h6>
+<p>Changed response : <strong>200 OK</strong></p>
+<ul>
+<li class="">Changed content type : <code>application/json</code>
+<ul>
+<li class="">
+<p>Changed property <code>results</code> (array)</p>
+<p>Changed items (object): > Serializer for BaseGrantModel and RefreshToken</p>
+<ul>
+<li class="">
+<p>Changed property <code>user</code> (object)</p>
+<blockquote>
+<p>User Serializer</p>
+</blockquote>
+<ul>
+<li class="">
+<p>Changed property <code>groups_obj</code> (array)</p>
+<p>Changed items (object): > Simplified Group Serializer for user's groups</p>
+<p>New optional properties:</p>
+<ul>
+<li class=""><code>users_obj</code></li>
+</ul>
+<ul>
+<li class="">
+<p>Deleted property <code>users</code> (array)</p>
+</li>
+<li class="">
+<p>Deleted property <code>users_obj</code> (array)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><hr class=divider_hZCZ /><div class="theme-admonition theme-admonition-note admonition_WCGJ alert alert--secondary admonitionContrib_Zv8a margin-top--sm theme-doc-footer-edit-meta-row"><div class=admonitionContent_pbrs><div class=admonitionHeader_FPxu><strong>Help us improve this content</strong></div><p>We welcome your knowledge and expertise. If you see areas of the documentation that you can improve (fix a typo, correct a technical detail, add additional context, etc.) we would really appreciate your contribution.<div class=row><div class="col col--12"><ul><li><a href=https://github.com/goauthentik/authentik/edit/main/website/docs/releases/2022/v2022.11.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page>Edit on GitHub</a><li><a href=https://docs.goauthentik.io/docs/developer-docs/ target=_blank rel="noreferrer noopener">Contributor Guide</a><li><a href=https://github.com/goauthentik/authentik/issues/new target=_blank rel="noreferrer noopener">Open an issue</a><li><a href=https://goauthentik.io/pricing/ target=_blank rel="noreferrer noopener">Get Enterprise Support</a></ul></div></div></div></div><div class=row><div class="col lastUpdated_BkBT"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/releases/2022.12/><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>2022.12</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/releases/2022.10/><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>2022.10</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#breaking-changes class="table-of-contents__link toc-highlight">Breaking changes</a><li><a href=#new-features class="table-of-contents__link toc-highlight">New features</a><li><a href=#upgrading class="table-of-contents__link toc-highlight">Upgrading</a><ul><li><a href=#docker-compose class="table-of-contents__link toc-highlight">docker-compose</a><li><a href=#kubernetes class="table-of-contents__link toc-highlight">Kubernetes</a></ul><li><a href=#minor-changesfixes class="table-of-contents__link toc-highlight">Minor changes/fixes</a><li><a href=#fixed-in-2022111 class="table-of-contents__link toc-highlight">Fixed in 2022.11.1</a><li><a href=#fixed-in-2022112 class="table-of-contents__link toc-highlight">Fixed in 2022.11.2</a><li><a href=#fixed-in-2022113 class="table-of-contents__link toc-highlight">Fixed in 2022.11.3</a><li><a href=#fixed-in-2022114 class="table-of-contents__link toc-highlight">Fixed in 2022.11.4</a><li><a href=#api-changes class="table-of-contents__link toc-highlight">API Changes</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Authentik Security Inc. Built with Docusaurus.</div></div></div></footer></div></body>

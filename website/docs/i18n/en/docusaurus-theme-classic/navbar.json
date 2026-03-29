@@ -1,0 +1,26 @@
+{
+  "logo.alt": {
+    "message": "authentik logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Features": {
+    "message": "Features",
+    "description": "Navbar item with label Features"
+  },
+  "item.label.Integrations": {
+    "message": "Integrations",
+    "description": "Navbar item with label Integrations"
+  },
+  "item.label.Documentation": {
+    "message": "Documentation",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Pricing": {
+    "message": "Pricing",
+    "description": "Navbar item with label Pricing"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  }
+}

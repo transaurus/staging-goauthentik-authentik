@@ -1,0 +1,129 @@
+import { AKElement } from "#elements/Base";
+import Styles from "#elements/forms/Radio.css";
+import { SlottedTemplateResult } from "#elements/types";
+import { CustomEmitterElement } from "#elements/utils/eventEmitter";
+
+import { IDGenerator } from "@goauthentik/core/id";
+
+import { CSSResult, html, nothing } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { map } from "lit/directives/map.js";
+
+import PFForm from "@patternfly/patternfly/components/Form/form.css";
+import PFRadio from "@patternfly/patternfly/components/Radio/radio.css";
+
+export interface RadioOption<T> {
+    label: string;
+    description?: SlottedTemplateResult;
+    className?: string;
+    default?: boolean;
+    value: T;
+    disabled?: boolean;
+}
+
+export interface RadioChangeEventDetail<T> {
+    value: T;
+}
+
+@customElement("ak-radio")
+export class Radio<T = never> extends CustomEmitterElement(AKElement) {
+    static styles: CSSResult[] = [
+        // ---
+        PFRadio,
+        PFForm,
+        Styles,
+    ];
+
+    /**
+     * Options to display in the radio group.
+     *
+     * Can be either an array of RadioOption<T> or a function returning such an array.
+     */
+    @property({ attribute: false })
+    public options!: RadioOption<T>[] | (() => RadioOption<T>[]);
+
+    @property()
+    public name = "";
+
+    @property({ attribute: false })
+    public value?: T | unknown;
+
+    #fieldID: string = this.name || IDGenerator.randomID();
+
+    #optionsArray(): RadioOption<T>[] {
+        return typeof this.options === "function" ? this.options() : this.options;
+    }
+
+    // Set the value if it's not set already. Property changes inside the `willUpdate()` method do
+    // not trigger an element update.
+    willUpdate() {
+        if (!this.value) {
+            const maybeDefault = this.#optionsArray().filter((opt) => opt.default);
+            if (maybeDefault.length > 0) {
+                this.value = maybeDefault[0].value;
+            }
+        }
+    }
+
+    // When a user clicks on `type="radio"`, *two* events happen in rapid succession: the original
+    // radio loses its setting, and the selected radio gains its setting. We want radio buttons to
+    // present a unified event interface, so we prevent the event from triggering if the value is
+    // already set.
+    #buildChangeListener = (option: RadioOption<T>) => {
+        return (ev: Event) => {
+            // This is a controlled input. Stop the native event from escaping or affecting the
+            // value. We'll do that ourselves.
+            ev.stopPropagation();
+
+            if (option.disabled) {
+                return;
+            }
+
+            this.value = option.value;
+
+            this.dispatchCustomEvent<RadioChangeEventDetail<T>>("change", { value: option.value });
+            this.dispatchCustomEvent<RadioChangeEventDetail<T>>("input", { value: option.value });
+        };
+    };
+
+    #renderRadio = (option: RadioOption<T>, index: number) => {
+        const id = `${this.#fieldID}-${index}`;
+
+        const changeListener = this.#buildChangeListener(option);
+
+        return html`<div
+            class="pf-c-radio ${option.disabled ? "pf-m-disabled" : ""}"
+            @click=${changeListener}
+        >
+            <input
+                class="pf-c-radio__input"
+                type="radio"
+                name="${this.name}"
+                aria-label=${option.label}
+                id=${id}
+                .checked=${option.value === this.value}
+                .disabled=${!!option.disabled}
+            />
+            <label class="pf-c-radio__label ${option.className ?? ""}" for=${id}
+                >${option.label}</label
+            >
+            ${option.description
+                ? html`<span class="pf-c-radio__description">${option.description}</span>`
+                : nothing}
+        </div>`;
+    };
+
+    render() {
+        return html`<div class="pf-c-form__group-control pf-m-stack">
+            ${map(this.#optionsArray(), this.#renderRadio)}
+        </div>`;
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        "ak-radio": Radio<never>;
+    }
+}
+
+export default Radio;

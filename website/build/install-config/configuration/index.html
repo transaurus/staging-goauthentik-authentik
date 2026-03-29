@@ -1,0 +1,444 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-install-config/configuration/configuration" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>Configuration | authentik</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true name=twitter:image content=https://docs.goauthentik.io/img/social.png /><meta data-rh=true property=og:url content=https://docs.goauthentik.io/install-config/configuration/ /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Configuration | authentik"/><meta data-rh=true name=description content="This page details all the authentik configuration options that you can set via environment variables."/><meta data-rh=true property=og:description content="This page details all the authentik configuration options that you can set via environment variables."/><link data-rh=true rel=icon href=/img/icon.png /><link data-rh=true rel=canonical href=https://docs.goauthentik.io/install-config/configuration/ /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/install-config/configuration/ hreflang=en /><link data-rh=true rel=alternate href=https://docs.goauthentik.io/install-config/configuration/ hreflang=x-default /><link data-rh=true rel=preconnect href=https://36ROD0O0FV-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://docs.goauthentik.io/install-config/","name":"Installation and Configuration","position":1},{"@type":"ListItem","item":"https://docs.goauthentik.io/install-config/configuration/","name":"Configuration","position":2}]}</script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-9MVR9WZFZH"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-9MVR9WZFZH",{anonymize_ip:!0})</script><link rel=search type=application/opensearchdescription+xml title=authentik href=/opensearch.xml><link rel=stylesheet href=/assets/css/styles.96891979.css /><script src=/assets/js/runtime~main.48e1a0ed.js defer></script><script src=/assets/js/main.0769e9dc.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/icon_left_brand.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a href=https://goauthentik.io/ target=_self rel="noopener noreferrer" class=navbar__brand><div class=navbar__logo><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/icon_left_brand.svg alt="authentik logo" class="themedComponent_siVc themedComponent--dark_yETr"/></div></a><a href=https://goauthentik.io/features target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Features</a><a href=https://integrations.goauthentik.io target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Integrations</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" target=_self href=/>Documentation</a><a href=https://goauthentik.io/pricing/ target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Pricing</a><a href=https://goauthentik.io/blog target=_self rel="noopener noreferrer" class="navbar__item navbar__link">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/goauthentik/authentik target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=github aria-label=GitHub></a><a href=https://goauthentik.io/discord target=_blank rel="noopener noreferrer" class="navbar__item navbar__link" data-icon=discord aria-label=Discord></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="navbar__item dropdown dropdown--hoverable dropdown--right ak-version-selector"><div aria-haspopup=true aria-expanded=false role=button class="navbar__link menu__link">Version: <!-- -->Pre-release</div><ul class="dropdown__menu menu__list-item--collapsed"><li><a href=https://version-2026-2.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2026.2</a><li><a href=https://version-2025-12.goauthentik.io target=_blank rel="noopener noreferrer" class="dropdown__link menu__link">2025.12</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/><span title="Welcome to authentik" class=linkLabel_fEdy>Welcome to authentik</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/core/glossary/><span title="Core Concepts" class=categoryLinkLabel_ufhF>Core Concepts</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/enterprise/><span title=Enterprise class=categoryLinkLabel_ufhF>Enterprise</span></a><button aria-label="Expand sidebar category 'Enterprise'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--active" href=/install-config/><span title="Installation and Configuration" class=categoryLinkLabel_ufhF>Installation and Configuration</span></a><button aria-label="Collapse sidebar category 'Installation and Configuration'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false tabindex=0 href=/install-config/install/docker-compose/><span title=Installation class=categoryLinkLabel_ufhF>Installation</span></a></div><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/install-config/configuration/><span title=Configuration class=linkLabel_fEdy>Configuration</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/first-steps/><span title="First steps" class=linkLabel_fEdy>First steps</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/email/><span title=Email class=linkLabel_fEdy>Email</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/upgrade/><span title="Upgrade authentik" class=linkLabel_fEdy>Upgrade authentik</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/beta/><span title="Beta and release candidate versions" class=linkLabel_fEdy>Beta and release candidate versions</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/reverse-proxy/><span title="Reverse proxy" class=linkLabel_fEdy>Reverse proxy</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/automated-install/><span title="Automated install" class=linkLabel_fEdy>Automated install</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/high-availability/><span title="High availability" class=linkLabel_fEdy>High availability</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/install-config/air-gapped/><span title="Air-gapped environments" class=linkLabel_fEdy>Air-gapped environments</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/add-secure-apps/applications/><span title="Add and Secure Applications" class=categoryLinkLabel_ufhF>Add and Secure Applications</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/customize/><span title="Customize your instance" class=categoryLinkLabel_ufhF>Customize your instance</span></a><button aria-label="Expand sidebar category 'Customize your instance'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/users-sources/user/><span title="Manage Users and Sources" class=categoryLinkLabel_ufhF>Manage Users and Sources</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/background-tasks/><span title="System Management" class=categoryLinkLabel_ufhF>System Management</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/endpoint-devices/><span title="Endpoint Devices (Early Preview)" class=categoryLinkLabel_ufhF>Endpoint Devices (Early Preview)</span></a><button aria-label="Expand sidebar category 'Endpoint Devices (Early Preview)'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/developer-docs/><span title="Developer Documentation" class=categoryLinkLabel_ufhF>Developer Documentation</span></a><button aria-label="Expand sidebar category 'Developer Documentation'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/security/><span title=Security class=categoryLinkLabel_ufhF>Security</span></a><button aria-label="Expand sidebar category 'Security'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/troubleshooting/><span title=Troubleshooting class=categoryLinkLabel_ufhF>Troubleshooting</span></a><button aria-label="Expand sidebar category 'Troubleshooting'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist" href=/releases/><span title="Release Notes" class=categoryLinkLabel_ufhF>Release Notes</span></a><button aria-label="Expand sidebar category 'Release Notes'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><a class=breadcrumbs__link href=/install-config/><span>Installation and Configuration</span></a><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>Configuration</span></ul></nav><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Configuration</h1></header><p>This page details all the authentik configuration options that you can set via environment variables.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=about-authentik-configurations>About authentik configurations<a href=#about-authentik-configurations class=hash-link aria-label="Direct link to About authentik configurations" title="Direct link to About authentik configurations" translate=no>​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_WCGJ alert alert--info"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>info</div><div class=admonitionContent_pbrs><p>The double-underscores are intentional, as all these settings are translated to YAML internally, and a double-underscore indicates the next level (a subsetting).</div></div>
+<p>All of these variables can be set to values, but you can also use a URI-like format to load values from other places:</p>
+<ul>
+<li class=""><code>env://&lt;name></code> Loads the value from the environment variable <code>&lt;name></code>. Fallback can be optionally set like <code>env://&lt;name>?&lt;default></code></li>
+<li class=""><code>file://&lt;name></code> Loads the value from the file <code>&lt;name></code>. Fallback can be optionally set like <code>file://&lt;name>?&lt;default></code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=set-your-environment-variables>Set your environment variables<a href=#set-your-environment-variables class=hash-link aria-label="Direct link to Set your environment variables" title="Direct link to Set your environment variables" translate=no>​</a></h2>
+<!-- -->
+<div class="theme-tabs-container tabs-container tabList_J5MA"><ul role=tablist aria-orientation=horizontal class=tabs><li role=tab tabindex=0 aria-selected=true class="tabs__item tabItem_l0OV tabs__item--active">Docker Compose<li role=tab tabindex=-1 aria-selected=false class="tabs__item tabItem_l0OV">Kubernetes</ul><div class=margin-top--md><div role=tabpanel class=tabItem_wHwb><p>If you are using Docker Compose, edit your <code>.env</code> file to append any keys that you want to add, and then run the following command to apply them:<div class="language-text codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-text codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">docker compose up -d</span><br/></span></code></pre></div></div></div><div role=tabpanel class=tabItem_wHwb hidden><p>If you are running in Kubernetes, edit your <code>values.yaml</code> file to append any keys that you want to add, and then run the following commands to apply:<div class="language-text codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-text codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">helm repo update</span><br/></span><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">helm upgrade --install authentik authentik/authentik -f values.yaml</span><br/></span></code></pre></div></div></div></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=verify-your-configuration-settings>Verify your configuration settings<a href=#verify-your-configuration-settings class=hash-link aria-label="Direct link to Verify your configuration settings" title="Direct link to Verify your configuration settings" translate=no>​</a></h2>
+<p>To check if your config has been applied correctly, you can run the following command to output the full config:</p>
+<div class="theme-tabs-container tabs-container tabList_J5MA"><ul role=tablist aria-orientation=horizontal class=tabs><li role=tab tabindex=0 aria-selected=true class="tabs__item tabItem_l0OV tabs__item--active">Docker Compose<li role=tab tabindex=-1 aria-selected=false class="tabs__item tabItem_l0OV">Kubernetes</ul><div class=margin-top--md><div role=tabpanel class=tabItem_wHwb><div class="language-text codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-text codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">docker compose run --rm worker ak dump_config</span><br/></span></code></pre></div></div></div><div role=tabpanel class=tabItem_wHwb hidden><div class="language-text codeBlockContainer_mQmQ theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-text codeBlock_RMoD thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class=codeBlockLines_AclH><span class=token-line style="color:hsl(230, 8%, 24%)"><span class="token plain">kubectl exec -it deployment/authentik-worker -c worker -- ak dump_config</span><br/></span></code></pre></div></div></div></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=postgresql-settings>PostgreSQL Settings<a href=#postgresql-settings class=hash-link aria-label="Direct link to PostgreSQL Settings" title="Direct link to PostgreSQL Settings" translate=no>​</a></h2>
+<p>authentik requires a PostgreSQL database to store its configuration and data. Below are the settings to configure the database connection.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=connection-settings>Connection settings<a href=#connection-settings class=hash-link aria-label="Direct link to Connection settings" title="Direct link to Connection settings" translate=no>​</a></h3>
+<ul>
+<li class=""><code>AUTHENTIK_POSTGRESQL__HOST</code>: Hostname or IP address of your PostgreSQL server.</li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__PORT</code>: Port on which PostgreSQL is listening. Defaults to the standard PostgreSQL port <code>5432</code>.</li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__USER</code>: Username that authentik will use to authenticate with PostgreSQL.</li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__PASSWORD</code>: Password for PostgreSQL authentication. If not set, it defaults to the value of the <code>POSTGRES_PASSWORD</code> environment variable (this fallback is specific to the default Docker Compose setup).</li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__NAME</code>: The name of the database for authentik to use.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_WCGJ alert alert--info"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>Hot-reloading</div><div class=admonitionContent_pbrs><p>The <code>AUTHENTIK_POSTGRESQL__HOST</code>, <code>AUTHENTIK_POSTGRESQL__PORT</code>, <code>AUTHENTIK_POSTGRESQL__USER</code>, and <code>AUTHENTIK_POSTGRESQL__PASSWORD</code> settings support hot-reloading and can be changed without restarting authentik. However, adding or removing read replicas requires a restart.</div></div>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=ssltls-settings>SSL/TLS settings<a href=#ssltls-settings class=hash-link aria-label="Direct link to SSL/TLS settings" title="Direct link to SSL/TLS settings" translate=no>​</a></h3>
+<p>Configure SSL/TLS to secure the connection to your PostgreSQL server.</p>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__SSLMODE</code>: Controls the SSL verification mode. Defaults to <code>verify-ca</code>.</p>
+<ul>
+<li class=""><code>disable</code>: No SSL is used.</li>
+<li class=""><code>allow</code>: Use SSL if available, but don't perform verification.</li>
+<li class=""><code>prefer</code>: Attempt an SSL connection first, fall back to non-SSL if it fails.</li>
+<li class=""><code>require</code>: Require an SSL connection, but without certificate verification.</li>
+<li class=""><code>verify-ca</code>: Require SSL and verify that the server certificate is signed by a trusted CA.</li>
+<li class=""><code>verify-full</code>: Require SSL, verify the CA, and verify that the server hostname matches the certificate.</li>
+</ul>
+</li>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__SSLROOTCERT</code>: Path to the CA certificate file for verifying the server's certificate. Required for <code>verify-ca</code> and <code>verify-full</code> modes.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__SSLCERT</code>: Path to the client SSL certificate file. Required if the PostgreSQL server is configured for mutual TLS and requires client certificates.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__SSLKEY</code>: Path to the private key for the client certificate (<code>SSLCERT</code>).</p>
+</li>
+</ul>
+<p>For more details, see <a href=https://docs.djangoproject.com/en/stable/ref/databases/#postgresql-connection-settings target=_blank rel="noopener noreferrer" class="">Django's PostgreSQL documentation</a> or the <a href=https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-PROTECTION target=_blank rel="noopener noreferrer" class="">PostgreSQL documentation</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=connection-management>Connection management<a href=#connection-management class=hash-link aria-label="Direct link to Connection management" title="Direct link to Connection management" translate=no>​</a></h3>
+<p>These settings control connection persistence and behavior, which is particularly important when using a connection pooler like PgBouncer.</p>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__CONN_MAX_AGE</code>: The maximum age of a database connection in seconds.</p>
+<ul>
+<li class=""><code>0</code> (default): Connections are closed after each request.</li>
+<li class="">greater than <code>0</code>: Enables persistent connections, with the value defining the maximum lifetime.</li>
+<li class=""><code>None</code>: Unlimited persistence. Use with caution, especially with connection poolers.
+See <a href=https://docs.djangoproject.com/en/stable/ref/databases/#persistent-connections target=_blank rel="noopener noreferrer" class="">Django's documentation on persistent connections</a> for more details.</li>
+</ul>
+</li>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__CONN_HEALTH_CHECKS</code>: Enables health checks on persistent connections before reuse. Defaults to <code>false</code>. This helps prevent errors from stale connections that may have been terminated by the database or a pooler. See <a href=https://docs.djangoproject.com/en/stable/ref/settings/#conn-health-checks target=_blank rel="noopener noreferrer" class="">Django's documentation</a> for details.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__DISABLE_SERVER_SIDE_CURSORS</code>: Disables server-side cursors. Defaults to <code>false</code>. Server-side cursors can improve performance for large result sets but are incompatible with connection poolers in transaction pooling mode (like PgBouncer). <strong>Set this to <code>true</code> if you use a transaction-based pooler or encounter cursor-related errors.</strong> See <a href=https://docs.djangoproject.com/en/stable/ref/databases/#transaction-pooling-and-server-side-cursors target=_blank rel="noopener noreferrer" class="">Django's documentation</a> for more details.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=advanced-settings>Advanced Settings<a href=#advanced-settings class=hash-link aria-label="Direct link to Advanced Settings" title="Direct link to Advanced Settings" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__DEFAULT_SCHEMA</code></p>
+<p>The name of the database schema for authentik to use. Defaults to <code>public</code>.</p>
+<p>This can only be set before authentik is started for the first time. If you specify a custom schema, it must already exist in the database, and the user that authentik connects with must have permissions to access it. The <code>search_path</code> for the database user must also be configured to include this schema.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__CONN_OPTIONS</code></p>
+<p>Arbitrary <code>libpq</code> parameter keywords for the database connection. A list of parameter keywords can be found <a href=https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PARAMKEYWORDS target=_blank rel="noopener noreferrer" class="">in the PostgreSQL documentation</a>.</p>
+<ul>
+<li class="">Parameters passed with this setting will override those passed with other settings.</li>
+<li class="">These parameters are not applied to read replicas.</li>
+<li class="">Parameter keywords should be formatted as a base64-encoded JSON dictionary.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=read-replicas>Read Replicas<a href=#read-replicas class=hash-link aria-label="Direct link to Read Replicas" title="Direct link to Read Replicas" translate=no>​</a></h3>
+<p>You can configure additional read replica databases to distribute database load and improve performance. When read replicas are configured, authentik automatically routes query operations between the primary database (for writes) and read replica databases (for queries). By default, the primary database won't be used for queries when read replicas are available. If you want the primary database to also handle queries, add it as a read replica.</p>
+<p>To configure authentik to use read replicas, add the settings below to your <a class="" href=/install-config/configuration/#set-your-environment-variables>configuration file</a>. If you have multiple read replicas, add settings for each one by using a unique index starting from <code>0</code> (e.g., <code>0</code>, <code>1</code>, <code>2</code>, etc.).</p>
+<p>The same PostgreSQL settings as described above are used for each read replica. For example, for the first read replica (index <code>0</code>):</p>
+<ul>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__HOST</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__NAME</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__USER</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__PORT</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__PASSWORD</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__SSLMODE</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__SSLROOTCERT</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__SSLCERT</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__SSLKEY</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__CONN_MAX_AGE</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__CONN_HEALTH_CHECKS</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__DISABLE_SERVER_SIDE_CURSORS</code></li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__READ_REPLICAS__0__CONN_OPTIONS</code></li>
+</ul>
+<p>Additionally, you can set arbitrary connection parameters on all read replicas with:</p>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__REPLICA_CONN_OPTIONS</code></p>
+<p>Arbitrary <code>libpq</code> parameter keywords for all read replicas database connections. A list of options can be found <a href=https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PARAMKEYWORDS target=_blank rel="noopener noreferrer" class="">in the PostgreSQL documentation</a>.</p>
+<ul>
+<li class="">Parameters passed with this setting will override those passed with other settings.</li>
+<li class="">Parameter keywords should be formatted as a base64-encoded JSON dictionary.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=using-a-postgresql-connection-pooler>Using a PostgreSQL Connection Pooler<a href=#using-a-postgresql-connection-pooler class=hash-link aria-label="Direct link to Using a PostgreSQL Connection Pooler" title="Direct link to Using a PostgreSQL Connection Pooler" translate=no>​</a></h3>
+<p>When your PostgreSQL databases are running behind a connection pooler (like PgBouncer or PgPool), you need to adjust several settings to ensure compatibility:</p>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__CONN_MAX_AGE</code>:</p>
+<p>A connection pooler running in session pool mode (which is the default for PgBouncer) can be incompatible with unlimited persistent connections (<code>null</code> setting). When the connection from the pooler to the database is dropped, the pooler will wait for the client to disconnect before releasing the connection. However, this will <em>never</em> happen as authentik keeps the connection indefinitely.</p>
+<p>To address this incompatibility, either configure the connection pooler to run in transaction pool mode or set this value lower than any timeout that might cause the connection to be dropped (down to <code>0</code> to disable persistent connections).</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_POSTGRESQL__DISABLE_SERVER_SIDE_CURSORS</code>:</p>
+<p>When using a connection pooler in transaction pool mode (e.g., PgPool, or PgBouncer in transaction or statement pool mode), you must set this option to <code>true</code>. This is required because server-side cursors maintain state across multiple queries, which is incompatible with transaction-based pooling where connections may change between queries.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=deprecated-settings>Deprecated Settings<a href=#deprecated-settings class=hash-link aria-label="Direct link to Deprecated Settings" title="Direct link to Deprecated Settings" translate=no>​</a></h3>
+<ul>
+<li class=""><code>AUTHENTIK_POSTGRESQL__USE_PGBOUNCER</code>: Adjusts the database configuration to support connections to a PgBouncer connection pooler. This setting is deprecated and will be removed in a future version. Instead, use the configuration described in the <a href=#using-a-postgresql-connection-pooler class="">Using a PostgreSQL Connection Pooler</a> section.</li>
+<li class=""><code>AUTHENTIK_POSTGRESQL__USE_PGPOOL</code>: Adjusts the database configuration to support connections to a Pgpool connection pooler. This setting is deprecated and will be removed in a future version. Instead, use the configuration described in the <a href=#using-a-postgresql-connection-pooler class="">Using a PostgreSQL Connection Pooler</a> section.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=cache-settings>Cache Settings<a href=#cache-settings class=hash-link aria-label="Direct link to Cache Settings" title="Direct link to Cache Settings" translate=no>​</a></h2>
+<ul>
+<li class=""><code>AUTHENTIK_CACHE__TIMEOUT</code>: Timeout for cached data until it expires in seconds, defaults to 300</li>
+<li class=""><code>AUTHENTIK_CACHE__TIMEOUT_FLOWS</code>: Timeout for cached flow plans until they expire in seconds, defaults to 300</li>
+<li class=""><code>AUTHENTIK_CACHE__TIMEOUT_POLICIES</code>: Timeout for cached policies until they expire in seconds, defaults to 300</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=worker-settings>Worker settings<a href=#worker-settings class=hash-link aria-label="Direct link to Worker settings" title="Direct link to Worker settings" translate=no>​</a></h2>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__processes><code>AUTHENTIK_WORKER__PROCESSES</code><a href=#authentik_worker__processes class=hash-link aria-label="Direct link to authentik_worker__processes" title="Direct link to authentik_worker__processes" translate=no>​</a></h5>
+<p>Configure how many worker processes should be started for Dramatiq to use. In environments where scaling with multiple replicas of the authentik worker is not possible, this number can be increased to handle higher loads.</p>
+<p>Defaults to 1. In environments where scaling with multiple replicas of the authentik worker is not possible, this number can be increased to handle higher loads.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__threads><code>AUTHENTIK_WORKER__THREADS</code><a href=#authentik_worker__threads class=hash-link aria-label="Direct link to authentik_worker__threads" title="Direct link to authentik_worker__threads" translate=no>​</a></h5>
+<p>Configure how many Dramatiq threads are started per worker. In environments where scaling with multiple replicas of the authentik worker is not possible, this number can be increased to handle higher loads.</p>
+<p>Defaults to 2. A value below 2 threads is not recommended, unless you have multiple worker replicas.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__consumer_listen_timeout><code>AUTHENTIK_WORKER__CONSUMER_LISTEN_TIMEOUT</code><a href=#authentik_worker__consumer_listen_timeout class=hash-link aria-label="Direct link to authentik_worker__consumer_listen_timeout" title="Direct link to authentik_worker__consumer_listen_timeout" translate=no>​</a></h5>
+<p>Configure how long a worker waits for a PostgreSQL <code>LISTEN</code> notification.</p>
+<p>Defaults to <code>seconds=30</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__task_max_retries><code>AUTHENTIK_WORKER__TASK_MAX_RETRIES</code><a href=#authentik_worker__task_max_retries class=hash-link aria-label="Direct link to authentik_worker__task_max_retries" title="Direct link to authentik_worker__task_max_retries" translate=no>​</a></h5>
+<p>Configure how many times a failing task will be retried before abandoning.</p>
+<p>Defaults to 5.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__task_default_time_limit><code>AUTHENTIK_WORKER__TASK_DEFAULT_TIME_LIMIT</code><a href=#authentik_worker__task_default_time_limit class=hash-link aria-label="Direct link to authentik_worker__task_default_time_limit" title="Direct link to authentik_worker__task_default_time_limit" translate=no>​</a></h5>
+<p>Configure the default duration a task can run for before it is aborted. Some tasks will override this setting based on other settings, such as LDAP source synchronization tasks.</p>
+<p>Defaults to <code>minutes=10</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__task_purge_interval><code>AUTHENTIK_WORKER__TASK_PURGE_INTERVAL</code><a href=#authentik_worker__task_purge_interval class=hash-link aria-label="Direct link to authentik_worker__task_purge_interval" title="Direct link to authentik_worker__task_purge_interval" translate=no>​</a></h5>
+<p>Configure the interval at which old tasks are cleaned up.</p>
+<p>Defaults to <code>days=1</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__task_expiration><code>AUTHENTIK_WORKER__TASK_EXPIRATION</code><a href=#authentik_worker__task_expiration class=hash-link aria-label="Direct link to authentik_worker__task_expiration" title="Direct link to authentik_worker__task_expiration" translate=no>​</a></h5>
+<p>Configure how long tasks are kept in the database before they are deleted.</p>
+<p>Defaults to <code>days=30</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_worker__scheduler_interval><code>AUTHENTIK_WORKER__SCHEDULER_INTERVAL</code><a href=#authentik_worker__scheduler_interval class=hash-link aria-label="Direct link to authentik_worker__scheduler_interval" title="Direct link to authentik_worker__scheduler_interval" translate=no>​</a></h5>
+<p>Configure how often the task scheduler runs.</p>
+<p>Defaults to <code>seconds=60</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=listen-settings>Listen Settings<a href=#listen-settings class=hash-link aria-label="Direct link to Listen Settings" title="Direct link to Listen Settings" translate=no>​</a></h2>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__http><code>AUTHENTIK_LISTEN__HTTP</code><a href=#authentik_listen__http class=hash-link aria-label="Direct link to authentik_listen__http" title="Direct link to authentik_listen__http" translate=no>​</a></h5>
+<p>List of comma-separated <code>address:port</code> values for HTTP.</p>
+<p>Applies to the Server, the Worker, and Proxy outposts.</p>
+<p>Defaults to <code>[::]:9000</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__https><code>AUTHENTIK_LISTEN__HTTPS</code><a href=#authentik_listen__https class=hash-link aria-label="Direct link to authentik_listen__https" title="Direct link to authentik_listen__https" translate=no>​</a></h5>
+<p>List of comma-separated <code>address:port</code> values for HTTPS.</p>
+<p>Applies to the Server and Proxy outposts.</p>
+<p>Defaults to <code>[::]:9443</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__ldap><code>AUTHENTIK_LISTEN__LDAP</code><a href=#authentik_listen__ldap class=hash-link aria-label="Direct link to authentik_listen__ldap" title="Direct link to authentik_listen__ldap" translate=no>​</a></h5>
+<p>List of comma-separated <code>address:port</code> values for LDAP.</p>
+<p>Applies to LDAP outposts.</p>
+<p>Defaults to <code>[::]:3389</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__ldaps><code>AUTHENTIK_LISTEN__LDAPS</code><a href=#authentik_listen__ldaps class=hash-link aria-label="Direct link to authentik_listen__ldaps" title="Direct link to authentik_listen__ldaps" translate=no>​</a></h5>
+<p>List of comma-separated <code>address:port</code> values for LDAPS.</p>
+<p>Applies to LDAP outposts.</p>
+<p>Defaults to <code>[::]:6636</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__metrics><code>AUTHENTIK_LISTEN__METRICS</code><a href=#authentik_listen__metrics class=hash-link aria-label="Direct link to authentik_listen__metrics" title="Direct link to authentik_listen__metrics" translate=no>​</a></h5>
+<p>List of comma-separated <code>address:port</code> values for Prometheus metrics.</p>
+<p>Applies to all.</p>
+<p>Defaults to <code>[::]:9300</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__debug><code>AUTHENTIK_LISTEN__DEBUG</code><a href=#authentik_listen__debug class=hash-link aria-label="Direct link to authentik_listen__debug" title="Direct link to authentik_listen__debug" translate=no>​</a></h5>
+<p>Listening address<!-- -->:port<!-- --> for Go Debugging metrics.</p>
+<p>Applies to all, except the worker.</p>
+<p>Defaults to <code>0.0.0.0:9900</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__debug_py><code>AUTHENTIK_LISTEN__DEBUG_PY</code><a href=#authentik_listen__debug_py class=hash-link aria-label="Direct link to authentik_listen__debug_py" title="Direct link to authentik_listen__debug_py" translate=no>​</a></h5>
+<p>Listening address<!-- -->:port<!-- --> for Python debugging server, see <a class="" href=/developer-docs/setup/debugging/>Debugging</a>.</p>
+<p>Applies to the Server and the Worker.</p>
+<p>Defaults to <code>0.0.0.0:9901</code>.</p>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_listen__trusted_proxy_cidrs><code>AUTHENTIK_LISTEN__TRUSTED_PROXY_CIDRS</code><a href=#authentik_listen__trusted_proxy_cidrs class=hash-link aria-label="Direct link to authentik_listen__trusted_proxy_cidrs" title="Direct link to authentik_listen__trusted_proxy_cidrs" translate=no>​</a></h5>
+<p>List of comma-separated CIDRs that proxy headers should be accepted from.</p>
+<p>Applies to the Server.</p>
+<p>Requests directly coming from one an address within a CIDR specified here are able to set proxy headers, such as <code>X-Forwarded-For</code>. Requests coming from other addresses will not be able to set these headers.</p>
+<p>Defaults to <code>127.0.0.0/8</code>, <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code>, <code>fe80::/10</code>, <code>::1/128</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=storage-settings>Storage settings<a href=#storage-settings class=hash-link aria-label="Direct link to Storage settings" title="Direct link to Storage settings" translate=no>​</a></h2>
+<p>These settings affect where files are stored. By default, they are stored on disk in the <code>/data</code> directory of the authentik container. S3 storage is also supported.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__backend><code>AUTHENTIK_STORAGE__BACKEND</code><a href=#authentik_storage__backend class=hash-link aria-label="Direct link to authentik_storage__backend" title="Direct link to authentik_storage__backend" translate=no>​</a></h4>
+<p>This parameter defines where to store files. Valid values are <code>file</code> and <code>s3</code>. For <code>file</code> storage, files are stored in a <code>/data</code> directory in the container. For <code>s3</code>, see below.</p>
+<p>Defaults to <code>file</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=file-storage-backend-settings>File storage backend settings<a href=#file-storage-backend-settings class=hash-link aria-label="Direct link to File storage backend settings" title="Direct link to File storage backend settings" translate=no>​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__file__path><code>AUTHENTIK_STORAGE__FILE__PATH</code><a href=#authentik_storage__file__path class=hash-link aria-label="Direct link to authentik_storage__file__path" title="Direct link to authentik_storage__file__path" translate=no>​</a></h4>
+<p>Where to store files on disk.</p>
+<p>Defaults to <code>/data</code>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__file__url_expiry><code>AUTHENTIK_STORAGE__FILE__URL_EXPIRY</code><a href=#authentik_storage__file__url_expiry class=hash-link aria-label="Direct link to authentik_storage__file__url_expiry" title="Direct link to authentik_storage__file__url_expiry" translate=no>​</a></h4>
+<p>How long generated URLs for file access are valid for.</p>
+<p>Defaults to <code>minutes=15</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=s3-storage-backend-settings>S3 storage backend settings<a href=#s3-storage-backend-settings class=hash-link aria-label="Direct link to S3 storage backend settings" title="Direct link to S3 storage backend settings" translate=no>​</a></h3>
+<p>For more information on S3 storage, see <a class="" href=/sys-mgmt/ops/storage-s3/>S3 storage setup</a>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__region><code>AUTHENTIK_STORAGE__S3__REGION</code><a href=#authentik_storage__s3__region class=hash-link aria-label="Direct link to authentik_storage__s3__region" title="Direct link to authentik_storage__s3__region" translate=no>​</a></h4>
+<p>S3 region where the bucket has been created. May be omitted depending on which S3 provider you use.</p>
+<p>Defaults to not set.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__endpoint><code>AUTHENTIK_STORAGE__S3__ENDPOINT</code><a href=#authentik_storage__s3__endpoint class=hash-link aria-label="Direct link to authentik_storage__s3__endpoint" title="Direct link to authentik_storage__s3__endpoint" translate=no>​</a></h4>
+<p>Endpoint to use to talk to the S3 storage provider. Overrides the previous region and use_ssl settings.</p>
+<p>Must be a valid URL in the form of <code>https://s3.provider</code>.</p>
+<p>Defaults to not set.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__use_ssl><code>AUTHENTIK_STORAGE__S3__USE_SSL</code><a href=#authentik_storage__s3__use_ssl class=hash-link aria-label="Direct link to authentik_storage__s3__use_ssl" title="Direct link to authentik_storage__s3__use_ssl" translate=no>​</a></h4>
+<p>Whether to use HTTPS when talking to the S3 storage providers.</p>
+<p>Defaults to <code>true</code>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__addressing_style><code>AUTHENTIK_STORAGE__S3__ADDRESSING_STYLE</code><a href=#authentik_storage__s3__addressing_style class=hash-link aria-label="Direct link to authentik_storage__s3__addressing_style" title="Direct link to authentik_storage__s3__addressing_style" translate=no>​</a></h4>
+<p>Configure the addressing style used to address a bucket.</p>
+<p>Valid values are <code>auto</code> and <code>path</code>.</p>
+<p>Defaults to <code>auto</code>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__signature_version><code>AUTHENTIK_STORAGE__S3__SIGNATURE_VERSION</code><a href=#authentik_storage__s3__signature_version class=hash-link aria-label="Direct link to authentik_storage__s3__signature_version" title="Direct link to authentik_storage__s3__signature_version" translate=no>​</a></h4>
+<p>Configure the signing method used for S3 requests.</p>
+<p>Defaults to <code>s3v4</code>.</p>
+<p>Set to <code>s3</code> for legacy S3-compatible providers that do not support signature v4.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__session_profile><code>AUTHENTIK_STORAGE__S3__SESSION_PROFILE</code><a href=#authentik_storage__s3__session_profile class=hash-link aria-label="Direct link to authentik_storage__s3__session_profile" title="Direct link to authentik_storage__s3__session_profile" translate=no>​</a></h4>
+<p>Profile to use when using AWS SDK authentication.</p>
+<p>Supports hot-reloading.</p>
+<p>Defaults to not set.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__access_key><code>AUTHENTIK_STORAGE__S3__ACCESS_KEY</code><a href=#authentik_storage__s3__access_key class=hash-link aria-label="Direct link to authentik_storage__s3__access_key" title="Direct link to authentik_storage__s3__access_key" translate=no>​</a></h4>
+<p>Access key to authenticate to S3. May be omitted if using AWS SDK authentication.</p>
+<p>Supports hot-reloading.</p>
+<p>Defaults to not set.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__secret_key><code>AUTHENTIK_STORAGE__S3__SECRET_KEY</code><a href=#authentik_storage__s3__secret_key class=hash-link aria-label="Direct link to authentik_storage__s3__secret_key" title="Direct link to authentik_storage__s3__secret_key" translate=no>​</a></h4>
+<p>Secret key to authenticate to S3. May be omitted if using AWS SDK authentication.</p>
+<p>Supports hot-reloading.</p>
+<p>Defaults to not set.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__security_token><code>AUTHENTIK_STORAGE__S3__SECURITY_TOKEN</code><a href=#authentik_storage__s3__security_token class=hash-link aria-label="Direct link to authentik_storage__s3__security_token" title="Direct link to authentik_storage__s3__security_token" translate=no>​</a></h4>
+<p>Security token to authenticate to S3. May be omitted.</p>
+<p>Supports hot-reloading.</p>
+<p>Defaults to not set.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__bucket_name><code>AUTHENTIK_STORAGE__S3__BUCKET_NAME</code><a href=#authentik_storage__s3__bucket_name class=hash-link aria-label="Direct link to authentik_storage__s3__bucket_name" title="Direct link to authentik_storage__s3__bucket_name" translate=no>​</a></h4>
+<p>Name of the bucket to use to store files.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__custom_domain><code>AUTHENTIK_STORAGE__S3__CUSTOM_DOMAIN</code><a href=#authentik_storage__s3__custom_domain class=hash-link aria-label="Direct link to authentik_storage__s3__custom_domain" title="Direct link to authentik_storage__s3__custom_domain" translate=no>​</a></h4>
+<p>Domain to use to create URLs for users. Mainly useful for non-AWS providers.</p>
+<p>May include a port. Must include the bucket.</p>
+<p>Example: <code>s3.company:8080/authentik-data</code>.</p>
+<p>Defaults to not set.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__secure_urls><code>AUTHENTIK_STORAGE__S3__SECURE_URLS</code><a href=#authentik_storage__s3__secure_urls class=hash-link aria-label="Direct link to authentik_storage__s3__secure_urls" title="Direct link to authentik_storage__s3__secure_urls" translate=no>​</a></h4>
+<p>Whether URLs created use HTTPS or HTTP.</p>
+<p>Defaults to <code>true</code>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__s3__url_expiry><code>AUTHENTIK_STORAGE__S3__URL_EXPIRY</code><a href=#authentik_storage__s3__url_expiry class=hash-link aria-label="Direct link to authentik_storage__s3__url_expiry" title="Direct link to authentik_storage__s3__url_expiry" translate=no>​</a></h4>
+<p>How long generated URLs for file access are valid for.</p>
+<p>Defaults to <code>minutes=15</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=media-storage-settings>Media storage settings<a href=#media-storage-settings class=hash-link aria-label="Direct link to Media storage settings" title="Direct link to Media storage settings" translate=no>​</a></h3>
+<p>These settings affect where media files are stored. Those files include applications and sources icons.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__media__backend><code>AUTHENTIK_STORAGE__MEDIA__BACKEND</code><a href=#authentik_storage__media__backend class=hash-link aria-label="Direct link to authentik_storage__media__backend" title="Direct link to authentik_storage__media__backend" translate=no>​</a></h4>
+<p>Overrides <a href=#authentik_storage__backend class=""><code>AUTHENTIK_STORAGE__BACKEND</code></a></p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__media__file__><code>AUTHENTIK_STORAGE__MEDIA__FILE__[...]</code><a href=#authentik_storage__media__file__ class=hash-link aria-label="Direct link to authentik_storage__media__file__" title="Direct link to authentik_storage__media__file__" translate=no>​</a></h4>
+<p>Overrides <a href=#file-storage-backend-settings class=""><code>AUTHENTIK_STORAGE__FILE__[...]</code></a> settings.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__media__s3__><code>AUTHENTIK_STORAGE__MEDIA__S3__[...]</code><a href=#authentik_storage__media__s3__ class=hash-link aria-label="Direct link to authentik_storage__media__s3__" title="Direct link to authentik_storage__media__s3__" translate=no>​</a></h4>
+<p>Overrides <a href=#s3-storage-backend-settings class=""><code>AUTHENTIK_STORAGE__S3__[...]</code></a> settings.</p>
+<p>These settings affect where media files are stored. Those files include applications and sources icons. By default, they use the same storage settings as the main storage configuration. S3 storage is also supported.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=reports-storage-settings>Reports storage settings<a href=#reports-storage-settings class=hash-link aria-label="Direct link to Reports storage settings" title="Direct link to Reports storage settings" translate=no>​</a></h3>
+<p>These settings affect where CSV reports are stored.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__reports__backend><code>AUTHENTIK_STORAGE__REPORTS__BACKEND</code><a href=#authentik_storage__reports__backend class=hash-link aria-label="Direct link to authentik_storage__reports__backend" title="Direct link to authentik_storage__reports__backend" translate=no>​</a></h4>
+<p>Overrides <a href=#authentik_storage__backend class=""><code>AUTHENTIK_STORAGE__BACKEND</code></a></p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__reports__file__><code>AUTHENTIK_STORAGE__REPORTS__FILE__[...]</code><a href=#authentik_storage__reports__file__ class=hash-link aria-label="Direct link to authentik_storage__reports__file__" title="Direct link to authentik_storage__reports__file__" translate=no>​</a></h4>
+<p>Overrides <a href=#file-storage-backend-settings class=""><code>AUTHENTIK_STORAGE__FILE__[...]</code></a> settings.</p>
+<h4 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_storage__reports__s3__><code>AUTHENTIK_STORAGE__REPORTS__S3__[...]</code><a href=#authentik_storage__reports__s3__ class=hash-link aria-label="Direct link to authentik_storage__reports__s3__" title="Direct link to authentik_storage__reports__s3__" translate=no>​</a></h4>
+<p>Overrides <a href=#s3-storage-backend-settings class=""><code>AUTHENTIK_STORAGE__S3__[...]</code></a> settings.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=authentik-settings>authentik Settings<a href=#authentik-settings class=hash-link aria-label="Direct link to authentik Settings" title="Direct link to authentik Settings" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_secret_key><code>AUTHENTIK_SECRET_KEY</code><a href=#authentik_secret_key class=hash-link aria-label="Direct link to authentik_secret_key" title="Direct link to authentik_secret_key" translate=no>​</a></h3>
+<p>Secret key used for cookie signing. Changing this will invalidate active sessions.</p>
+<div class="theme-admonition theme-admonition-caution admonition_WCGJ alert alert--warning"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 16 16"><path fill-rule=evenodd d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg></span>caution</div><div class=admonitionContent_pbrs><p>Prior to 2023.6.0 the secret key was also used for unique user IDs. When running a pre-2023.6.0 version of authentik the key should <em>not</em> be changed after the first install.</div></div>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_log_level><code>AUTHENTIK_LOG_LEVEL</code><a href=#authentik_log_level class=hash-link aria-label="Direct link to authentik_log_level" title="Direct link to authentik_log_level" translate=no>​</a></h3>
+<p>Log level for the server and worker containers. Possible values: <code>debug</code>, <code>info</code>, <code>warning</code>, <code>error</code>.</p>
+<p>Starting with 2021.12.3, you can also set the log level to <code>trace</code>. This has no effect on the core authentik server, but shows additional messages for the embedded outpost.</p>
+<div class="theme-admonition theme-admonition-danger admonition_WCGJ alert alert--danger"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 12 16"><path fill-rule=evenodd d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"/></svg></span>danger</div><div class=admonitionContent_pbrs><p>Setting the log level to <code>trace</code> will include sensitive details in logs, so it shouldn't be used in most cases.<p>Logs generated with <code>trace</code> should be treated with care as they can give others access to your instance, and can potentially include things like session cookies to authentik <strong>and other pages</strong>.</div></div>
+<p>Defaults to <code>info</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_cookie_domain><code>AUTHENTIK_COOKIE_DOMAIN</code><a href=#authentik_cookie_domain class=hash-link aria-label="Direct link to authentik_cookie_domain" title="Direct link to authentik_cookie_domain" translate=no>​</a></h3>
+<p>Which domain the session cookie should be set to. By default, the cookie is set to the domain authentik is accessed under.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_events__context_processors__geoip><code>AUTHENTIK_EVENTS__CONTEXT_PROCESSORS__GEOIP</code><a href=#authentik_events__context_processors__geoip class=hash-link aria-label="Direct link to authentik_events__context_processors__geoip" title="Direct link to authentik_events__context_processors__geoip" translate=no>​</a></h3>
+<p>Path to the GeoIP City database. Defaults to <code>/geoip/GeoLite2-City.mmdb</code>. If the file is not found, authentik will skip GeoIP support.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_events__context_processors__asn><code>AUTHENTIK_EVENTS__CONTEXT_PROCESSORS__ASN</code><a href=#authentik_events__context_processors__asn class=hash-link aria-label="Direct link to authentik_events__context_processors__asn" title="Direct link to authentik_events__context_processors__asn" translate=no>​</a></h3>
+<p>Path to the GeoIP ASN database. Defaults to <code>/geoip/GeoLite2-ASN.mmdb</code>. If the file is not found, authentik will skip GeoIP support.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_disable_update_check><code>AUTHENTIK_DISABLE_UPDATE_CHECK</code><a href=#authentik_disable_update_check class=hash-link aria-label="Direct link to authentik_disable_update_check" title="Direct link to authentik_disable_update_check" translate=no>​</a></h3>
+<p>Disable the inbuilt update-checker. Defaults to <code>false</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_error_reporting><code>AUTHENTIK_ERROR_REPORTING</code><a href=#authentik_error_reporting class=hash-link aria-label="Direct link to authentik_error_reporting" title="Direct link to authentik_error_reporting" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_ERROR_REPORTING__ENABLED</code></p>
+<p>Enable error reporting. Defaults to <code>false</code>.</p>
+<p>Error reports are sent to <a href=https://sentry.io target=_blank rel="noopener noreferrer" class="">https://sentry.io</a> and are used for debugging and general feedback. Anonymous performance data is also sent.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_ERROR_REPORTING__SENTRY_DSN</code></p>
+<p>Sets the DSN for the Sentry API endpoint.</p>
+<p>When error reporting is enabled, the default Sentry DSN will allow the authentik developers to receive error reports and anonymous performance data, which is used for general feedback about authentik, and in some cases, may be used for debugging purposes.</p>
+<p>Users can create their own hosted Sentry account (or self-host Sentry) and opt to collect this data themselves.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_ERROR_REPORTING__ENVIRONMENT</code></p>
+<p>The environment tag associated with all data sent to Sentry. Defaults to <code>customer</code>.</p>
+<p>When error reporting has been enabled to aid in debugging issues, this should be set to a unique value, such as an email address.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_ERROR_REPORTING__SEND_PII</code></p>
+<p>Whether or not to send personal data, like usernames. Defaults to <code>false</code>.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_ERROR_REPORTING__EXTRA_ARGS</code></p>
+<p>Base64-encoded sentry_init arguments. See <a href=https://docs.sentry.io/platforms/python/configuration/options/ target=_blank rel="noopener noreferrer" class="">Sentry's documentation</a> for available options.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_email><code>AUTHENTIK_EMAIL</code><a href=#authentik_email class=hash-link aria-label="Direct link to authentik_email" title="Direct link to authentik_email" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__HOST</code></p>
+<p>Default: <code>localhost</code></p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__PORT</code></p>
+<p>Default: <code>25</code></p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__USERNAME</code></p>
+<p>Default: `` (Don't add quotation marks)</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__PASSWORD</code></p>
+<p>Default: `` (Don't add quotation marks)</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__USE_TLS</code></p>
+<p>Default: <code>false</code></p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__USE_SSL</code></p>
+<p>Default: <code>false</code></p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__TIMEOUT</code></p>
+<p>Default: <code>10</code></p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_EMAIL__FROM</code></p>
+<p>Default: <code>authentik@localhost</code></p>
+<p>Email address authentik will send from, should have a correct <a href=https://github.com/domain target=_blank rel="noopener noreferrer" class=""><strong>@domain</strong></a></p>
+<p>To change the sender's display name, use a format like <code>Name &lt;account@domain></code>.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_outposts><code>AUTHENTIK_OUTPOSTS</code><a href=#authentik_outposts class=hash-link aria-label="Direct link to authentik_outposts" title="Direct link to authentik_outposts" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><code>AUTHENTIK_OUTPOSTS__CONTAINER_IMAGE_BASE</code></p>
+<p>Placeholders:</p>
+<ul>
+<li class=""><code>%(type)s</code>: Outpost type; proxy, ldap, etc</li>
+<li class=""><code>%(version)s</code>: Current version; 2021.4.1</li>
+<li class=""><code>%(build_hash)s</code>: Build hash if you're running a beta version</li>
+</ul>
+<p>Placeholder for outpost docker images. Default: <code>ghcr.io/goauthentik/%(type)s:%(version)s</code>.</p>
+</li>
+<li class="">
+<p><code>AUTHENTIK_OUTPOSTS__DISCOVER</code></p>
+<p>Configure the automatic discovery of integrations. Defaults to <code>true</code>.</p>
+<p>By default, the following is discovered:</p>
+<ul>
+<li class="">Kubernetes in-cluster config</li>
+<li class="">Kubeconfig</li>
+<li class="">Existence of a docker socket</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_ldap__task_timeout_hours><code>AUTHENTIK_LDAP__TASK_TIMEOUT_HOURS</code><a href=#authentik_ldap__task_timeout_hours class=hash-link aria-label="Direct link to authentik_ldap__task_timeout_hours" title="Direct link to authentik_ldap__task_timeout_hours" translate=no>​</a></h3>
+<p>Timeout in hours for LDAP synchronization tasks.</p>
+<p>Defaults to <code>2</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_ldap__page_size><code>AUTHENTIK_LDAP__PAGE_SIZE</code><a href=#authentik_ldap__page_size class=hash-link aria-label="Direct link to authentik_ldap__page_size" title="Direct link to authentik_ldap__page_size" translate=no>​</a></h3>
+<p>Page size for LDAP synchronization. Controls the number of objects created in a single task.</p>
+<p>Defaults to <code>50</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_ldap__tls__ciphers><code>AUTHENTIK_LDAP__TLS__CIPHERS</code><a href=#authentik_ldap__tls__ciphers class=hash-link aria-label="Direct link to authentik_ldap__tls__ciphers" title="Direct link to authentik_ldap__tls__ciphers" translate=no>​</a></h3>
+<p>Allows configuration of TLS Ciphers for LDAP connections used by LDAP sources. Setting applies to all sources.</p>
+<p>Defaults to <code>null</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_reputation__expiry><code>AUTHENTIK_REPUTATION__EXPIRY</code><a href=#authentik_reputation__expiry class=hash-link aria-label="Direct link to authentik_reputation__expiry" title="Direct link to authentik_reputation__expiry" translate=no>​</a></h3>
+<p>Configure how long reputation scores should be saved for in seconds.</p>
+<p>Defaults to <code>86400</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_session_storage><code>AUTHENTIK_SESSION_STORAGE</code><a href=#authentik_session_storage class=hash-link aria-label="Direct link to authentik_session_storage" title="Direct link to authentik_session_storage" translate=no>​</a></h3>
+<div class="theme-admonition theme-admonition-info admonition_WCGJ alert alert--info"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 14 16"><path fill-rule=evenodd d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg></span>Deprecated</div><div class=admonitionContent_pbrs><p>This setting is removed as of version 2025.4. Sessions are now exclusively stored in the database. See our <a class="" href=/releases/2025.4/#sessions-are-now-stored-in-the-database>2025.4 release notes</a> for more information.</div></div>
+<p>If you are running a version earlier than 2025.4, you can configure if the sessions are stored in the cache or the database. Defaults to <code>cache</code>. Allowed values are <code>cache</code> and <code>db</code>. Note that changing this value will invalidate all previous sessions.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_sessions__unauthenticated_age><code>AUTHENTIK_SESSIONS__UNAUTHENTICATED_AGE</code><span class="badge badge--version" title="Available in authentik 2025.4.0 and later" aria-description="Version badge" role=img>authentik: 2025.4.0+</span><a href=#authentik_sessions__unauthenticated_age class=hash-link aria-label="Direct link to authentik_sessions__unauthenticated_age" title="Direct link to authentik_sessions__unauthenticated_age" translate=no>​</a></h3>
+<p>Configure how long unauthenticated sessions last for. Does not impact how long authenticated sessions are valid for. See the <a class="" href=/add-secure-apps/flows-stages/stages/user_login/>user login stage</a> for session validity.</p>
+<p>Defaults to <code>days=1</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_web__workers><code>AUTHENTIK_WEB__WORKERS</code><a href=#authentik_web__workers class=hash-link aria-label="Direct link to authentik_web__workers" title="Direct link to authentik_web__workers" translate=no>​</a></h3>
+<p>Configure how many gunicorn worker processes should be started (see <a href=https://docs.gunicorn.org/en/stable/design.html target=_blank rel="noopener noreferrer" class="">https://docs.gunicorn.org/en/stable/design.html</a>).</p>
+<p>Defaults to 2. A value below 2 workers is not recommended. In environments where scaling with multiple replicas of the authentik server is not possible, this number can be increased to handle higher loads.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_web__threads><code>AUTHENTIK_WEB__THREADS</code><a href=#authentik_web__threads class=hash-link aria-label="Direct link to authentik_web__threads" title="Direct link to authentik_web__threads" translate=no>​</a></h3>
+<p>Configure how many gunicorn threads a worker processes should have (see <a href=https://docs.gunicorn.org/en/stable/design.html target=_blank rel="noopener noreferrer" class="">https://docs.gunicorn.org/en/stable/design.html</a>).</p>
+<p>Defaults to 4.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_web__max_requests><code>AUTHENTIK_WEB__MAX_REQUESTS</code><a href=#authentik_web__max_requests class=hash-link aria-label="Direct link to authentik_web__max_requests" title="Direct link to authentik_web__max_requests" translate=no>​</a></h3>
+<p>The maximum number of requests a worker will process before restarting. If this is set to zero then the automatic worker restarts are disabled (see <a href=https://gunicorn.org/reference/settings/#max_requests target=_blank rel="noopener noreferrer" class="">https://gunicorn.org/reference/settings/#max_requests</a>).</p>
+<p>Defaults to 1000.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_web__max_requests_jitter><code>AUTHENTIK_WEB__MAX_REQUESTS_JITTER</code><a href=#authentik_web__max_requests_jitter class=hash-link aria-label="Direct link to authentik_web__max_requests_jitter" title="Direct link to authentik_web__max_requests_jitter" translate=no>​</a></h3>
+<p>The maximum jitter to add to the <code>AUTHENTIK_WEB__MAX_REQUESTS</code> setting (see <a href=https://gunicorn.org/reference/settings/#max_requests_jitter target=_blank rel="noopener noreferrer" class="">https://gunicorn.org/reference/settings/#max_requests_jitter</a>).</p>
+<p>Defaults to 50.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_web__path><code>AUTHENTIK_WEB__PATH</code><a href=#authentik_web__path class=hash-link aria-label="Direct link to authentik_web__path" title="Direct link to authentik_web__path" translate=no>​</a></h3>
+<p>Configure the path under which authentik is served. For example to access authentik under <code>https://my.domain/authentik/</code>, set this to <code>/authentik/</code>. Value <em>must</em> contain both a leading and trailing slash.</p>
+<p>Defaults to <code>/</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_web__timeout_http><code>AUTHENTIK_WEB__TIMEOUT_HTTP</code><a href=#authentik_web__timeout_http class=hash-link aria-label="Direct link to authentik_web__timeout_http" title="Direct link to authentik_web__timeout_http" translate=no>​</a></h3>
+<p>Configure the timeouts for the web HTTP/HTTPS Server. Accepts duration in the format of "300ms", "-1.5h" or "2h45m". Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".</p>
+<ul>
+<li class=""><code>AUTHENTIK_WEB__TIMEOUT_HTTP_READ_HEADER</code></li>
+</ul>
+<p>Defaults to <code>5s</code></p>
+<ul>
+<li class=""><code>AUTHENTIK_WEB__TIMEOUT_HTTP_READ</code></li>
+</ul>
+<p>Defaults to <code>30s</code></p>
+<ul>
+<li class=""><code>AUTHENTIK_WEB__TIMEOUT_HTTP_WRITE</code></li>
+</ul>
+<p>Defaults to <code>60s</code></p>
+<ul>
+<li class=""><code>AUTHENTIK_WEB__TIMEOUT_HTTP_IDLE</code></li>
+</ul>
+<p>Defaults to <code>120s</code></p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=advanced-settings-1>Advanced settings<a href=#advanced-settings-1 class=hash-link aria-label="Direct link to Advanced settings" title="Direct link to Advanced settings" translate=no>​</a></h2>
+<h5 class="anchor anchorTargetStickyNavbar_tleR" id=authentik_skip_migrations><code>AUTHENTIK_SKIP_MIGRATIONS</code><a href=#authentik_skip_migrations class=hash-link aria-label="Direct link to authentik_skip_migrations" title="Direct link to authentik_skip_migrations" translate=no>​</a></h5>
+<p>Whether to skip running migrations on starting authentik. This is destined to advanced setups and not recommended in normal use.</p>
+<p>Defaults to <code>false</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=system-settings>System settings<a href=#system-settings class=hash-link aria-label="Direct link to System settings" title="Direct link to System settings" translate=no>​</a></h2>
+<p>Additional <a class="" href=/sys-mgmt/settings/>system settings</a> are configurable using the Admin interface, under <strong>System</strong> > <strong>Settings</strong> or using the API.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id=custom-python-settings>Custom python settings<a href=#custom-python-settings class=hash-link aria-label="Direct link to Custom python settings" title="Direct link to Custom python settings" translate=no>​</a></h2>
+<p>To modify additional settings further than the options above allow, you can create a custom Python file and mount it to <code>/data/user_settings.py</code>. This file will be loaded on startup by both the server and the worker. All default settings are <a href=https://github.com/goauthentik/authentik/blob/main/authentik/root/settings.py target=_blank rel="noopener noreferrer" class="">here</a></p>
+<div class="theme-admonition theme-admonition-caution admonition_WCGJ alert alert--warning"><div class=admonitionHeading_GCBg><span class=admonitionIcon_L39b><svg viewBox="0 0 16 16"><path fill-rule=evenodd d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg></span>caution</div><div class=admonitionContent_pbrs><p>Using these custom settings is not supported and can prevent your authentik instance from starting. Use with caution.</div></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><hr class=divider_hZCZ /><div class="theme-admonition theme-admonition-note admonition_WCGJ alert alert--secondary admonitionContrib_Zv8a margin-top--sm theme-doc-footer-edit-meta-row"><div class=admonitionContent_pbrs><div class=admonitionHeader_FPxu><strong>Help us improve this content</strong></div><p>We welcome your knowledge and expertise. If you see areas of the documentation that you can improve (fix a typo, correct a technical detail, add additional context, etc.) we would really appreciate your contribution.<div class=row><div class="col col--12"><ul><li><a href=https://github.com/goauthentik/authentik/edit/main/website/docs/install-config/configuration/configuration.mdx target=_blank rel="noopener noreferrer" class=theme-edit-this-page>Edit on GitHub</a><li><a href=https://docs.goauthentik.io/docs/developer-docs/ target=_blank rel="noreferrer noopener">Contributor Guide</a><li><a href=https://github.com/goauthentik/authentik/issues/new target=_blank rel="noreferrer noopener">Open an issue</a><li><a href=https://goauthentik.io/pricing/ target=_blank rel="noreferrer noopener">Get Enterprise Support</a></ul></div></div></div></div><div class=row><div class="col lastUpdated_BkBT"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/install-config/install/aws/><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>AWS installation</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/install-config/first-steps/><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>First steps</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#about-authentik-configurations class="table-of-contents__link toc-highlight">About authentik configurations</a><li><a href=#set-your-environment-variables class="table-of-contents__link toc-highlight">Set your environment variables</a><li><a href=#verify-your-configuration-settings class="table-of-contents__link toc-highlight">Verify your configuration settings</a><li><a href=#postgresql-settings class="table-of-contents__link toc-highlight">PostgreSQL Settings</a><ul><li><a href=#connection-settings class="table-of-contents__link toc-highlight">Connection settings</a><li><a href=#ssltls-settings class="table-of-contents__link toc-highlight">SSL/TLS settings</a><li><a href=#connection-management class="table-of-contents__link toc-highlight">Connection management</a><li><a href=#advanced-settings class="table-of-contents__link toc-highlight">Advanced Settings</a><li><a href=#read-replicas class="table-of-contents__link toc-highlight">Read Replicas</a><li><a href=#using-a-postgresql-connection-pooler class="table-of-contents__link toc-highlight">Using a PostgreSQL Connection Pooler</a><li><a href=#deprecated-settings class="table-of-contents__link toc-highlight">Deprecated Settings</a></ul><li><a href=#cache-settings class="table-of-contents__link toc-highlight">Cache Settings</a><li><a href=#worker-settings class="table-of-contents__link toc-highlight">Worker settings</a><li><a href=#listen-settings class="table-of-contents__link toc-highlight">Listen Settings</a><li><a href=#storage-settings class="table-of-contents__link toc-highlight">Storage settings</a><ul><li><a href=#file-storage-backend-settings class="table-of-contents__link toc-highlight">File storage backend settings</a><li><a href=#s3-storage-backend-settings class="table-of-contents__link toc-highlight">S3 storage backend settings</a><li><a href=#media-storage-settings class="table-of-contents__link toc-highlight">Media storage settings</a><li><a href=#reports-storage-settings class="table-of-contents__link toc-highlight">Reports storage settings</a></ul><li><a href=#authentik-settings class="table-of-contents__link toc-highlight">authentik Settings</a><ul><li><a href=#authentik_secret_key class="table-of-contents__link toc-highlight"><code>AUTHENTIK_SECRET_KEY</code></a><li><a href=#authentik_log_level class="table-of-contents__link toc-highlight"><code>AUTHENTIK_LOG_LEVEL</code></a><li><a href=#authentik_cookie_domain class="table-of-contents__link toc-highlight"><code>AUTHENTIK_COOKIE_DOMAIN</code></a><li><a href=#authentik_events__context_processors__geoip class="table-of-contents__link toc-highlight"><code>AUTHENTIK_EVENTS__CONTEXT_PROCESSORS__GEOIP</code></a><li><a href=#authentik_events__context_processors__asn class="table-of-contents__link toc-highlight"><code>AUTHENTIK_EVENTS__CONTEXT_PROCESSORS__ASN</code></a><li><a href=#authentik_disable_update_check class="table-of-contents__link toc-highlight"><code>AUTHENTIK_DISABLE_UPDATE_CHECK</code></a><li><a href=#authentik_error_reporting class="table-of-contents__link toc-highlight"><code>AUTHENTIK_ERROR_REPORTING</code></a><li><a href=#authentik_email class="table-of-contents__link toc-highlight"><code>AUTHENTIK_EMAIL</code></a><li><a href=#authentik_outposts class="table-of-contents__link toc-highlight"><code>AUTHENTIK_OUTPOSTS</code></a><li><a href=#authentik_ldap__task_timeout_hours class="table-of-contents__link toc-highlight"><code>AUTHENTIK_LDAP__TASK_TIMEOUT_HOURS</code></a><li><a href=#authentik_ldap__page_size class="table-of-contents__link toc-highlight"><code>AUTHENTIK_LDAP__PAGE_SIZE</code></a><li><a href=#authentik_ldap__tls__ciphers class="table-of-contents__link toc-highlight"><code>AUTHENTIK_LDAP__TLS__CIPHERS</code></a><li><a href=#authentik_reputation__expiry class="table-of-contents__link toc-highlight"><code>AUTHENTIK_REPUTATION__EXPIRY</code></a><li><a href=#authentik_session_storage class="table-of-contents__link toc-highlight"><code>AUTHENTIK_SESSION_STORAGE</code></a><li><a href=#authentik_sessions__unauthenticated_age class="table-of-contents__link toc-highlight"><code>AUTHENTIK_SESSIONS__UNAUTHENTICATED_AGE</code></a><li><a href=#authentik_web__workers class="table-of-contents__link toc-highlight"><code>AUTHENTIK_WEB__WORKERS</code></a><li><a href=#authentik_web__threads class="table-of-contents__link toc-highlight"><code>AUTHENTIK_WEB__THREADS</code></a><li><a href=#authentik_web__max_requests class="table-of-contents__link toc-highlight"><code>AUTHENTIK_WEB__MAX_REQUESTS</code></a><li><a href=#authentik_web__max_requests_jitter class="table-of-contents__link toc-highlight"><code>AUTHENTIK_WEB__MAX_REQUESTS_JITTER</code></a><li><a href=#authentik_web__path class="table-of-contents__link toc-highlight"><code>AUTHENTIK_WEB__PATH</code></a><li><a href=#authentik_web__timeout_http class="table-of-contents__link toc-highlight"><code>AUTHENTIK_WEB__TIMEOUT_HTTP</code></a></ul><li><a href=#advanced-settings-1 class="table-of-contents__link toc-highlight">Advanced settings</a><li><a href=#system-settings class="table-of-contents__link toc-highlight">System settings</a><li><a href=#custom-python-settings class="table-of-contents__link toc-highlight">Custom python settings</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Authentik Security Inc. Built with Docusaurus.</div></div></div></footer></div></body>
