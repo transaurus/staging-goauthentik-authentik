@@ -6,5 +6,6 @@
   "translateCommand": "npm run -w docs docusaurus -- write-translations",
   "buildCommand": "npm run -w docs build",
   "buildOutput": "build",
-  "packageManager": "npm"
+  "packageManager": "npm",
+  "nodeVersion": "24"
 }
